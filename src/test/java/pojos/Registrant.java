@@ -135,4 +135,5 @@ public class Registrant {
                 ", authorities=" + Arrays.toString(authorities) +
                 '}';
     }
+
 }

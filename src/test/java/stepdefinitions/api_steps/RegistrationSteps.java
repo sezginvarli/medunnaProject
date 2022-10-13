@@ -3,13 +3,12 @@ package stepdefinitions.api_steps;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import pojos.Registrant;
 import utilities.ConfigReader;
 
-import static utilities.Authentication.generateToken;
+import static io.restassured.RestAssured.given;
 import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationSteps {
@@ -17,9 +16,9 @@ public class RegistrationSteps {
     Registrant [] registrants;
     @Given("user sends a get request for users' data")
     public void user_sends_a_get_request_for_users_data() {
-        response= RestAssured.given().headers(
-            "Authotization",
-            "Bearer "+generateToken (),//ConfigReader.getProperty("api_token")
+        response= given().headers(
+            "Authorization",
+            "Bearer "+ConfigReader.getProperty("api_token"),//generateToken (),//
             "Content-type", ContentType.JSON,
             "Accept", ContentType.JSON
         ).when().get(ConfigReader.getProperty("users_api_url"));
@@ -32,17 +31,16 @@ public class RegistrationSteps {
 
         registrants=obj.readValue(response.asString(),Registrant[].class);
 
+ System.out.println("Size ==>> "+registrants.length);
 /*
-        System.out.println("Size ==>> "+registrants.length);
-
         boolean flag=false;
         for (int i = 0; i < registrants.length; i++) {
  //           System.out.println("mane"+ i+1+" : "+registrants[i].getFirstName);
-            if ("".contains(registrants[i].getSsn())){
+            if ("856-45-6777".contains(registrants[i].getSsn())){
                 flag=true;
             }
         }
-        assertTrue(flag);*/
+        assertTrue(flag);               */
     }
 
     @Then("user saves the users' data to correspondent files and validates")
