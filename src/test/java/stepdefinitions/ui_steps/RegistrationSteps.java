@@ -1,12 +1,12 @@
 package stepdefinitions.ui_steps;
 
 import com.github.javafaker.Faker;
-import pages.RegıstratıonPage;
+import pages.RegistrationPage;
 import pojos.Registrant;
 
 public class RegistrationSteps {
     Registrant registrant=new Registrant();
-    RegıstratıonPage regıstratıonPage=new RegıstratıonPage();
+    RegistrationPage regıstratıonPage=new RegistrationPage();
 
     Faker faker=new Faker();
 
