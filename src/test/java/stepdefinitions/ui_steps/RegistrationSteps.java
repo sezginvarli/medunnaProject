@@ -13,7 +13,7 @@ import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationSteps {
     Registrant registrant=new Registrant();
-    RegistrationPage registrationPage=new RegistrationPage();
+    RegistrationPage regıstratıonPage=new RegistrationPage();
 
     Faker faker=new Faker();
 
