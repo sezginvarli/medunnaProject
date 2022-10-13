@@ -1,0 +1,5 @@
+Registrant{firstName='Johnson', lastName='Monahan', ssn='582-86-2062', login='JohnsonMonahan', langKey='null', password='!Ivt0VmGUB5%5U!p', email='JohnsonMonahan@gmail.com', id=0, activated=false, authorities=null}
+Registrant{firstName='Lonnie', lastName='Friesen', ssn='867-71-2557', login='LonnieFriesen', langKey='null', password='$A$0e5sDOEu4', email='LonnieFriesen@gmail.com', id=0, activated=false, authorities=null}
+Registrant{firstName='Louis', lastName='Hammes', ssn='472-38-7835', login='LouisHammes', langKey='null', password='#SzJ^p95Kkt9', email='LouisHammes@gmail.com', id=0, activated=false, authorities=null}
+Registrant{firstName='Dale', lastName='Johnson', ssn='530-19-5237', login='DaleJohnson', langKey='null', password='yVXF$F9bV', email='DaleJohnson@gmail.com', id=0, activated=false, authorities=null}
+Registrant{firstName='Norberto', lastName='Christiansen', ssn='176-13-1722', login='NorbertoChristiansen', langKey='null', password='Wkz2O0Wlqbktq7T', email='NorbertoChristiansen@gmail.com', id=0, activated=false, authorities=null}
