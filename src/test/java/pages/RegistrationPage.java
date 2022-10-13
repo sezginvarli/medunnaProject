@@ -3,9 +3,9 @@ package pages;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class RegıstratıonPage {
+public class RegistrationPage {
 
-    public RegıstratıonPage(){
+    public RegistrationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
