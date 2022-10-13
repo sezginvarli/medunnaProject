@@ -9,7 +9,7 @@ public class TXTWriter {
     public static void saveUiRegistrantsData(Registrant registrant){
 
         try {
-            FileWriter fw=new FileWriter(ConfigReader.getProperty("applicants_data"),true);
+            FileWriter fw=new FileWriter(ConfigReader.getProperty("applicant_data"),true);
             BufferedWriter bw=new BufferedWriter(fw);
             bw.append(registrant.toString()+"\n");
             bw.close();
@@ -28,8 +28,6 @@ public class TXTWriter {
             for (int i = 0; i < registrants.length ; i++) {
                 bw.append(registrants[i].toString()+"\n");
             }
-
-
             bw.close();
 
         }catch (Exception e){

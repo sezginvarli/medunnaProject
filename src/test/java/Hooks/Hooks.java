@@ -16,6 +16,10 @@ public class Hooks {
     public  void baseUrlSetup(){
         spec=new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
     }
+    @Before(order = 1,value = "@NewApplicant")
+    public void navigateToRegistration(){
+        Driver.getDriver().get(ConfigReader.getProperty("registration_page_url"));
+    }
     @Before
     public void setUp(){
 

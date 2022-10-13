@@ -1,5 +1,6 @@
 Feature: Test Registration data
 
+  @NewApplicant
   Scenario Outline: test new applicants
     Given user provides their ssn id as "<ssn>"
     And user provides their firstname as "<firstname>"

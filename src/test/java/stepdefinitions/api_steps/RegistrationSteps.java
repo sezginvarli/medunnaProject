@@ -1,22 +1,16 @@
 package stepdefinitions.api_steps;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.mapper.ObjectMapperSerializationContext;
 import io.restassured.response.Response;
-import jdk.jfr.ContentType;
-import org.openqa.selenium.devtools.v85.network.model.Response;
 import pojos.Registrant;
 import utilities.ConfigReader;
 
-import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
-import static utilities.TXTWriter.saveUIRegistrantsData;
-
+import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationSteps {
     Response response;
@@ -25,7 +19,7 @@ public class RegistrationSteps {
     public void user_sends_a_get_request_for_users_data() {
         response= RestAssured.given().headers(
             "Authotization",
-            "Bearer "+generateToken ("api_token"),//ConfigReader.getProperty("api_token")
+            "Bearer "+generateToken (),//ConfigReader.getProperty("api_token")
             "Content-type", ContentType.JSON,
             "Accept", ContentType.JSON
         ).when().get(ConfigReader.getProperty("users_api_url"));
@@ -54,8 +48,7 @@ public class RegistrationSteps {
     @Then("user saves the users' data to correspondent files and validates")
     public void user_saves_the_users_data_to_correspondent_files_and_validates() {
 
-        saveUIRegistrantsData(registrants);
-
+        saveUiRegistrantsData(registrants);
 
     }
 

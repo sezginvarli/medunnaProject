@@ -13,7 +13,7 @@ import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationSteps {
     Registrant registrant=new Registrant();
-    RegistrationPage regıstratıonPage=new RegistrationPage();
+    RegistrationPage registrationPage=new RegistrationPage();
 
     Faker faker=new Faker();
 
@@ -81,6 +81,5 @@ public class RegistrationSteps {
         Assert.assertTrue(registrationPage.successMessageToastContainer.isDisplayed());
         saveUiRegistrantsData(registrant);
     }
-
 
 }
