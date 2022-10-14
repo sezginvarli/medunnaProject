@@ -10,7 +10,6 @@ public class RegistrationPage {
 
     public RegistrationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
-
     }
 
     @FindBy(id = "ssn")
@@ -51,11 +50,5 @@ public class RegistrationPage {
     public WebElement YourLastNameIsRequired;
     @FindBy(xpath = "//div[text()='Your username is required.']")
     public WebElement YourUserNameIsRequired;
-
-
-
-
-
-
 
 }
