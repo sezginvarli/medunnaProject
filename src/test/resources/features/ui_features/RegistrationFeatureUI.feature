@@ -1,5 +1,6 @@
 Feature: Test Registration data
 
+  @NewApplicant
   Scenario Outline: test new applicants
     Given user provides their ssn id as "<ssn>"
     And user provides their firstname as "<firstname>"
@@ -12,4 +13,8 @@ Feature: Test Registration data
 
     Examples: test data for applicants
       | ssn | firstname | lastname | username | email | password | password_confirm |
-      |     |           |          |          |       |          |                  |
+      |126-46-8758|team0303|batch86|team03batch86|batch8687team03@gmail.com|batch86team03|batch86team03|
+      |126-46-8758|team0303|batch86|team03batch86|batch8687team03@gmail.com|batch86team03|batch86team03|
+      |126-46-8758|team0303|batch86|team03batch86|batch8687team03@gmail.com|batch86team03|batch86team03|
+      |126-46-8758|team0303|batch86|team03batch86|batch8687team03@gmail.com|batch86team03|batch86team03|
+      |126-46-8758|team0303|batch86|team03batch86|batch8687team03@gmail.com|batch86team03|batch86team03|
