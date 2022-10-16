@@ -9,9 +9,10 @@ import pojos.Registrant;
 import utilities.ConfigReader;
 
 import static io.restassured.RestAssured.given;
+import static utilities.Authentication.generateToken;
 import static utilities.TXTWriter.saveUiRegistrantsData;
 
-public class RegistrationSteps {
+public class RegistrationApiSteps {
     Response response;
     Registrant [] registrants;
     @Given("user sends a get request for users' data")
@@ -19,7 +20,7 @@ public class RegistrationSteps {
 
         response= given().headers(
             "Authorization",
-            "Bearer "+ConfigReader.getProperty("api_token"),//generateToken (),//
+            "Bearer "+ generateToken (),//ConfigReader.getProperty("api_token"),//
             "Content-type", ContentType.JSON,
             "Accept", ContentType.JSON
         ).when().get(ConfigReader.getProperty("users_api_url"));

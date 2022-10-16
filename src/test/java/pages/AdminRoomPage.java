@@ -3,8 +3,8 @@ package pages;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class RoomPage {
-    public RoomPage(){
+public class AdminRoomPage {
+    public AdminRoomPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

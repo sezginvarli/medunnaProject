@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -10,6 +12,15 @@ public class PhysiciansMainPage {
     public PhysiciansMainPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+    @FindBy(id = "entity-menu")
+    public WebElement myPagesDropdown;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
+    public WebElement myAppointments;
+
+
+
 
 
 }

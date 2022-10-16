@@ -1,7 +1,6 @@
 package stepdefinitions.ui_steps;
 
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,7 +11,7 @@ import utilities.Driver;
 
 import static utilities.TXTWriter.saveUiRegistrantsData;
 
-public class RegistrationSteps {
+public class RegistrationUiSteps {
     Registrant registrant=new Registrant();
     RegistrationPage registrationPage=new RegistrationPage();
 
