@@ -16,13 +16,15 @@ public class RegistrationSteps {
     Registrant [] registrants;
     @Given("user sends a get request for users' data")
     public void user_sends_a_get_request_for_users_data() {
+
         response= given().headers(
             "Authorization",
             "Bearer "+ConfigReader.getProperty("api_token"),//generateToken (),//
             "Content-type", ContentType.JSON,
             "Accept", ContentType.JSON
         ).when().get(ConfigReader.getProperty("users_api_url"));
-        response.prettyPrint();
+
+
     }
     @Given("user deserializes the users' data to java")
     public void user_deserializes_the_users_data_to_java() throws Exception {
