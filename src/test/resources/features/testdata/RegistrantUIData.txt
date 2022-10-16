@@ -1,5 +1,0 @@
-Registrant{firstName='Darrel', lastName='Quigley', ssn='541-40-2326', login='DarrelQuigley', langKey='null', password='6WHVSm4xQRD86h2zT', email='DarrelQuigley@gmail.com', id=0, activated=false, authorities=null}
-Registrant{firstName='Lacy', lastName='Prohaska', ssn='453-75-5029', login='LacyProhaska', langKey='null', password='708sE#$!p*eY9u', email='LacyProhaska@gmail.com', id=0, activated=false, authorities=null}
-Registrant{firstName='Imelda', lastName='MacGyver', ssn='878-36-0963', login='ImeldaMacGyver', langKey='null', password='M1^J$CL^1uOw&k9i#G', email='ImeldaMacGyver@gmail.com', id=0, activated=false, authorities=null}
-Registrant{firstName='Barney', lastName='Bernier', ssn='284-51-5134', login='BarneyBernier', langKey='null', password='Xrd7FnWiKX76Exb4N', email='BarneyBernier@gmail.com', id=0, activated=false, authorities=null}
-Registrant{firstName='Tierra', lastName='Daniel', ssn='159-70-7385', login='TierraDaniel', langKey='null', password='@3PI6&iu2$1C0bQQs', email='TierraDaniel@gmail.com', id=0, activated=false, authorities=null}
