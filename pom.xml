@@ -100,16 +100,22 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.13.4</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.0</version>
+        </dependency>
 
 
 
 
         <!--        &lt;!&ndash; https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>tech.grasshopper</groupId>-->
-<!--            <artifactId>extentreports-cucumber7-adapter</artifactId>-->
-<!--            <version>1.2.0</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>tech.grasshopper</groupId>-->
+        <!--            <artifactId>extentreports-cucumber7-adapter</artifactId>-->
+        <!--            <version>1.2.0</version>-->
+        <!--        </dependency>-->
 
 
         <dependency>
@@ -173,10 +179,11 @@
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
                                 <param>**/json-reports/*.json</param>
-                            </jsonFiles><classificationFiles>->
-                            <param>sample.properties</param>
-                            <param>other.properties</param>
-                        </classificationFiles>
+                            </jsonFiles>
+                            <classificationFiles>->
+                                <param>sample.properties</param>
+                                <param>other.properties</param>
+                            </classificationFiles>
                         </configuration>
                     </execution>
                 </executions>

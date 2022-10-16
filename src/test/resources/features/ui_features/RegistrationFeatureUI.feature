@@ -18,3 +18,6 @@ Feature: Test Registration data
       |126-46-8758|team0303|batch86|team03batch86|batch8687team03@gmail.com|batch86team03|batch86team03|
       |126-46-8758|team0303|batch86|team03batch86|batch8687team03@gmail.com|batch86team03|batch86team03|
       |126-46-8758|team0303|batch86|team03batch86|batch8687team03@gmail.com|batch86team03|batch86team03|
+
+
+

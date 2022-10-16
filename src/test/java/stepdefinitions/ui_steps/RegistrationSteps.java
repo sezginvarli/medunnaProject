@@ -9,6 +9,8 @@ import pages.RegistrationPage;
 import pojos.Registrant;
 import utilities.Driver;
 
+import java.io.FileWriter;
+
 import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationSteps {
@@ -81,5 +83,6 @@ public class RegistrationSteps {
         Assert.assertTrue(registrationPage.successMessageToastContainer.isDisplayed());
         saveUiRegistrantsData(registrant);
     }
+
 
 }
