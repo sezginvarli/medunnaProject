@@ -9,6 +9,7 @@ import pojos.Registrant;
 import utilities.ConfigReader;
 
 import static io.restassured.RestAssured.given;
+import static utilities.Authentication.generateToken;
 import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationSteps {
@@ -18,7 +19,7 @@ public class RegistrationSteps {
     public void user_sends_a_get_request_for_users_data() {
         response= given().headers(
             "Authorization",
-            "Bearer "+ConfigReader.getProperty("api_token"),//generateToken (),//
+            "Bearer "+generateToken (),//
             "Content-type", ContentType.JSON,
             "Accept", ContentType.JSON
         ).when().get(ConfigReader.getProperty("users_api_url"));
@@ -31,7 +32,7 @@ public class RegistrationSteps {
 
         registrants=obj.readValue(response.asString(),Registrant[].class);
 
- System.out.println("Size ==>> "+registrants.length);
+        System.out.println("Size ==>> "+registrants.length);
 /*
         boolean flag=false;
         for (int i = 0; i < registrants.length; i++) {
