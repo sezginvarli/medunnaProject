@@ -13,14 +13,16 @@ public class PhysiciansMainPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(id = "entity-menu")
+    @FindBy(xpath = "//*[@id='entity-menu']")
     public WebElement myPagesDropdown;
 
     @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
     public WebElement myAppointments;
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement myPatients;
 
-
-
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
+    public WebElement myInPatients;
 
 }
