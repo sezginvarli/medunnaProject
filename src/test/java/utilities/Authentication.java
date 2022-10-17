@@ -7,7 +7,7 @@ import io.restassured.response.Response;
 import java.util.HashMap;
 import java.util.Map;
 
-import static Hooks.Hooks.spec;
+import static hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 
 public class Authentication {
