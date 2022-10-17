@@ -11,19 +11,24 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class Hooks {
-    public static RequestSpecification spec;
-    @Before(value = "@Api")
-    public  void baseUrlSetup(){
-        spec=new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
-    }
-    @Before(order = 1,value = "@NewApplicant")
-    public void navigateToRegistration(){
-        Driver.getDriver().get(ConfigReader.getProperty("registration_page_url"));
-    }
     @Before
     public void setUp(){
 
     }
+    public static RequestSpecification spec;
+    @Before (value = "@Api")
+    public  void baseUrlSetup(){
+        spec=new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base_url")).build();
+    }
+    @Before (order = 1,value = "@NewApplicant")
+    public void navigateToRegistration(){
+        Driver.getDriver().get(ConfigReader.getProperty("registration_page_url"));
+    }
+    @Before (order = 1,value = "@Signin")
+    public void navigateToHomePage(){
+        Driver.getDriver().get(ConfigReader.getProperty("base_url"));
+    }
+
 
     @After
     public void tearDown(Scenario scenario){
