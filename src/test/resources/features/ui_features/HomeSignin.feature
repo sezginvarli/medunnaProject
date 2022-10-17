@@ -1,6 +1,8 @@
 
  Feature: Home Page and Sign-in Features
 
+
+
   @Signin
   Scenario Outline: Sign in feature
 
@@ -11,5 +13,5 @@
     And user click on Remember me checkbox
     Then user click on Sign in
     Examples:
-      | username | password |
+      | username |   password       |
       | hk_admin |    Hk_admin      |

@@ -12,7 +12,6 @@ public class HomePageStepDefs {
     @When("user click on account menu")
     public void user_click_on_account_menu() {
         homeAndSigninPage.signInAccountMenu.click();
-
     }
     @Then("user can select Sign in")
     public void user_can_select_sign_in() {
