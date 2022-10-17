@@ -14,5 +14,5 @@ Feature: Doctor view and edit inpatients
   Scenario: user view inpatients
       When user clicks on mypages
       And user clicks on myinpatients button
-      Then user veifies that a table header exist with given datas "ID" "Start Date" "End Date" "Status" "Description" "Created Date" "Room" "Appointment" "Patient"
+      Then user verifies that a table header exist with given datas "ID" "Start Date" "End Date" "Status" "Description" "Created Date" "Room" "Appointment" "Patient"
       And user close the application

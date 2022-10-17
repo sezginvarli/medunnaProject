@@ -52,7 +52,7 @@ public class HomePageStepDefs {
     }
     @Then("user close the application")
     public void user_close_the_application() {
-
+        Driver.closeDriver();
     }
 }
 

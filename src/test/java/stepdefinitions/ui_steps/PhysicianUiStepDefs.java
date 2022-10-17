@@ -2,7 +2,6 @@ package stepdefinitions.ui_steps;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.internal.common.assertion.Assertion;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import pages.PhysiciansInpatientsPage;
@@ -34,8 +33,8 @@ public class PhysicianUiStepDefs {
         }
     }
 
-    @Then("user veifies that a table header exist with given datas {string} {string} {string} {string} {string} {string} {string} {string} {string}")
-    public void userVeifiesThatATableHeaderExistWithGivenDatas(String id, String startDate, String endDate, String status, String description, String createdDate, String room, String appointment, String patient) {
+    @Then("user verifies that a table header exist with given datas {string} {string} {string} {string} {string} {string} {string} {string} {string}")
+    public void userVerifiesThatATableHeaderExistWithGivenDatas(String id, String startDate, String endDate, String status, String description, String createdDate, String room, String appointment, String patient) {
 
         ReusableMethods.waitFor(10);
         List<String> headers = new ArrayList<>();
