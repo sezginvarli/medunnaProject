@@ -1,12 +1,12 @@
 package stepdefinitions.ui_steps;
 
-import io.cucumber.java.en.And;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomeAndSigninPage;
-import utilities.ConfigReader;
+
 import utilities.Driver;
 import utilities.ReusableMethods;
 
