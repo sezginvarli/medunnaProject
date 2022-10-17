@@ -24,6 +24,7 @@ public class Hooks {
     public void navigateToRegistration(){
         Driver.getDriver().get(ConfigReader.getProperty("registration_page_url"));
     }
+
     @Before (order = 1,value = "@Signin")
     public void navigateToHomePage(){
         Driver.getDriver().get(ConfigReader.getProperty("base_url"));
