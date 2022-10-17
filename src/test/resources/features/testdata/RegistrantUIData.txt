@@ -17,3 +17,6 @@ Registrant{firstName='Johnsie', lastName='Klocko', ssn='110-12-1015', login='Joh
 Registrant{firstName='Kraig', lastName='Crona', ssn='546-98-6283', login='KraigCrona', langKey='null', password='0#6%kHcuH0e', email='KraigCrona@gmail.com', id=0, activated=false, authorities=null}
 Registrant{firstName='Zachery', lastName='Cartwright', ssn='803-70-7091', login='ZacheryCartwright', langKey='null', password='^RF3AXTn0sOW06ABCF', email='ZacheryCartwright@gmail.com', id=0, activated=false, authorities=null}
 >>>>>>> main
+Registrant{firstName='Rudy', lastName='Upton', ssn='578-43-5794', login='RudyUpton', langKey='null', password='pn3asAI8a00', email='RudyUpton@gmail.com', id=0, activated=false, authorities=null}
+Registrant{firstName='Carmel', lastName='Spencer', ssn='621-72-3940', login='CarmelSpencer', langKey='null', password='2P9!4ill9&q', email='CarmelSpencer@gmail.com', id=0, activated=false, authorities=null}
+Registrant{firstName='Eduardo', lastName='Ziemann', ssn='388-89-0569', login='EduardoZiemann', langKey='null', password='AH@N88x1!!7a', email='EduardoZiemann@gmail.com', id=0, activated=false, authorities=null}

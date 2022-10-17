@@ -13,13 +13,9 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-<<<<<<< HEAD
-        tags = "@Signin",
-        dryRun = true
-=======
-        tags = "@US04_TC01",
+
+        tags = "@NewApplicant",
         dryRun = false
->>>>>>> main
 
 )
 public class Runner {
