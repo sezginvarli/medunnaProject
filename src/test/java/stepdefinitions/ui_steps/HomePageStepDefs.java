@@ -12,6 +12,7 @@ import utilities.ReusableMethods;
 
 public class HomePageStepDefs {
 
+
     HomeAndSigninPage HomeAndSigninPage = new HomeAndSigninPage();
 
     @When("user goto home page")
@@ -74,11 +75,5 @@ public class HomePageStepDefs {
 
         }
     }
-
-
-
-
-
-
 
 
