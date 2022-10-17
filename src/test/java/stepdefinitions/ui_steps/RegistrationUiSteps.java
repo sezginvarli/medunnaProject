@@ -11,7 +11,7 @@ import utilities.Driver;
 
 import static utilities.TXTWriter.saveUiRegistrantsData;
 
-public class RegistrationSteps {
+public class RegistrationUiSteps {
     Registrant registrant=new Registrant();
     RegistrationPage registrationPage=new RegistrationPage();
 
@@ -83,3 +83,48 @@ public class RegistrationSteps {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
