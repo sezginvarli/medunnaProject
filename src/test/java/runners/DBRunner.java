@@ -4,6 +4,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        monochrome = true,
         plugin = {
                 "pretty",
                 "html:target/default-cucumber-reports.html",
@@ -11,16 +12,11 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "./src/test/resources/features",
-        glue = {"stepdefinitions","hooks"},
-<<<<<<< HEAD
-        tags = "@Signin",
+        features = "./src/test/resources/features/db_feautes",
+        glue = {"stepdefinitions"},
+        tags = "@db_read",
         dryRun = true
-=======
-        tags = "@US04_TC01",
-        dryRun = false
->>>>>>> main
-
 )
-public class Runner {
+        public class DBRunner {
 }
+
