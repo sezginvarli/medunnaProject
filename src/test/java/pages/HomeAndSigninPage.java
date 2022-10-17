@@ -16,7 +16,7 @@ public class HomeAndSigninPage {
     public WebElement signInLink;
 
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
-    public WebElement registerButton;
+    public WebElement firstSignInButton;
 
     @FindBy(id = "username")
     public WebElement userNameTextArea;
@@ -26,8 +26,8 @@ public class HomeAndSigninPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton;
-
-
+    @FindBy(xpath = "//span[text()='Patient29 patient']")
+    public WebElement signInVerifyButton;
 
 
 }
