@@ -2,16 +2,15 @@
 Feature: Create Or Edit Patient By Admin
 
   Background: Go to homepage
-    Given user opens to Medunna Page
-    And user click on account menu
-    And user can select Sign in
+    Given User clicks on account drop-down-menu button
+    And User clicks on sign-in button
 
-
+  @Signin
   @CreatedPatientByAdmin
   Scenario Outline: New patient is created by admin
-    Given user enter their username as "<username>"
-    When user enter their password as "<password>"
-    And user click on Sign in
+    Given user enters a valid "<username>" username
+    When user enters a valid "<password>" password
+    And user clicks on second sign-in button
     When Click on Items&Titles button then click patient button
     And Click on Create a new patient button
     And Enter "<firstname>" in firstname box
@@ -32,13 +31,14 @@ Feature: Create Or Edit Patient By Admin
       | username | password | firstname | lastname | birth_date | email | phone | description |
       | Batch86 | Batch86+ | Tom | Hanks | 2000-02-17T15:03 | tomhanks2@gmail.com | 5095487814 | Cold Flue |
 
+@Signin
 @CreatedPatientByOtherUsers
   Scenario Outline: New patient is created by other users
-    Given user enter their username as "<username>"
-    When user enter their password as "<password>"
-    And user click on Sign in
+    Given user enters a valid "<username>" username
+    When user enters a valid "<password>" password
+    And user clicks on second sign-in button
     Then Verify the Items&Titles is not here
-    And user click on account menu
+    And User clicks on account drop-down-menu button
     Then user click on sign out
   Examples:
     | username | password |

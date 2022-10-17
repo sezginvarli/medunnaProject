@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import pages.AdminPatientPage;
+import pages.HomeAndSigninPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -15,6 +16,8 @@ public class CreateOrEditPatientStepDefs {
 
     AdminPatientPage adminPatientPage=new AdminPatientPage();
     Faker faker=new Faker();
+
+    HomeAndSigninPage homeAndSigninPage=new HomeAndSigninPage();
 
     @Given("user opens to Medunna Page")
     public void user_opens_to_medunna_page() {
@@ -104,6 +107,6 @@ public class CreateOrEditPatientStepDefs {
     @Then("user click on sign out")
     public void user_click_on_sign_out() {
         ReusableMethods.waitFor(1);
-        adminPatientPage.signOutButton.click();
+        homeAndSigninPage.signOutButton.click();
     }
 }

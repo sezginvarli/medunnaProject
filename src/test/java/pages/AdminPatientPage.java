@@ -54,8 +54,7 @@ public class AdminPatientPage {
     @FindBy(xpath = "//*[contains(text(),'A new Patient is created')]")
     public WebElement successMessageToastContainer;
 
-    @FindBy(xpath = "//a[@href='/logout']")
-    public WebElement signOutButton;
+
 
 
 
