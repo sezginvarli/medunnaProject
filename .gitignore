@@ -1,9 +1,6 @@
 .idea
 /target
 *.iml
-<<<<<<< HEAD
 target
-
-=======
 test-output
->>>>>>> main
+
