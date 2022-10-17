@@ -9,6 +9,7 @@ import pojos.Registrant;
 import utilities.ConfigReader;
 
 import static io.restassured.RestAssured.given;
+import static utilities.Authentication.generateToken;
 import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationSteps {
@@ -18,11 +19,12 @@ public class RegistrationSteps {
     public void user_sends_a_get_request_for_users_data() {
         response= given().headers(
             "Authorization",
-            "Bearer "+ConfigReader.getProperty("api_token"),//generateToken (),//
-            "Content-type", ContentType.JSON,
+            "Bearer "+generateToken(),//ConfigReader.getProperty("api_token")
+            "Content-Type", ContentType.JSON,
             "Accept", ContentType.JSON
         ).when().get(ConfigReader.getProperty("users_api_url"));
-        response.prettyPrint();
+        response.then().assertThat().statusCode(200);
+       response.prettyPrint();
     }
     @Given("user deserializes the users' data to java")
     public void user_deserializes_the_users_data_to_java() throws Exception {
