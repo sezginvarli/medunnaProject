@@ -17,7 +17,6 @@ public class HomeAndSigninPage {
 
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
     public WebElement firstSignInButton;
-
     @FindBy(id = "username")
     public WebElement userNameTextArea;
 
