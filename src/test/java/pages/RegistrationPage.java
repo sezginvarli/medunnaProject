@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -26,7 +25,7 @@ public class RegistrationPage {
     public WebElement newPasswordTextBox;
     @FindBy(id = "secondPassword")
     public WebElement newPasswordConfirmationTextBox;
-    @FindBy(id = "register-submit")
+    @FindBy(id = "register-submit ")
     public WebElement registerButton;
     @FindBy(xpath = "//*[contains(text(),'Registration Saved')]")
     public WebElement successMessageToastContainer;
@@ -50,5 +49,31 @@ public class RegistrationPage {
     public WebElement YourLastNameIsRequired;
     @FindBy(xpath = "//div[text()='Your username is required.']")
     public WebElement YourUserNameIsRequired;
+    @FindBy(xpath = "//div[text()='Your email is required.']")
+    public WebElement YourUserEmailIsRequired;
+
+
+    @FindBy(xpath = "//*[text()='Registration']")
+    public WebElement registrationText;
+
+    @FindBy(xpath = "(//div[@class='form-group'])[4]")
+    public WebElement noUsernameError;
+
+    @FindBy(xpath = "(//div[@class='form-group'])[5]")
+    public WebElement noEmailError;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement registerButton2;
+    @FindBy(xpath = "//div[text()='Your username is invalid.']")
+    public WebElement YourUsernameIsInvalid;
+
+    @FindBy(xpath = "//div[text()='This field is invalid']")
+    public WebElement thisFieldIsInvalid;
+
+    @FindBy(xpath= "(//input[@class='is-touched is-dirty av-valid form-control'])[4]")
+    public WebElement validUsername;
+
+    @FindBy(xpath= "(//input[@class='is-touched is-dirty av-valid form-control'])[5]")
+    public WebElement validEmail;
+
 
 }
