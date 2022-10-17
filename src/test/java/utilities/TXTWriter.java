@@ -1,6 +1,5 @@
 package utilities;
 
-import pojos.Physicians;
 import pojos.Registrant;
 
 import java.io.BufferedWriter;

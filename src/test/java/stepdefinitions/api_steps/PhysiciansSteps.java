@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import pojos.Physicians;
 import utilities.ConfigReader;
 
 import static io.restassured.RestAssured.given;
