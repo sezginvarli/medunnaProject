@@ -2,8 +2,11 @@ package utilities;
 
 import pojos.Registrant;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Map;
 
 public class TXTWriter {
     public static void saveUiRegistrantsData(Registrant registrant) {
@@ -49,4 +52,17 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
+
+    public static void SavePojoToFile(String filePath, Object pojoObj){
+        try{
+            FileWriter fw2 = new FileWriter(filePath,false);
+            BufferedWriter bw = new BufferedWriter(fw2);
+            bw.append(pojoObj +"\n");
+            bw.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }

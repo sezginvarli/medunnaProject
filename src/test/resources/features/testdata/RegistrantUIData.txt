@@ -3,3 +3,5 @@ Registrant{firstName='Lacy', lastName='Prohaska', ssn='453-75-5029', login='Lacy
 Registrant{firstName='Imelda', lastName='MacGyver', ssn='878-36-0963', login='ImeldaMacGyver', langKey='null', password='M1^J$CL^1uOw&k9i#G', email='ImeldaMacGyver@gmail.com', id=0, activated=false, authorities=null}
 Registrant{firstName='Barney', lastName='Bernier', ssn='284-51-5134', login='BarneyBernier', langKey='null', password='Xrd7FnWiKX76Exb4N', email='BarneyBernier@gmail.com', id=0, activated=false, authorities=null}
 Registrant{firstName='Tierra', lastName='Daniel', ssn='159-70-7385', login='TierraDaniel', langKey='null', password='@3PI6&iu2$1C0bQQs', email='TierraDaniel@gmail.com', id=0, activated=false, authorities=null}
+Registrant{firstName='Kraig', lastName='Crona', ssn='546-98-6283', login='KraigCrona', langKey='null', password='0#6%kHcuH0e', email='KraigCrona@gmail.com', id=0, activated=false, authorities=null}
+Registrant{firstName='Zachery', lastName='Cartwright', ssn='803-70-7091', login='ZacheryCartwright', langKey='null', password='^RF3AXTn0sOW06ABCF', email='ZacheryCartwright@gmail.com', id=0, activated=false, authorities=null}

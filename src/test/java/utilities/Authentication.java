@@ -10,7 +10,7 @@ import java.util.Map;
 import static hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 
-public class Authentication {
+public class   Authentication {
 
     public static String generateToken(){
     // set the base url and pathParams
@@ -18,9 +18,9 @@ public class Authentication {
 
     // set the expected data
         Map<String,Object> expectedData=new HashMap<>();
-        expectedData.put("password","Hk_admin");
+        expectedData.put("password","Batch86+");
         expectedData.put("rememberMe",true);
-        expectedData.put("username","hk_admin");
+        expectedData.put("username","Batch86");
 
     // send the request & get the response
         Response response= given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}/{second}");
