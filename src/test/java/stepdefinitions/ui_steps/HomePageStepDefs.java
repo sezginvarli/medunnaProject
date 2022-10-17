@@ -4,6 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomeAndSigninPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 
 public class HomePageStepDefs {
 
@@ -11,7 +13,7 @@ public class HomePageStepDefs {
 
     @When("user goto home page")
     public void user_goto_home_page() {
-
+        Driver.getDriver().get(ConfigReader.getProperty("base_url"));
     }
     @When("user click on account menu")
     public void user_click_on_account_menu() {
