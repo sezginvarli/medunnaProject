@@ -16,7 +16,7 @@ public class HomePage {
     @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
     public WebElement signIn;
 
-    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    @FindBy(id = "hospitalmsappfrontendApp.appointment.home.createOrEditLabel")
     public WebElement register;
 
 

@@ -13,13 +13,17 @@ public class AppointmentPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(id = "appointment-heading")
+    public WebElement appointmentListPageAppointmentHeading;
+
     @FindBy(id = "fromDate")
-    public WebElement dateFrom;
+    public WebElement appointmentListPageDateFrom;
 
     @FindBy(id = "toDate")
-    public WebElement dateTo;
+    public WebElement appointmentListPageDateTo;
 
-    @FindBy(xpath = "(//td[@class='text-right'])[1]")
+    @FindBy(xpath = "(//td[@class='text-right']/div)[1]")
     public WebElement firstEditButton;
+
 
 }
