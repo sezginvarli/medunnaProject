@@ -33,5 +33,4 @@ public class HomeAndSigninPage {
     public WebElement register;
 
 
-
 }
