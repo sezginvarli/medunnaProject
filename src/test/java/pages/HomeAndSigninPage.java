@@ -22,8 +22,10 @@ public class HomeAndSigninPage {
     public WebElement passwordTextArea;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton;
+
     @FindBy(xpath = "//span[text()='Patient29 patient']")
     public WebElement signInVerifyButton;
+<<<<<<< HEAD
     @FindBy(id = "rememberMe")
     public WebElement rememberMeCheckBox;
     @FindBy(xpath = "//div[@class='alert alert-warning fade show']")
@@ -48,5 +50,14 @@ public class HomeAndSigninPage {
     public WebElement cancel;
     @FindBy(xpath = "//strong[text()='Failed to sign in!']")
     public WebElement authentication;
+=======
+
+    @FindBy(xpath = "//a[@href='logout']")
+    public WebElement signOutButton;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement register;
+
+>>>>>>> main
 
 }
