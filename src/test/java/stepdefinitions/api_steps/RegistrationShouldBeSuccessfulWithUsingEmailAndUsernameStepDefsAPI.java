@@ -21,7 +21,7 @@ import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
 
 
-public class RegistrationShouldBeSuccessfulApiStepDefs {
+public class RegistrationShouldBeSuccessfulWithUsingEmailAndUsernameStepDefsAPI {
     Response response;
     Registrant [] registrants ;
     List<String> actualUsernameData;

@@ -13,7 +13,7 @@ import utilities.ReusableMethods;
 
 import static utilities.TXTWriter.saveUiRegistrantsData;
 
-public class RegistrationShouldBeSuccessfulStepDefs {
+public class RegistrationShouldBeSuccessfulWithUsingEmailAndUsernameStepDefsUI {
 
     HomeAndSigninPage homePage=new HomeAndSigninPage();
     RegistrationPage registrationPage=new RegistrationPage();
