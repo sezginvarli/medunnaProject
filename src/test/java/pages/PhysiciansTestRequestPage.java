@@ -1,5 +1,7 @@
 package pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -9,5 +11,37 @@ public class PhysiciansTestRequestPage {
     public PhysiciansTestRequestPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+
+    @FindBy(xpath = "//a[@class='btn btn-success btn-sm']")
+    public WebElement requestTest;
+    
+    @FindBy(id = "c-test-item-heading")
+    public WebElement testItem;
+
+    @FindBy(xpath = "//span[text()='Save']")
+    public WebElement saveButton;
+
+    @FindBy(id = "1407")
+    public WebElement albumin;
+
+    @FindBy(id = "1405")
+    public WebElement potassium;
+
+    @FindBy(id = "1408")
+    public WebElement hemoglobin;
+
+    @FindBy(id = "1406")
+    public WebElement totalProtein;
+
+    @FindBy(id = "1402")
+    public WebElement urea;
+
+    @FindBy(id = "1401")
+    public WebElement glucose;
+
+    @FindBy(id = "1404")
+    public WebElement sodium;
+
 
 }
