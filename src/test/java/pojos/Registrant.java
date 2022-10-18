@@ -36,7 +36,7 @@ public class Registrant {
     private String langKey;
     private String password;
     private String email;
-    private int id;
+   // private int id;
     private boolean activated;
     private String [] authorities;
 
@@ -96,13 +96,13 @@ public class Registrant {
         this.email = email;
     }
 
-    public int getId() {
-        return id;
-    }
+//    public int getId() {
+//        return id;
+//    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public boolean isActivated() {
         return activated;
@@ -113,10 +113,12 @@ public class Registrant {
     }
 
     public String[] getAuthorities() {
+
         return authorities;
     }
 
     public void setAuthorities(String[] authorities) {
+
         this.authorities = authorities;
     }
 
@@ -130,7 +132,7 @@ public class Registrant {
                 ", langKey='" + langKey + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", id=" + id +
+               // ", id=" + id +
                 ", activated=" + activated +
                 ", authorities=" + Arrays.toString(authorities) +
                 '}';

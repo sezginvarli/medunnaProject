@@ -76,7 +76,7 @@ public class RegistrationUiSteps {
     @Then("user registers and saves the records")
     public void user_registers_and_saves_the_records() {
 
-        Driver.waitAndClick(registrationPage.registerButton);
+        Driver.waitAndClick(registrationPage.registerButton2);
         Driver.wait(1);
         Assert.assertTrue(registrationPage.successMessageToastContainer.isDisplayed());
         saveUiRegistrantsData(registrant);

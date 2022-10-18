@@ -49,6 +49,25 @@ public class HomeAndSigninPage {
     public WebElement SendAndAppointmantRequest;
 
 
+    @FindBy(id = "account-menu")
+    public WebElement signInAccountMenu;
+    @FindBy(id = "login-item")
+    public WebElement signInLink;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement firstSignInButton;
+    @FindBy(id = "username")
+    public WebElement userNameTextArea;
+
+    @FindBy(id = "password")
+    public WebElement passwordTextArea;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signInButton;
+    @FindBy(xpath = "//span[text()='Patient29 patient']")
+    public WebElement signInVerifyButton;
+    @FindBy(xpath = "//a[@href='/logout']")
+    public WebElement signOutButton;
 
 
 }
