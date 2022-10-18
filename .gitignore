@@ -1,5 +1,5 @@
 .idea
 /target
 *.iml
+target
 test-output
-/src/test/java/runners

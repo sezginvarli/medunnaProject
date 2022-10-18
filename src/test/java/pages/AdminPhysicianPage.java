@@ -7,4 +7,13 @@ public class AdminPhysicianPage {
     public AdminPhysicianPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+
+
+
+
+
+
+
+
 }
