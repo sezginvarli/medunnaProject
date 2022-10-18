@@ -4,7 +4,6 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.AdminPatientPage;
 import pages.AppointmentEditCreatePage;
@@ -13,8 +12,6 @@ import pages.HomeAndSigninPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
-
-import java.util.List;
 
 
 public class Acar_CreateOrEditPatientStepDefs {

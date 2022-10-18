@@ -13,6 +13,9 @@ public class AppointmentPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(id = "appointment-heading")
+    public WebElement appointmentListPageAppointmentHeading;
+
     @FindBy(id = "fromDate")
     public WebElement dateFrom;
 
