@@ -15,11 +15,13 @@ public class AppointmentPage {
 
     @FindBy(id = "fromDate")
     public WebElement dateFrom;
-
     @FindBy(id = "toDate")
     public WebElement dateTo;
-
     @FindBy(xpath = "(//td[@class='text-right'])[1]")
     public WebElement firstEditButton;
+    @FindBy(xpath = "(//*[text()='Edit'])[2]")
+    public WebElement secondEditButton;
+
+
 
 }

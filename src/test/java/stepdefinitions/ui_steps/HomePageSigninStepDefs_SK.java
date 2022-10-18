@@ -7,20 +7,15 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomeAndSigninPage;
-import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.openqa.selenium.Keys.TAB;
 
-public class HomePageSigninStepDefs {
+public class HomePageSigninStepDefs_SK {
 
     HomeAndSigninPage homeAndSigninPage = new HomeAndSigninPage();
 
-    @Given("user navigates to URL {string}")
-    public void user_navigates_to_url(String string) {
-        Driver.getDriver().get(string);
-    }
     @Given("User clicks on account drop-down-menu button")
     public void user_clicks_on_account_drop_down_menu_button() {
         ReusableMethods.waitForClickablility(homeAndSigninPage.signInAccountMenu,3).click();

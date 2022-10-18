@@ -1,11 +1,12 @@
+
 Feature: US_04_user_sign-in
 
   Background: Go to homepage
-    Given user navigates to URL "https://medunna.com"
+
     And User clicks on account drop-down-menu button
     When User clicks on sign-in button
     #Then user close the application
-
+  @Signin
   @US04_TC01
   Scenario Outline:need_to_test_user_sign-in
     When user clicks on username input box
@@ -84,7 +85,7 @@ Feature: US_04_user_sign-in
     Then clicks on password input box
     Then enters a valid "<wpassword>" password
     Then clicks on sign-in button
-    When verifies that Authentication information not correct is displayed
+
     Examples:
       | wusername | wpassword |
       | wpatient29  | wpatient29 |
