@@ -20,6 +20,8 @@ public class PhysiciansMainPage {
     @FindBy(id = "entity-menu")
     public WebElement myPagesDropdown;
 
+    @FindBy(xpath = "//span[text()='MY PAGES']")
+    public WebElement myPages;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
     public WebElement dropdownElementMyAppointments;
 
