@@ -1,4 +1,4 @@
-
+@US_002
 Feature: Registration should be successful with email and username
   Background: user navigates to the registration page
     Given user goes to the url
@@ -7,7 +7,7 @@ Feature: Registration should be successful with email and username
     When user provides their ssn id as "ssn"
     And user provides their firstname as "firstname"
     And user provides their lastname as "lastname"
-  @ValidationEmailAndUsername
+  @US002_TC01_UI
     Scenario: TC01 valid email and username
       When user provides their username as "username"
       And user types in their email as "email"
@@ -18,13 +18,13 @@ Feature: Registration should be successful with email and username
       Then user clicks register button and saves the records
       Then user verifies Registration Saved message
       And user closes the browser
-  @BlankUsername
+  @US002_TC02_UI
     Scenario: TC02 blank username
       And user types in their email as "email"
       Then user hit the enter
       And user verifies Your username is required message
       And user closes the browser
-  @SpaceInUsername
+  @US002_TC03_UI
   Scenario Outline: TC03 space in the username
     When user enters their username as "<username>"
     Then user hit the enter
@@ -33,7 +33,7 @@ Feature: Registration should be successful with email and username
     Examples: test data
     |username|
     |Brad Pitt|
-  @UsernameSpecialChar
+  @US002_TC04_UI
   Scenario Outline: TC04 valid username contain special character
     When user enters their username as "<username>"
     Then user hit the enter
@@ -43,7 +43,7 @@ Feature: Registration should be successful with email and username
       |username|
       |Brad123@|
 
-  @ValidEmail
+  @US002_TC05_UI
   Scenario Outline: TC05 valid email that contains "@."
     When user provides their username as "username"
     When user enters their email as "<email>"
@@ -55,7 +55,7 @@ Feature: Registration should be successful with email and username
       |fake@gmail.com|
       |fake@hotmail.com  |
 
-  @InvalidEmail
+  @US002_TC06_UI
   Scenario Outline: TC06 valid email that not contains "@."
     When user provides their username as "username"
     When user enters their email as "<email>"
@@ -68,14 +68,14 @@ Feature: Registration should be successful with email and username
       |fakehotmail.com  |
       |fake@hotmailcom  |
 
-  @BlankEmail
+  @US002_TC07_UI
   Scenario: TC07 blank email
     When user provides their username as "username"
     Then user hit the enter
     And user verifies Your email is required message
     And user closes the browser
 
-  @NotBlankEmail
+  @US002_TC08_UI
   Scenario: TC08 can not be blank email
     When user provides their username as "username"
     And user types in their email as "email"
