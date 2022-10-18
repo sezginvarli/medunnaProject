@@ -18,17 +18,16 @@ Feature: Physiacian Features
       And Assert that Create_or_Edit_an_Appointment page is opened
       Then check if patient id, start date, end date, status, physician area are fullfilled
       And Validate only appointment status  "PENDING", "COMPLETED", "CANCELLED" can be selected
-      And check if the Anamnesis text box is editable and cannot be left empty
-      And check if the Treatment text box is editable and cannot be left empty
-      And check if the Diagnosis text box is editable and cannot be left empty
-
-
-
-
-
+      And check if the anamnesis as "<Anamnesis>" text box is editable and cannot be left empty
+      And check if the treatment as "<Treatment>" text box is editable and cannot be left empty
+      And check if the diagnosis as "<Diagnosis>" text box is editable and cannot be left empty
+      And check if the prescription as "<prescription>" text box is editable and cannot be left empty
+      And check if the description as "<description>" text box is editable and cannot be left empty
+      Then user saves the updated appointment
+      And verify the appointment is updated successfully
 
 
       Examples:
-        | username  | password | name       |
-        | alimeCann | aliCan86 | alime cann |
+  | username  | password | name       | Anamnesis           | Treatment | Diagnosis | prescription | description          |
+  | alimeCann | aliCan86 | alime cann | knee pain,dorsalgia | ASA       | RA        | Aspirin      | call back next month |
 
