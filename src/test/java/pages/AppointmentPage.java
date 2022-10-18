@@ -17,13 +17,15 @@ public class AppointmentPage {
     public WebElement appointmentListPageAppointmentHeading;
 
     @FindBy(id = "fromDate")
-    public WebElement appointmentListPageDateFrom;
+    public WebElement dateFrom;
 
     @FindBy(id = "toDate")
-    public WebElement appointmentListPageDateTo;
+    public WebElement dateTo;
 
-    @FindBy(xpath = "(//td[@class='text-right']/div)[1]")
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
     public WebElement firstEditButton;
 
+    @FindBy(xpath = "//span[text()='Appointment']")
+    public WebElement appointmentButton;
 
 }
