@@ -32,7 +32,7 @@ Feature: Create Or Edit Patient By Admin
       | Batch86 | Batch86+ | Tom | Hanks | 2000-02-17T15:03 | tomhanks2@gmail.com | 5095487814 | Cold Flue |
 
 @Signin
-@CreatedPatientByOtherUsers
+@C0reatedPatientByOtherUsers
   Scenario Outline: New patient is created by other users
     Given user enters a valid "<username>" username
     When user enters a valid "<password>" password
