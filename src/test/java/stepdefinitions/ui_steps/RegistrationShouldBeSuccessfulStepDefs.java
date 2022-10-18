@@ -4,7 +4,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.HomePage;
+import pages.HomeAndSigninPage;
 import pages.RegistrationPage;
 import pojos.Registrant;
 import utilities.ConfigReader;
@@ -15,7 +15,7 @@ import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationShouldBeSuccessfulStepDefs {
 
-    HomePage homePage=new HomePage();
+    HomeAndSigninPage homePage=new HomeAndSigninPage();
     RegistrationPage registrationPage=new RegistrationPage();
     Registrant registrant=new Registrant();
 
@@ -27,7 +27,7 @@ public class RegistrationShouldBeSuccessfulStepDefs {
 
     @When("user clicks on the register section at the dropdown")
     public void user_clicks_on_the_register_section_at_the_dropdown() {
-        homePage.dropdownIcon.click();
+        homePage.signInAccountMenu.click();
         homePage.register.click();
     }
     @Then("user verifies the registration page")
