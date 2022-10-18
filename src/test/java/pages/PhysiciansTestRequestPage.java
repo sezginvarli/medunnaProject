@@ -10,5 +10,4 @@ public class PhysiciansTestRequestPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-
 }
