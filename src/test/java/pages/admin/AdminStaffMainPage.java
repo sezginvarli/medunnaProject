@@ -1,10 +1,12 @@
-package pages;
+package pages.admin;
 
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class AdminStaffPage {
-    public AdminStaffPage(){
+public class AdminStaffMainPage {
+    public AdminStaffMainPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+
 }

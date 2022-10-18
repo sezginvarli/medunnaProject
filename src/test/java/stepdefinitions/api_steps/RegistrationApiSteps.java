@@ -17,7 +17,6 @@ public class RegistrationApiSteps {
     Registrant [] registrants;
     @Given("user sends a get request for users' data")
     public void user_sends_a_get_request_for_users_data() {
-
         response= given().headers(
             "Authorization",
             "Bearer "+ generateToken (),//ConfigReader.getProperty("api_token"),//

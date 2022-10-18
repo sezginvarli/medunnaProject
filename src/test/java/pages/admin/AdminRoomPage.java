@@ -1,10 +1,12 @@
-package pages;
+package pages.admin;
 
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class CountryPage {
-    public CountryPage(){
+public class AdminRoomPage {
+    public AdminRoomPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+
 }
