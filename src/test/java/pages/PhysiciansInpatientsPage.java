@@ -1,9 +1,12 @@
 package pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.List;
 
 public class PhysiciansInpatientsPage {
 
@@ -15,4 +18,8 @@ public class PhysiciansInpatientsPage {
 
     @FindBy(xpath = "//table/tbody")
     public WebElement inPatientsTableBody;
+
+    @FindAll
+    (@FindBy(xpath = "//table/tbody//a[contains(@href,'/in-patient/')]"))
+    public List<WebElement> inPatientsEditButtons;
 }
