@@ -28,7 +28,7 @@ Feature: Test Physicians
     And user enters a valid "<password>" password
     Then user clicks on second sign-in button
     When user click on physician from dropdown button
-    And user click on click on view button
+    And user click on click on edit button
     And user fill the required credentials
     And user click on save button and should see "A physician is created with identifier (id number)"
     Then user refresh the page and click created date and in first place must see the created physician

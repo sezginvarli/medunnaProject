@@ -30,7 +30,7 @@ public class AdminPhysicianPage {
     public WebElement specialityDropDown;
     @FindBy(css = "[name = 'bloodGroup']")
     public WebElement bloodGroupDropdown;
-    @FindBy(css = "[content= 'Description for hospitalmsappfrontend']")
+    @FindBy(css = "[id = 'physician-description']")
     public WebElement description;
     @FindBy(id = "file_image")
     public WebElement fileImageUpload;
@@ -46,7 +46,8 @@ public class AdminPhysicianPage {
     public WebElement backButton;
     @FindBy(id = "save-entity")
     public WebElement saveButton;
-
+    @FindBy(xpath = "//*[text() = 'ID']")
+    public WebElement visibilityOfId;
 
     public WebElement selectPhysicianById(String id){
         WebElement selectById = Driver.getDriver().findElement(By.linkText(id));
