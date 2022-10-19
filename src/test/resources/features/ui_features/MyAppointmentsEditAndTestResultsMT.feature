@@ -65,3 +65,6 @@ Feature: My Appointments Edit And Test Results by Physician
       | username    | password    |
       | team03doctor | team03Doctor |
 
+
+
+
