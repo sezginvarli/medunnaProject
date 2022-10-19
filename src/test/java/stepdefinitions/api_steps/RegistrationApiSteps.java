@@ -25,6 +25,7 @@ public class RegistrationApiSteps {
             "Accept", ContentType.JSON
         ).when().get(ConfigReader.getProperty("users_api_url"));
 
+
     }
     @Given("user deserializes the users' data to java")
     public void user_deserializes_the_users_data_to_java() throws Exception {
