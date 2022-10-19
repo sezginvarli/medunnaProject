@@ -20,12 +20,8 @@ public class AppointmentPage {
     public WebElement dateFrom;
     @FindBy(id = "toDate")
     public WebElement dateTo;
-<<<<<<< HEAD
-    @FindBy(xpath = "(//td[@class='text-right'])[1]")
-=======
-
     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
->>>>>>> main
+
     public WebElement firstEditButton;
     @FindBy(xpath = "(//*[text()='Edit'])[2]")
     public WebElement secondEditButton;
