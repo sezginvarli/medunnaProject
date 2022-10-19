@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
-import pages.AdminPhysicianPage;
+import pages.admin.AdminPhysicianPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
