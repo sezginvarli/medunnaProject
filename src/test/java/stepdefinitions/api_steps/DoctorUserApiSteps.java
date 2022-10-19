@@ -7,19 +7,18 @@ import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
 
-public class UserApiSteps {
+public class DoctorUserApiSteps {
     Response response;
-    String token="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbnVyZmEiLCJhdXRoIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY2ODUyNTY1NH0.YmMJDZWD_SsDH9wp2-VudfKM3ULjYVr2WfDXcHX5UjbqbBgnPoxRlucivZMeWt9GZuVMku5BIe1vD_u-i9WK7w";
-    @Given("user sends a get request for users")
-    public void user_sends_a_get_request_for_users() {
-
+    String doctor_token="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkb2N0b3J1cmZhNSIsImF1dGgiOiJST0xFX1BIWVNJQ0lBTiIsImV4cCI6MTY2NjMwMzk3Nn0.svjN4u_QeUrUhh-3h2xuDZMmfl9S7gtLAuz1XhwkilcsB2z1s_t8C53Aia9rplnPExv8wHrtklrfC8Zuhy4FyQ";
+    @Given("user sends a GET patient request for doctor users")
+    public void user_sends_a_GET_patient_request_for_doctor_users() {
 
         RequestSpecification spec=new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
 
-        spec.pathParams("first","api","second","users");
+        spec.pathParams("first","api","second","appointments");
         response=given().headers(
                 "Authorization",
-                "Bearer "+token,
+                "Bearer "+doctor_token,
                 "Content-Type",
                 "application/json",
                 "Accept","application/json"
