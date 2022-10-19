@@ -22,13 +22,6 @@ Feature: Physiacian Features
       And check if the Treatment text box is editable and cannot be left empty
       And check if the Diagnosis text box is editable and cannot be left empty
 
-
-
-
-
-
-
       Examples:
         | username  | password | name       |
         | alimeCann | aliCan86 | alime cann |
-
