@@ -14,6 +14,7 @@ Feature:Password segment on Homepage should be editable
     And user enter their confirmation password as "erty"
     Then user clicks on the save button
     And user verifies Password changed! pop-up
+    And user saves the password data
     Then user closes the browser
   @US_008_TC01
   Scenario: TC01 new password should be confirmed
