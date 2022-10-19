@@ -4,9 +4,8 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import pages.AdminPatientPage;
+import pages.admin.AdminPatientPage;
 import pages.AppointmentEditCreatePage;
 import pages.AppointmentPage;
 import pages.HomeAndSigninPage;
@@ -170,31 +169,4 @@ public class Acar_CreateOrEditPatientStepDefs {
         Select select =new Select(appointmentEditCreatePage.appointmentPhysicianArea);
         select.selectByValue("277681");
     }
-    @When("user selects {string} country")
-    public void user_selects_country(String country) {
-        ReusableMethods.waitFor(1);
-        Select select=new Select(adminPatientPage.countryDropDown);
-        select.selectByVisibleText(country);
-    }
-    @When("user selects {string} state")
-    public void user_selects_state(String state) {
-        ReusableMethods.waitFor(1);
-        Select select=new Select(adminPatientPage.stateCityDropDown);
-        select.selectByVisibleText(state);
-    }
-    @When("click on ID button for order")
-    public void click_on_id_button_for_order() {
-        ReusableMethods.waitFor(3);
-        adminPatientPage.ID.click();
-    }
-    @When("user clicks on delete button")
-    public void user_clicks_on_delete_button() {
-        ReusableMethods.waitFor(3);
-        adminPatientPage.firstDeleteButton.click();
-    }
-    @When("user clicks on confirm delete button")
-    public void user_clicks_on_confirm_delete_button() {
-        ReusableMethods.waitForClickablility(adminPatientPage.confirmDeleteButton,5).click();
-    }
-
 }

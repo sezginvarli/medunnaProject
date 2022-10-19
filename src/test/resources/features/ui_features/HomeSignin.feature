@@ -1,6 +1,5 @@
 
  Feature: Home Page and Sign-in Features
- Feature: US_04_user_sign-in
 
    Background: Go to homepage
      Given user navigates to URL "https://medunna.com"
@@ -90,6 +89,5 @@
      Examples:
        | wusername | wpassword |
        | wpatient29  | wpatient29 |
-
 
 
