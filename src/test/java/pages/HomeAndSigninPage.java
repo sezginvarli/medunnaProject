@@ -47,7 +47,7 @@ public class HomeAndSigninPage {
     public WebElement cancel;
     @FindBy(xpath = "//strong[text()='Failed to sign in!']")
     public WebElement authentication;
-    @FindBy(xpath = "//a[@href='logout']")
+    @FindBy(xpath = "//a[@href='/logout']")
     public WebElement signOutButton;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
     public WebElement register;

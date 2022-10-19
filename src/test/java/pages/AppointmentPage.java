@@ -25,7 +25,4 @@ public class AppointmentPage {
     @FindBy(xpath = "//span[text()='Appointment']")
     public WebElement appointmentButton;
 
-    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
-    public WebElement toastifyAllert;
-
 }
