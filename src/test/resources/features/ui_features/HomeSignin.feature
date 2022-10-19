@@ -90,7 +90,3 @@
      Examples:
        | wusername | wpassword |
        | wpatient29  | wpatient29 |
-
-
-
-

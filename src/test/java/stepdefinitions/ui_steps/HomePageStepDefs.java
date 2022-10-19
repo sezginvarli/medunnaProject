@@ -1,12 +1,12 @@
 package stepdefinitions.ui_steps;
 
-import io.cucumber.java.en.And;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomeAndSigninPage;
-import utilities.ConfigReader;
+
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -44,6 +44,7 @@ public class HomePageStepDefs {
     @Then("user clicks on second sign-in button")
     public void user_clicks_on_second_sign_in_button() {
         homeAndSigninPage.signInButton.click();
+
     }
     @When("user verifies that signed-in {string} is done successfully")
     public void user_verifies_that_signed_in_is_done_successfully(String signedInUserName) throws InterruptedException {
@@ -55,9 +56,3 @@ public class HomePageStepDefs {
 
     }
 }
-
-
-
-
-
-
