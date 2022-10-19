@@ -13,14 +13,55 @@ public class PhysiciansMainPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    //@FindBy(id = "account-menu")
+    @FindBy(xpath = "//*[@id='account-menu']/a/span")
+    public WebElement userAccountMenu;
+
     @FindBy(id = "entity-menu")
     public WebElement myPagesDropdown;
 
+    @FindBy(xpath = "//span[text()='MY PAGES']")
+    public WebElement myPages;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
-    public WebElement myAppointments;
+    public WebElement dropdownElementMyAppointments;
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement dropdownElementMyPatients;
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
+    public WebElement dropdownElementMyInpatients;
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[4]")
+    public WebElement physicianAccountSettings;
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[5]")
+    public WebElement physicianAccountPassword;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[6]")
+    public WebElement physicianAccountSignOut;
+
+    @FindBy(xpath = "(//a[starts-with(@href,'/appointment-update/')])[1]")
+    public WebElement editButtonInMyAppointmentsPage;
+
+    @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
+    public WebElement showTestResultsButton;
+
+    @FindBy(xpath = "//a[@class='btn btn-info btn-sm']")
+    public WebElement viewResultsButton;
+
+    @FindBy(id = "c-test-result-heading")
+    public WebElement testResultPageHeader;
+
+    @FindBy(xpath = "//button[@class='btn btn-warning btn-sm']")
+    public WebElement requestInpatientButton;
+
+    @FindBy(xpath = "//*[.='A new In Patient is created']")
+    public WebElement newInPatientCreatedMessage;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement myPatients;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
+    public WebElement myInPatients;
 
 }

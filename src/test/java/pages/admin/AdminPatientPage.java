@@ -1,4 +1,4 @@
-package pages;
+package pages.admin;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,8 +51,57 @@ public class AdminPatientPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//*[contains(text(),'A new Patient is created')]")
+    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
     public WebElement successMessageToastContainer;
+
+    @FindBy(xpath = "//span[text()='SSN']")
+    public WebElement ssn;
+
+    @FindBy(xpath = "//span[text()='First Name']")
+    public WebElement firstName;
+
+    @FindBy(xpath = "//span[text()='Last Name']")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//span[text()='Birth Date']")
+    public WebElement birthDate;
+
+    @FindBy(xpath = "//span[text()='Phone']")
+    public WebElement phone;
+
+    @FindBy(xpath = "//span[text()='Email']")
+    public WebElement email;
+
+    @FindBy(xpath = "//span[text()='Gender']")
+    public WebElement gender;
+
+    @FindBy(xpath = "//span[text()='Blood Group']")
+    public WebElement bloodGroup;
+
+    @FindBy(xpath = "//span[text()='Address']")
+    public WebElement address;
+
+    @FindBy(xpath = "//span[text()='Description']")
+    public WebElement description;
+
+    @FindBy(xpath = "//span[text()='Created Date']")
+    public WebElement createdDate;
+
+    @FindBy(xpath = "//span[text()='User']")
+    public WebElement user;
+
+    @FindBy(xpath = "(//span[text()='Country'])[2]")
+    public WebElement country;
+
+    @FindBy(xpath = "//span[text()=' State/City']")
+    public WebElement stateCity;
+
+    @FindBy(xpath = "(//span[text()='Edit'])[1]")
+    public WebElement patientEditButton;
+
+    @FindBy(xpath = "//span[text()='ID']")
+    public WebElement ID;
+
 
 
 
