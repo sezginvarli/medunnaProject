@@ -40,6 +40,26 @@ public class PhysiciansMainPage {
     @FindBy(xpath = "(//a[@class='dropdown-item'])[6]")
     public WebElement physicianAccountSignOut;
 
+    @FindBy(xpath = "(//a[starts-with(@href,'/appointment-update/')])[1]")
+    public WebElement editButtonInMyAppointmentsPage;
+
+    @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
+    public WebElement showTestResultsButton;
+
+    @FindBy(xpath = "//a[@class='btn btn-info btn-sm']")
+    public WebElement viewResultsButton;
+
+    @FindBy(id = "c-test-result-heading")
+    public WebElement testResultPageHeader;
+
+    @FindBy(xpath = "//button[@class='btn btn-warning btn-sm']")
+    public WebElement requestInpatientButton;
+
+    @FindBy(xpath = "//*[.='A new In Patient is created']")
+    public WebElement newInPatientCreatedMessage;
+
+
+
 
 
 }

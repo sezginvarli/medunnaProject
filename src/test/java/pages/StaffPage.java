@@ -24,16 +24,13 @@ public class StaffPage {
     @FindBy(name = "ssn")
     public WebElement searchPatientWithSsn;
 
-    // NOTE: İf there are more than one patient with same SSN, xpath is not working !!!
-    @FindBy(xpath = "//a[starts-with(@href,'/patient-detail/')]")
+    @FindBy(xpath = "(//a[starts-with(@href,'/patient-detail/')])[1]")
     public WebElement viewButtonAfterSearchingPatient;
 
-    // NOTE: İf there are more than one patient with same SSN, xpath is not working !!!
-    @FindBy(xpath = "//a[starts-with(@href,'/patient-update/')]")
+    @FindBy(xpath = "(//a[starts-with(@href,'/patient-update/')])[1]")
     public WebElement editButtonAfterSearchingPatientPage;
 
-    // NOTE: İf there are more than one patient with same SSN, xpath is not working !!!
-    @FindBy(xpath = "//a[starts-with(@href,'/patient-appointments/')]")
+    @FindBy(xpath = "(//a[starts-with(@href,'/patient-appointments/')])[1]")
     public WebElement showAppointmentsButtonAfterSearchingPatientPage;
 
     @FindBy(id = "patient-id")
@@ -77,6 +74,9 @@ public class StaffPage {
 
     @FindBy(id = "save-entity")
     public WebElement saveButton;
+
+    @FindBy(xpath = "//*[.='A new Patient is created with identifier']")
+    public WebElement newPatientCreatedMessage;
 
 
 

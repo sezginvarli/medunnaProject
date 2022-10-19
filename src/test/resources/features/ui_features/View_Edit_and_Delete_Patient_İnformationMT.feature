@@ -6,12 +6,26 @@ Feature: View, edit and delete Patient information
 
     @Signin
     @US_09_1_TC01
-    Scenario Outline: View patient information and edit all patient information
+    Scenario Outline: View patient information
       When user clicks on username input box
       And user enters a valid "<username>" username
       And user clicks on password input box
       And user enters a valid "<password>" password
       And user clicks on second sign-in button
+      And user clicks on My Pages button
+      And user clicks on Search Patient button
+      And user search patient with "<SSN>"
+      And user clicks on View button
+      Then Verify view portal is displayed
+      And user close the application
+      Examples:
+        | username    | password    | SSN         |
+        | team03staff | team03Staff | 132-45-1231 |
+
+
+      @Signin
+      @US_09_1_TC02
+      Scenario Outline: Edit all patient information
       And user clicks on My Pages button
       And user clicks on Search Patient button
       And user search patient with "<SSN>"
@@ -38,7 +52,7 @@ Feature: View, edit and delete Patient information
         | team03staff | team03Staff | 132-45-1231 |
 
     @Signin
-    @US_09_1_TC02
+    @US_09_1_TC03
     Scenario Outline: Search new applicant with SSN and see all info
       When user clicks on username input box
       And user enters a valid "<username>" username

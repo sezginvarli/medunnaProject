@@ -12,7 +12,6 @@ public class PhysiciansTestRequestPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-
     @FindBy(xpath = "//a[@class='btn btn-success btn-sm']")
     public WebElement requestTest;
     
@@ -42,6 +41,5 @@ public class PhysiciansTestRequestPage {
 
     @FindBy(id = "1404")
     public WebElement sodium;
-
 
 }

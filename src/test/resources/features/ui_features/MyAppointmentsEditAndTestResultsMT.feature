@@ -6,7 +6,7 @@ Feature: My Appointments Edit And Test Results by Physician
 
   @Signin
   @US_013_TC01
-    Scenario: Staff updates test results
+    Scenario Outline: Staff updates test results
       When user clicks on username input box
       And user enters a valid "<username>" username
       And user clicks on password input box
@@ -22,12 +22,14 @@ Feature: My Appointments Edit And Test Results by Physician
       And user updates test result
       Then user clicks on Save button
       And user close the application
-
+    Examples:
+      | username    | password    |
+      | team03staff | team03Staff |
 
 
   @Signin
   @US_013_TC02
-  Scenario: Doctor can see all test information
+  Scenario Outline: Doctor can see all test information
     When user clicks on username input box
     And user enters a valid "<username>" username
     And user clicks on password input box
@@ -40,12 +42,14 @@ Feature: My Appointments Edit And Test Results by Physician
     And user clicks on View Results button
     Then Verify all test information is displayed
     And user close the application
-
+    Examples:
+      | username    | password    |
+      | team03doctor | team03Doctor |
 
 
   @Signin
   @US_013_TC03
-  Scenario: Doctor request Inpatient
+  Scenario Outline: Doctor request Inpatient
     When user clicks on username input box
     And user enters a valid "<username>" username
     And user clicks on password input box
@@ -57,4 +61,7 @@ Feature: My Appointments Edit And Test Results by Physician
     And user clicks on Request Inpatient button
     Then Verify "A new In Patient is created" pop up
     And user close the application
+    Examples:
+      | username    | password    |
+      | team03doctor | team03Doctor |
 
