@@ -1,16 +1,9 @@
 package utilities;
-<<<<<<< HEAD
-=======
 
->>>>>>> main
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class JSUtils {
-<<<<<<< HEAD
-=======
-
->>>>>>> main
     //This method will takes two parameter: WebElement, and WebDriver
     //When you pass the element, JS will click on that element
 //    JSUtils.clickElementByJS(driver.findElement(By.id("submit-button")));
@@ -66,7 +59,6 @@ public class JSUtils {
         javascriptExecutor.executeScript("alert('" + message + "')");
         Thread.sleep(3000);
     }
-
     /*
      * executes the given JavaScript command on given web element
      */
@@ -82,10 +74,6 @@ public class JSUtils {
         jse.executeScript(command);
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
     //    Set the value of an input using js executor. Params: WebElement element, String text
 //    This method changes the value attribute of an element.
 //    It changes the input text
@@ -109,8 +97,3 @@ public class JSUtils {
         JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("arguments[0].style.border='"+borderStyle+"'",element);
     }
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> main
