@@ -1,5 +1,6 @@
 package utilities;
 
+import pojos.Physician;
 import pojos.Registrant;
 
 import java.io.BufferedReader;
@@ -38,7 +39,7 @@ public class TXTWriter {
         }
     }
 
-    public static void savePhysiciansData(Physicians[] physiciansApi) {
+    public static void savePhysiciansData(Physician[] physiciansApi) {
         try {
             FileWriter fw = new FileWriter(ConfigReader.getProperty("physicians_api_data"), false);
             BufferedWriter bw = new BufferedWriter(fw);

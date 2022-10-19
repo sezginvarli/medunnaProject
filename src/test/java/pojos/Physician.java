@@ -48,7 +48,7 @@ public class Physician {
     private String firstName; //required
     private String gender; //required enum: [ MALE, FEMALE, OTHER ]
     private int id;
-    private String image;
+//    private String image;
     private String imageContentType;
     private String lastName;//required
     private String phone;//required
@@ -70,7 +70,7 @@ public class Physician {
         this.firstName = firstName;
         this.gender = gender;
         this.id = id;
-        this.image = image;
+//        this.image = image;
         this.imageContentType = imageContentType;
         this.lastName = lastName;
         this.phone = phone;
@@ -186,13 +186,13 @@ public class Physician {
         this.id = id;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
+//    public String getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(String image) {
+//        this.image = image;
+//    }
 
     public String getImageContentType() {
         return imageContentType;
@@ -258,7 +258,7 @@ public class Physician {
                 ", firstName='" + firstName + '\'' +
                 ", gender='" + gender + '\'' +
                 ", id=" + id +
-                ", image='" + image + '\'' +
+//                ", image='" + image + '\'' +
                 ", imageContentType='" + imageContentType + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phone='" + phone + '\'' +

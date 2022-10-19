@@ -21,4 +21,20 @@ public class TXTReader {
 
         return returnFileContent;
     }
+    public static boolean readFileElementExist(String filepath,String query){
+        boolean flag = false;
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(filepath));
+            String st;
+            while ((st = br.readLine()) != null){
+                if (st.contains(query)){
+                    flag = true;
+                }
+            }
+        } catch(Exception e){
+
+        }
+
+        return flag;
+    }
 }
