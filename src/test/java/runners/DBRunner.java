@@ -13,9 +13,9 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "./src/test/resources/features",
+        features = "./src/test/resources/features/database_features",
         glue = {"stepdefinitions"},
-        tags = "@US_009DB",
+        tags = "@US002_DB",
         dryRun = false
 )
 public class DBRunner {

@@ -51,4 +51,8 @@ public class HomeAndSigninPage {
     public WebElement signOutButton;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
     public WebElement register;
+    @FindBy(xpath = "(//*[text()='Sign in'])[2]")
+    public WebElement signInText;
+    @FindBy(partialLinkText = "Password")
+    public WebElement passwordDropdown;
 }
