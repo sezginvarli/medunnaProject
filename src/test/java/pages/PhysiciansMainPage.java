@@ -58,8 +58,10 @@ public class PhysiciansMainPage {
     @FindBy(xpath = "//*[.='A new In Patient is created']")
     public WebElement newInPatientCreatedMessage;
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement myPatients;
 
-
-
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
+    public WebElement myInPatients;
 
 }

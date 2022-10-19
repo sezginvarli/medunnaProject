@@ -12,6 +12,7 @@ import utilities.ReusableMethods;
 
 public class HomePageStepDefs {
 
+
     HomeAndSigninPage homeAndSigninPage = new HomeAndSigninPage();
     @Given("user navigates to URL {string}")
     public void user_navigates_to_url(String string) {
@@ -56,3 +57,4 @@ public class HomePageStepDefs {
 
     }
 }
+
