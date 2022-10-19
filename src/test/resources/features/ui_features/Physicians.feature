@@ -1,8 +1,8 @@
+@Signin
 Feature: Test Physicians
 
   Background: user goto home page
 
-    @Signin
     @US18.01_TC01
   Scenario Outline: test existed physicians
     Given user click on "Items&Titles" button
