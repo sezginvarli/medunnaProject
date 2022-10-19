@@ -11,15 +11,46 @@ Feature: Doctor view and edit inpatients
     And user clicks on second sign-in button
 
   @US_07_TC01
-  Scenario: user view inpatients
-      When user clicks on mypages
-      And user clicks on myinpatients button
-      Then user verifies that a table header exist with given datas "ID" "Start Date" "End Date" "Status" "Description" "Created Date" "Room" "Appointment" "Patient"
-      And user close the application
-
-  @US_07_TC02
-  Scenario: user edits inpatients
+  Scenario Outline: user view inpatients
     When user clicks on mypages
     And user clicks on myinpatients button
+    Then user verifies that a table header exist with given data "<data>"
+    And User clicks on account drop-down-menu button
+    And user click on sign out
+    And user close the application
+    Examples:
+      | data |
+      |   ID   |
+      |  Start Date    |
+      |  End Date    |
+      |  Status    |
+      |  Description    |
+      |  Created Date    |
+      |  Room    |
+      |  Appointment    |
+      |  Patient    |
+
+  @US_07_TC02
+  Scenario Outline: user edits inpatients
+    When user clicks on mypages
+    And user clicks on myinpatients button
+    And user gets inpatient data before changing data
     And user clicks on edit button
-    Then user verifies if form inputs can be changed
+    And user sets inpatient "<item>" data
+    And user clicks on save button
+    And user gets inpatient data after changing data
+    Then user verifies if the inpatient create or edit form "<item>" area has changed
+    And User clicks on account drop-down-menu button
+    And user click on sign out
+    And user close the application
+    Examples:
+      | item |
+      |   ID   |
+#      |  Start Date    |
+#      |  End Date    |
+#      |  Status    |
+#      |  Description    |
+#      |  Created Date    |
+#      |  Room    |
+#      |  Appointment    |
+#      |  Patient    |

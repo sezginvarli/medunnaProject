@@ -1,44 +1,50 @@
 package stepdefinitions.ui_steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import pages.InpatientsCreateOrEditPage;
 import pages.PhysiciansInpatientsPage;
 import pages.PhysiciansMainPage;
+import pojos.Appointment;
+import pojos.InPatient;
+import pojos.Patient;
+import pojos.Room;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class PhysicianUiStepDefs {
     PhysiciansMainPage mainPage = new PhysiciansMainPage();
     PhysiciansInpatientsPage inpatientsPage = new PhysiciansInpatientsPage();
     InpatientsCreateOrEditPage inpatientsEditPage = new InpatientsCreateOrEditPage();
+    InPatient inpatientBeforeChange = new InPatient();
+    InPatient inPatientAfterChange = new InPatient();
     @When("user clicks on mypages")
     public void user_clicks_on_mypages() {
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitForVisibility(mainPage.myPagesDropdown,5);
         mainPage.myPagesDropdown.click();
     }
     @When("user clicks on myinpatients button")
     public void user_clicks_on_myinpatients_button() {
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitForVisibility(mainPage.myInPatients,5);
         mainPage.myInPatients.click();
     }
-    @Then("user veifies that a table header exist with given data {string}")
-    public void user_veifies_that_a_table_header_exist_with_given_data(String string) {
-        ReusableMethods.waitFor(10);
-        for(int i=1;i<10;i++){
-            String text = inpatientsPage.inPatientsTableHeaders.findElement(By.xpath("//tr/th["+i+"]")).getText();
-            System.out.println(text);
-        }
+
+    @When("user clicks on edit button")
+    public void user_clicks_on_edit_button() {
+        ReusableMethods.waitForVisibility(inpatientsPage.inPatientsTableHeaders,10);
+        List<WebElement> editButtons = inpatientsPage.inPatientsEditButtons;
+        editButtons.get(0).click();
     }
 
-    @Then("user verifies that a table header exist with given datas {string} {string} {string} {string} {string} {string} {string} {string} {string}")
-    public void userVerifiesThatATableHeaderExistWithGivenDatas(String id, String startDate, String endDate, String status, String description, String createdDate, String room, String appointment, String patient) {
+    @Then("user verifies that a table header exist with given data {string}")
+    public void userVerifiesThatATableHeaderExistWithGivenData(String data) {
 
         ReusableMethods.waitForVisibility(inpatientsPage.inPatientsTableHeaders,10);
         List<String> headers = new ArrayList<>();
@@ -49,96 +55,103 @@ public class PhysicianUiStepDefs {
             headers.add(header);
         }
 
-        Assert.assertTrue(headers.contains(id));
-        Assert.assertTrue(headers.contains(startDate));
-        Assert.assertTrue(headers.contains(endDate));
-        Assert.assertTrue(headers.contains(status));
-        Assert.assertTrue(headers.contains(description));
-        Assert.assertTrue(headers.contains(createdDate));
-        Assert.assertTrue(headers.contains(room));
-        Assert.assertTrue(headers.contains(appointment));
-        Assert.assertTrue(headers.contains(patient));
-    }
-    @When("user clicks on edit button")
-    public void user_clicks_on_edit_button() {
-        ReusableMethods.waitForVisibility(inpatientsPage.inPatientsTableHeaders,10);
-        List<WebElement> editButtons = inpatientsPage.inPatientsEditButtons;
-        editButtons.get(0).click();
+        Assert.assertTrue(headers.contains(data));
     }
 
-    @Then("user verifies if form inputs can be changed")
-    public void user_verifies_if_form_inputs_can_be_changed() {
+    @Then("user verifies if the inpatient create or edit form {string} area can be changed")
+    public void userVerifiesIfTheInpatientCreateOrEditFormAreaCanBeChanged(String item) {
+        //items: "ID" "Start Date" "End Date" "Status" "Description" "Created Date" "Room" "Appointment" "Patient"
+        switch (item){
+            case "ID":
+                break;
+            case "Start Date":
+                break;
+            case "End Date":
+                break;
+            case "Status":
+                break;
+            case "Description":
+                break;
+            case "Created Date":
+                break;
+            case "Room":
+                break;
+            case "Appointment":
+                break;
+            case "Patient":
+                break;
 
+        }
+    }
+
+    @And("user gets inpatient data before changing data")
+    public void userGetsInpatientDataBeforeChangingData() {
+
+        ReusableMethods.waitForVisibility(inpatientsPage.inPatientsTableBody,10);
+        inpatientBeforeChange = getInpatientDetailsFromTable();
+
+    }
+    @When("user sets inpatient {string} data")
+    public void user_sets_inpatient_data(String string) {
         ReusableMethods.waitForVisibility(inpatientsEditPage.id,10);
-        //id
-        inpatientsEditPage.id.click();
-        System.out.println(inpatientsEditPage.id.isEnabled());
+
         Assert.assertTrue(inpatientsEditPage.id.isEnabled());
-        inpatientsEditPage.id.sendKeys("123546");
-        String idText = inpatientsEditPage.id.getAttribute("value");
-        System.out.println(idText);
+        inpatientsEditPage.id.click();
+        inpatientsEditPage.id.sendKeys("123456");
+    }
 
-        //start date
-        inpatientsEditPage.startDate.click();
-        System.out.println(inpatientsEditPage.startDate.isEnabled());
-//        Assert.assertTrue(inpatientsEditPage.startDate.isEnabled());
-//        inpatientsEditPage.startDate.sendKeys("123546");
-        String startDateText = inpatientsEditPage.startDate.getAttribute("value");
-        System.out.println(startDateText);
+    @And("user clicks on save button")
+    public void userClicksOnSaveButton() {
+        ReusableMethods.waitFor(1);
 
-        //end date
-        inpatientsEditPage.endDate.click();
-        System.out.println(inpatientsEditPage.endDate.isEnabled());
-//        Assert.assertTrue(inpatientsEditPage.endDate.isEnabled());
-//        inpatientsEditPage.endDate.sendKeys("11112022");
-        String endDateText = inpatientsEditPage.endDate.getAttribute("value");
-        System.out.println(endDateText);
+        inpatientsEditPage.saveButton.click();
+    }
 
-        //description
-        inpatientsEditPage.description.click();
-        System.out.println(inpatientsEditPage.description.isEnabled());
-//        Assert.assertTrue(inpatientsEditPage.description.isEnabled());
-//        inpatientsEditPage.description.sendKeys("description automated test");
-        String descriptionText = inpatientsEditPage.description.getAttribute("value");
-        System.out.println(descriptionText);
+    @And("user gets inpatient data after changing data")
+    public void userGetsInpatientDataAfterChangingData() {
+        inPatientAfterChange = getInpatientDetailsFromTable();
+    }
+    public InPatient getInpatientDetailsFromTable(){
+        InPatient inpatient = new InPatient();
+        try {
+            //gets first inpatients in table
+            WebElement inpatientsData = inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr[1]"));
 
-        //created date
-        inpatientsEditPage.createdDate.click();
-        System.out.println(inpatientsEditPage.createdDate.isEnabled());
-//        Assert.assertTrue(inpatientsEditPage.createdDate.isEnabled());
-//        inpatientsEditPage.createdDate.sendKeys("11112022");
-        String createdDateText = inpatientsEditPage.createdDate.getAttribute("value");
-        System.out.println(createdDateText);
+            //set inpatient data to be able to compare
+            inpatient.setId(Integer.parseInt(inpatientsData.findElement(By.xpath("//td[1]")).getText()));
+            inpatient.setStartDate(inpatientsData.findElement(By.xpath("//td[2]")).getText());
+            inpatient.setEndDate(inpatientsData.findElement(By.xpath("//td[3]")).getText());
+            inpatient.setStatus(inpatientsData.findElement(By.xpath("//td[4]")).getText());
+            inpatient.setDescription(inpatientsData.findElement(By.xpath("//td[5]")).getText());
+            inpatient.setCreatedDate(inpatientsData.findElement(By.xpath("//td[6]")).getText());
 
-        //appointment
-        inpatientsEditPage.appointmentId.click();
-        System.out.println(inpatientsEditPage.appointmentId.isEnabled());
-//        Assert.assertTrue(inpatientsEditPage.appointmentId.isEnabled());
-//        inpatientsEditPage.appointmentId.sendKeys("278848");
-        String appointmentIdText = inpatientsEditPage.appointmentId.getAttribute("value");
-        System.out.println(appointmentIdText);
+            //set new classes for class variables
+            inpatient.setRoom(new Room());
+            inpatient.getRoom().setId(Integer.parseInt(inpatientsData.findElement(By.xpath("//td[7]")).getText()));
 
-        //status
-        System.out.println(inpatientsEditPage.status.isEnabled());
-//        Assert.assertTrue(inpatientsEditPage.status.isEnabled());
-        Select selectStatus = new Select(inpatientsEditPage.status);
-        selectStatus.selectByIndex(0);
-        String statusText = selectStatus.getFirstSelectedOption().getText();
-        System.out.println(statusText);
+            //set new classes for class variables
+            inpatient.setAppointment(new Appointment());
+            inpatient.getAppointment().setId(Integer.parseInt(inpatientsData.findElement(By.xpath("//td[8]")).getText()));
 
-        //room
-        System.out.println(inpatientsEditPage.room.isEnabled());
-//        Assert.assertTrue(inpatientsEditPage.room.isEnabled());
-        Select selectRoom = new Select(inpatientsEditPage.room);
-        selectStatus.selectByIndex(1);
-        String roomText = selectRoom.getFirstSelectedOption().getText();
-        System.out.println(roomText);
+            //set new classes for class variables
+            inpatient.setPatient(new Patient());
 
-        //patient
-        System.out.println(inpatientsEditPage.patient.isEnabled());
-        Select selectPatient = new Select(inpatientsEditPage.patient);
-//        selectPatient.selectByValue("277764");
-        String patientText = selectPatient.getFirstSelectedOption().getText();
-        System.out.println(patientText);
+            //table cell has many patient detail. split data than assign to patient corresponding variables
+            String patientDetail = inpatientsData.findElement(By.xpath("//td[9]")).getText();
+            String[] patientSsnAndFullname = patientDetail.split(":");
+            String patientSsn = patientSsnAndFullname[0];
+            int i = patientSsnAndFullname[1].lastIndexOf(" ");
+            String[] fullName =  {patientSsnAndFullname[1].substring(0, i), patientSsnAndFullname[1].substring(i)};
+
+            inpatient.getPatient().setSsn(patientSsn);
+            inpatient.getPatient().setFirstName(fullName[0]);
+            inpatient.getPatient().setLastName(fullName[1]);
+
+        }catch (NoSuchElementException e){
+            System.out.println("the phsyician does not have any inpatients");
+            e.getStackTrace();
+        }
+        return inpatient;
     }
 }
+//Toastify__toast--success

@@ -27,7 +27,7 @@ public class HomeAndSigninPage {
     public WebElement signInButton;
     @FindBy(xpath = "//span[text()='Patient29 patient']")
     public WebElement signInVerifyButton;
-    @FindBy(xpath = "//a[@href='logout']")
+    @FindBy(xpath = "//a[@href='/logout']")
     public WebElement signOutButton;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
     public WebElement register;

@@ -35,4 +35,7 @@ public class InpatientsCreateOrEditPage {
 
     @FindBy(xpath = "//select[@name='patient.id']")
     public WebElement patient;
+
+    @FindBy(xpath = "//button[@id='save-entity']")
+    public WebElement saveButton;
 }
