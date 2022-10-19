@@ -41,8 +41,8 @@ public class PhysiciansSteps {
         savePhysiciansData(physiciansApi);
         String files = readFile(ConfigReader.getProperty("physicians_api_data"));
         System.out.println(files.contains("Kay"));
-        boolean flag = readFileElementExist(ConfigReader.getProperty("physicians_api_data"),"136909");
-        System.out.println("yes there is 12123"+flag);
+        boolean flag = readFileElementExist(ConfigReader.getProperty("physicians_api_data"),"merve_mahir@gmail.com");
+        System.out.println("yes there is exist"+flag);
         Assert.assertTrue(flag);
     }
 }

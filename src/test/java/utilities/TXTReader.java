@@ -32,9 +32,7 @@ public class TXTReader {
                 }
             }
         } catch(Exception e){
-
         }
-
         return flag;
     }
 }
