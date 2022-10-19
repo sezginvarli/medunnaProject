@@ -5,19 +5,24 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
-import pages.AdminPatientPage;
+import pages.admin.AdminPatientPage;
+import pages.AppointmentEditCreatePage;
+import pages.AppointmentPage;
 import pages.HomeAndSigninPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 
-public class CreateOrEditPatientStepDefs {
+public class Acar_CreateOrEditPatientStepDefs {
 
     AdminPatientPage adminPatientPage=new AdminPatientPage();
     Faker faker=new Faker();
-
     HomeAndSigninPage homeAndSigninPage=new HomeAndSigninPage();
+
+    AppointmentPage appointmentPage=new AppointmentPage();
+
+    AppointmentEditCreatePage appointmentEditCreatePage=new AppointmentEditCreatePage();
 
     @Given("user opens to Medunna Page")
     public void user_opens_to_medunna_page() {
@@ -88,11 +93,8 @@ public class CreateOrEditPatientStepDefs {
     @Then("Verify {string} message")
     public void verify_message(String message) {
         ReusableMethods.waitForVisibility(adminPatientPage.successMessageToastContainer,5);
-        Assert.assertTrue(adminPatientPage.successMessageToastContainer.isDisplayed());
+        Assert.assertTrue(adminPatientPage.successMessageToastContainer.getText().contains(message));
     }
-
-
-
     @Then("Verify the Items&Titles is not here")
     public void verify_the_items_titles_is_not_here() {
         ReusableMethods.waitFor(1);
@@ -101,12 +103,67 @@ public class CreateOrEditPatientStepDefs {
     @Then("close the application")
     public void close_the_application() {
         Driver.getDriver().close();
-
     }
-
     @Then("user click on sign out")
     public void user_click_on_sign_out() {
         ReusableMethods.waitFor(1);
         homeAndSigninPage.signOutButton.click();
+    }
+    @Then("Verify all information")
+    public void verify_all_information() {
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.ssn.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.firstName.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.lastName.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.birthDate.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.phone.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.email.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.gender.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.bloodGroup.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.address.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.description.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.createdDate.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.user.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.country.isDisplayed());
+        ReusableMethods.waitFor(1);
+        Assert.assertTrue(adminPatientPage.stateCity.isDisplayed());
+    }
+    @When("user click on edit button")
+    public void user_click_on_edit_button() {
+        ReusableMethods.waitForClickablility(adminPatientPage.patientEditButton, 5).click();
+    }
+    @Then("verify ID item is displayed")
+    public void verify_id_item_is_displayed() {
+        boolean IDIsDisplayed=ReusableMethods.waitForVisibility(adminPatientPage.ID,5).isDisplayed();
+        Assert.assertTrue(IDIsDisplayed);
+    }
+    @When("click on Items&Titles button then click appointment button")
+    public void click_on_items_titles_button_then_click_appointment_button() {
+        ReusableMethods.waitForClickablility(adminPatientPage.itemsTitlesButton,5).click();
+        ReusableMethods.waitFor(1);
+        appointmentPage.appointmentButton.click();
+    }
+    @When("click first edit button")
+    public void click_first_edit_button() {
+        ReusableMethods.waitForClickablility(appointmentPage.firstEditButton,40).click();
+    }
+    @When("user assign new doctor for patient")
+    public void user_assign_new_doctor_for_patient() {
+        ReusableMethods.waitForVisibility(appointmentEditCreatePage.appointmentPhysicianArea,5);
+        ReusableMethods.waitFor(2);
+        Select select =new Select(appointmentEditCreatePage.appointmentPhysicianArea);
+        select.selectByValue("277681");
     }
 }

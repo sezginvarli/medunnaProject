@@ -154,4 +154,3 @@ public class PhysicianUiStepDefs {
         return inpatient;
     }
 }
-//Toastify__toast--success

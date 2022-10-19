@@ -16,9 +16,6 @@ public class AppointmentEditCreatePage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(id = "hospitalmsappfrontendApp.appointment.home.createOrEditLabel")
-    public WebElement headerCreateOrEdit ;
-
     @FindBy(id = "appointment-id")
     public WebElement appointmentId;
 
@@ -61,7 +58,7 @@ public class AppointmentEditCreatePage {
     @FindBy(xpath ="(//div[@class='invalid-feedback'])[3]")
     public WebElement diagnosisRequiredWarning ;
 
-
-
+    @FindBy(id = "hospitalmsappfrontendApp.appointment.home.createOrEditLabel")
+    public WebElement createEditAppointmentHeader ;
 
 }
