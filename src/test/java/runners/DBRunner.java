@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "./src/test/resources/features/database_features",
+        features = "./src/test/resources/features/db_features",
         glue = {"stepdefinitions"},
         tags = "",
         dryRun = false
