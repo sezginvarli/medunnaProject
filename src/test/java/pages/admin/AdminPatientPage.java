@@ -1,4 +1,4 @@
-package pages;
+package pages.admin;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -101,11 +101,6 @@ public class AdminPatientPage {
 
     @FindBy(xpath = "//span[text()='ID']")
     public WebElement ID;
-
-
-
-
-
 
 
 }
