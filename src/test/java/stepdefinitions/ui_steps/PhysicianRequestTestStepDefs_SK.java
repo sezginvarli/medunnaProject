@@ -32,7 +32,7 @@ public class PhysicianRequestTestStepDefs_SK {
     @Then("clicks on My Appointment button.")
     public void clicks_on_my_appointment_button() throws InterruptedException {
         Driver.wait(3);
-        physiciansMainPage.myAppointments.click();
+        physiciansMainPage.dropdownElementMyAppointments.click();
 
     }
     @Then("choose the patient and clicks edit button")

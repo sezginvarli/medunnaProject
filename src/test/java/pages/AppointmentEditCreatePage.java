@@ -46,17 +46,24 @@ public class AppointmentEditCreatePage {
     @FindBy(id = "appointment-physician")
     public WebElement appointmentPhysicianArea;
 
-    @FindBy(id = "save-entity")
+    //@FindBy(xpath = "//button[@id='save-entity']")
+    @FindBy(xpath = "//*[text()='Save']")
     public WebElement appointmentSaveButton;
 
     @FindBy(xpath ="(//div[@class='invalid-feedback'])[1]")
     public WebElement anamnesisRequiredWarning ;
 
-    @FindBy(xpath ="(//div[@class='invalid-feedback'])[2]")
+    @FindBy(xpath ="//*[text()='This field is required.']")
     public WebElement treatmentRequiredWarning ;
 
-    @FindBy(xpath ="(//div[@class='invalid-feedback'])[3]")
+    @FindBy(xpath ="//*[text()='This field is required.']")
     public WebElement diagnosisRequiredWarning ;
+
+    @FindBy(xpath ="//*[text()='This field is required.']")
+    public WebElement prescriptionRequiredWarning ;
+
+    @FindBy(xpath ="//*[text()='This field is required.']")
+    public WebElement descriptionRequiredWarning ;
 
     @FindBy(id = "hospitalmsappfrontendApp.appointment.home.createOrEditLabel")
     public WebElement createEditAppointmentHeader ;
