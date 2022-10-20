@@ -10,7 +10,7 @@ Feature: Doctor view and edit inpatients
     And user enters a valid "team03Doctor" password
     And user clicks on second sign-in button
 
-  @US_14_TC01
+  @US14_TC01
   Scenario Outline: user view inpatients
     When user clicks on mypages
     And user clicks on myinpatients button
@@ -30,7 +30,7 @@ Feature: Doctor view and edit inpatients
       |  Appointment    |
       |  Patient    |
 
-  @US_14_TC02
+  @US14_TC02
   Scenario Outline: user edits inpatients
     When user clicks on mypages
     And user clicks on myinpatients button
