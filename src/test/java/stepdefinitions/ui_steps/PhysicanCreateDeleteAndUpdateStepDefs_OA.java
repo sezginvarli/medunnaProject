@@ -68,7 +68,7 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
         Select select3 = new Select(adminPhysicianPage.selectUserDropDown);
         select3.selectByIndex(4);
         Select select4 = new Select(adminPhysicianPage.countryDropDown);
-        select4.selectByIndex(4);
+        select4.selectByIndex(3);
         ReusableMethods.waitFor(3);
         adminPhysicianPage.backButton.click();
     }
@@ -80,4 +80,9 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     public void user_refresh_the_page_and_click_created_date_and_in_first_place_must_see_the_created_physician() {
 
     }
+    @When("user click on click on create physician button")
+    public void user_click_on_click_on_create_physician_button() {
+        adminPhysicianPage.createNewPhysician.click();
+    }
+
 }

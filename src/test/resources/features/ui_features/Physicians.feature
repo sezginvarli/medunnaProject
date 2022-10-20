@@ -36,5 +36,20 @@ Feature: Test Physicians
       | username | password |
       | Batch86  | Batch86+ |
 
+  @US18.02_TC02
+  Scenario Outline: Admin doctor can create a new physician
+    And user enters a valid "<username>" username
+    And user clicks on password input box
+    And user enters a valid "<password>" password
+    Then user clicks on second sign-in button
+    When user click on physician from dropdown button
+    And user click on click on create physician button
+    And user fill the required credentials
+    And user click on save button and should see "A physician is created with identifier (id number)"
+    Then user refresh the page and click created date and in first place must see the created physician
+    Examples:user credentials
+      | username | password |
+      | Batch86  | Batch86+ |
+
 
 
