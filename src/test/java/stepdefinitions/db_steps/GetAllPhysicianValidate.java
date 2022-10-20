@@ -41,6 +41,6 @@ public class GetAllPhysicianValidate {
             a++;
         }
         System.out.println(checkPhysician);
-        Assert.assertEquals("214529", checkPhysician.get(0).toString());
+        Assert.assertEquals("There is no id like that","214529", rs.getObject("id").toString());
     }
 }
