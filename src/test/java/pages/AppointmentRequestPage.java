@@ -27,4 +27,13 @@ public class AppointmentRequestPage {
 
     @FindBy(id = "appoDate")
     public WebElement appointmentDate;
+
+    @FindBy(xpath = "//*[contains(text(),'Appointment registration saved')]")
+    public WebElement registrationSavedMessage;
+
+    @FindBy(xpath = "//*[contains(text(),'Appointment date can not be past date!')]")
+    public WebElement dateCanNotBePastDateMessage;
+
+    @FindBy(id = "register-submit")
+    public WebElement sendAppointmentRequestButton;
 }
