@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "C:\\Users\\Pc\\IdeaProjects\\medunnaProject\\src\\test\\resources\\features\\api_features",
+        features = ".src/test/resources/features/api_features",
         glue = {"stepdefinitions"},
         tags = "@US10",
         dryRun = false
