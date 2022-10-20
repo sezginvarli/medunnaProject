@@ -48,6 +48,27 @@ public class AdminPhysicianPage {
     public WebElement saveButton;
     @FindBy(xpath = "//*[text() = 'ID']")
     public WebElement visibilityOfId;
+    @FindBy(css = "[class = 'Toastify__toast-body']")
+    public WebElement alert;
+    //*[@id="root"]/div/div/div[1]/div/div/div[1]
+    @FindBy(xpath = "//*[text() = 'Created Date']")
+    public WebElement createdDate;
+    @FindBy(xpath = "//*[text() = 'Kane']")
+    public WebElement firstNameKane;
+    @FindBy(css = "[class = 'info jhi-item-count']")
+    public WebElement totalPhysicianNumber;
+    @FindBy(css = "//dt[. = 'SSN']")
+    public WebElement viewSSNPlace;
+    @FindBy(css = "//dt[. = 'First Name']")
+    public WebElement viewFirstNamePlace;
+    @FindBy(css = "//dt[. = 'Phone']")
+    public WebElement viewPhonePlace;
+    @FindBy(css = "//dt[. = 'Last Name']")
+    public WebElement viewLastNamePlace;
+    @FindBy(xpath = "//h2/b")
+    public WebElement physicianIDinViewPage;
+    @FindBy(id = "jhi-confirm-delete-physician")
+    public WebElement deleteConfirmButton;
 
     public WebElement selectPhysicianById(String id){
         WebElement selectById = Driver.getDriver().findElement(By.linkText(id));
