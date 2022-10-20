@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class RegistrationPage {
 
     public RegistrationPage(){
@@ -74,6 +76,25 @@ public class RegistrationPage {
 
     @FindBy(xpath= "(//input[@class='is-touched is-dirty av-valid form-control'])[5]")
     public WebElement validEmail;
-
+    @FindBy(xpath = "//*[text()='Password for [']")
+    public WebElement passwordText;
+    @FindBy(xpath="//input[@name='currentPassword']")
+    public WebElement currentPassword;
+    @FindBy(xpath="//input[@name='newPassword']")
+    public WebElement newPassword;
+    @FindBy(xpath="//input[@name='confirmPassword']")
+    public WebElement confirmPassword;
+    @FindBy(xpath="//button[@type='submit']")
+    public WebElement saveButton;
+    @FindBy(xpath="//div[@class='Toastify__toast-body']")
+    public WebElement passwordChanged;
+    @FindBy(xpath = "//li[@class='point']")
+    public List<WebElement> totalBarNums;
+    @FindBy(xpath = "//li[@style='background-color: rgb(221, 221, 221);']")
+    public List<WebElement> emptyBars;
+    @FindBy(xpath= "(//input[@class='is-touched is-dirty av-valid form-control'])[3]")
+    public WebElement noConfirmError;
+    @FindBy(xpath= "//*[text()='The password and its confirmation do not match!']")
+    public WebElement confirmNotMatch;
 
 }
