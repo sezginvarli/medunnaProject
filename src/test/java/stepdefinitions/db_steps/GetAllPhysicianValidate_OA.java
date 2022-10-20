@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-public class GetAllPhysicianValidate {
+public class GetAllPhysicianValidate_OA {
     @Given("admin send the credential for connect the database")
     public void admin_send_the_credential_for_connect_the_database() {
         DBUtils.createConnection();
@@ -42,5 +42,6 @@ public class GetAllPhysicianValidate {
         }
         System.out.println(checkPhysician);
         Assert.assertEquals("There is no id like that","214529", rs.getObject("id").toString());
+        DBUtils.closeConnection();
     }
 }
