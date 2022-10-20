@@ -5,11 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class HomeAndSigninPage {
     public HomeAndSigninPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "//a[@class=\"appointment-btn scrollto\"]")
+    @FindBy(xpath = "//a[@class='appointment-btn scrollto']")
     public WebElement MakeAnAppointment;
 
     @FindBy(id="firstName")
@@ -30,23 +32,35 @@ public class HomeAndSigninPage {
     @FindBy(id="appoDate")
     public WebElement appoDate;
 
-    @FindBy(xpath="(//div[@class=\"invalid-feedback\"])[1]")
+    @FindBy(xpath="(//div[@class='invalid-feedback'])[1]")
     public WebElement YourFirstNameisrequired;
 
-    @FindBy(xpath = "(//div[@class=\"invalid-feedback\"])[2]")
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
     public WebElement YourLastNameisrequired;
 
-    @FindBy(xpath = "(//div[@class=\"invalid-feedback\"])[3]")
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
     public WebElement YourSSNisrequired;
 
-    @FindBy(xpath = "(//div[@class=\"invalid-feedback\"])[4]")
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
     public WebElement YourEmailisrequired;
 
-    @FindBy(xpath = "(//div[@class=\"invalid-feedback\"])[5]")
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
     public WebElement YourNumberisrequired;
 
-    @FindBy(id = "id=\"register-submit\"")
+    @FindBy(id ="register-submit")
     public WebElement SendAndAppointmantRequest;
+
+    @FindBy(xpath = "//span[.='MY PAGES(PATIENT)']")
+    public WebElement myPagesPatient;
+
+    @FindBy(xpath = "//span[.='My Appointments']")
+    public WebElement myAppointment;
+
+    @FindBy(xpath = "(//span[.='Show Tests'])[1]")
+    public WebElement showTestElement;
+
+    @FindBy(xpath = "//table/tbody/tr/td[6]")
+    public List<WebElement> createdDate;
 
 
     @FindBy(id = "account-menu")
