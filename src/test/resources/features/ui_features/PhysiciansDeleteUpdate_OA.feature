@@ -18,7 +18,7 @@ Feature: Test Physicians
     And user click on back button
     And user fill the required credentials
     And user click on save button and should see successfully edited message
-    Then user refresh the page and click created date and in first place must see the created physician
+    Then user refresh the page should see edited physician
     Examples:user credentials
       | username | password |
       | Batch86  | Batch86+ |
@@ -39,7 +39,7 @@ Feature: Test Physicians
       | Batch86  | Batch86+ |
 
     @US18.02_TC03
-    Scenario Outline:Admin doctor can view a new physician
+    Scenario Outline:Admin doctor can view a physician
       And user enters a valid "<username>" username
       And user clicks on password input box
       And user enters a valid "<password>" password
@@ -54,7 +54,7 @@ Feature: Test Physicians
 
 
       @US18.02_TC04
-      Scenario Outline:Admin doctor can view a new physician
+      Scenario Outline:Admin doctor can delete a physician
         And user enters a valid "<username>" username
         And user clicks on password input box
         And user enters a valid "<password>" password
@@ -67,5 +67,26 @@ Feature: Test Physicians
           | username | password |
           | Batch86  | Batch86+ |
 
-
+      @US18.02_TC05
+      Scenario Outline:Admin doctor can not create without obligate fields
+        And user enters a valid "<username>" username
+        And user clicks on password input box
+        And user enters a valid "<password>" password
+        Then user clicks on second sign-in button
+        When user click on physician from dropdown button
+        When Admin should click Create a new Physician button
+        Then Admin must see "Create or edit a Physician"
+        When Admin fill the required credentials except First Name
+        Then Admin click on save button and should see "This field is required."
+        When Admin fill the required credentials except Last Name
+        Then Admin click on save button and should see "This field is required."
+        When Admin fill the required credentials except Exam Fee
+        Then Admin click on save button and should see "This field is required."
+        When Admin fill the required credentials except Phone
+        Then Admin click on save button and should see "Phone number is required."
+        When Admin fill the required credentials but;filled date outside of the stated dates
+        Then Admin click on save button and should see "Date must be between 10/20/1822 and 10/20/2002"
+        Examples:user credentials
+          | username | password |
+          | Batch86  | Batch86+ |
 

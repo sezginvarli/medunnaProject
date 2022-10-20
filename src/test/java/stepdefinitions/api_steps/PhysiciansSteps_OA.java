@@ -10,15 +10,13 @@ import org.junit.Assert;
 import pojos.Physician;
 import utilities.ConfigReader;
 
-import java.util.List;
-
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
 import static utilities.TXTReader.readFile;
 import static utilities.TXTReader.readFileElementExist;
 import static utilities.TXTWriter.savePhysiciansData;
 
-public class PhysiciansSteps {
+public class PhysiciansSteps_OA {
     Physician[] physiciansApi;
     Response response;
     @Given("admin send the request for physicians data")
@@ -42,7 +40,7 @@ public class PhysiciansSteps {
         String files = readFile(ConfigReader.getProperty("physicians_api_data"));
         System.out.println(files.contains("Kay"));
         boolean flag = readFileElementExist(ConfigReader.getProperty("physicians_api_data"),"merve_mahir@gmail.com");
-        System.out.println("yes there is exist"+flag);
+        System.out.println("yes there is merve_mahir@gmail.com exist: "+flag);
         Assert.assertTrue(flag);
     }
 }
