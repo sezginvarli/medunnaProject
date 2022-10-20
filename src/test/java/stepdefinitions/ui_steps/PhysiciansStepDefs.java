@@ -18,16 +18,17 @@ public class PhysiciansStepDefs {
 
     @Given("user clicks on Items&Titles button")
     public void user_clicks_on_items_titles_button() {
-        Driver.waitForClickablility(adminPhysicianPage.itemsAndTitlesButton, 3).click();
+       // Driver.waitForClickablility(adminPhysicianPage.itemsAndTitlesButton, 3).click();
+        adminPhysicianPage.itemsAndTitlesButton.click();
 
-        ReusableMethods.waitFor(2);
-        adminPhysicianPage.physicianButton.click();
+
 
     }
 
     @When("user clicks on Physician button")
     public void user_clicks_on_physician_button() {
-
+        ReusableMethods.waitFor(2);
+        adminPhysicianPage.physicianButton.click();
 
     }
 
