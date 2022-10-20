@@ -13,12 +13,12 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "./src/test/resources/features/db_feautes",
+        features = "src/test/resources/features/api_features",
         glue = {"stepdefinitions"},
-        tags = "",
+        tags = "@US10_TC04",
         dryRun = false
 )
-public class DBRunner {
+public class Runner {
 }
 
 

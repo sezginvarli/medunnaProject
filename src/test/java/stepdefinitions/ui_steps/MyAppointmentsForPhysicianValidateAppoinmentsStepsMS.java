@@ -5,7 +5,6 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.HomeAndSigninPage;
 import pages.PhysiciansMainPage;
-import stepdefinitions.ui_steps.HomePageStepDefs;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -44,7 +43,7 @@ homeAndSigninPage.signInButton.click();
     }
     @Then("click My Appointments")
     public void click_my_Appointments() {
-physiciansMainPage.myAppointments.click();
+physiciansMainPage.dropdownElementMyAppointments.click();
     }
     @Then("verify Appointments page")
     public void verify_Appointments_page() {
