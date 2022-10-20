@@ -1,5 +1,5 @@
-
 @CreatedOrEditPhysicianByAdmin
+@Signin
 Feature: Create Or Edit Physicians By Admin
 
 
@@ -8,9 +8,9 @@ Feature: Create Or Edit Physicians By Admin
     And User clicks on sign-in button
 
 
-  @Signin
 
-    @US18.01_TC01
+
+    @US18.01_TC011
   Scenario Outline:test existed physicians
     Given user enters a valid "<username>" username
     When user enters a valid "<password>" password

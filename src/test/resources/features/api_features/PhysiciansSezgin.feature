@@ -4,7 +4,7 @@ Feature: test api physicians
   @Api
   @PhysiciansGet
 
-
+@POST
   Scenario:TC_001_User_can_POST_physicians_as_admin
 
     Given user creates a postbody

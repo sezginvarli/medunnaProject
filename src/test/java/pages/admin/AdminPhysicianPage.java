@@ -6,11 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class AdminPhysicianPage {
-
     public AdminPhysicianPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
     @FindBy(xpath = "//span[text()='Items&Titles']")
     public WebElement itemsAndTitlesButton;
 
@@ -58,6 +56,5 @@ public class AdminPhysicianPage {
 
     @FindBy(id = "physician-examFee")
     public WebElement examFeeButton;
-
 
 }

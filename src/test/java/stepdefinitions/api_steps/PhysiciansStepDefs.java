@@ -10,9 +10,10 @@ import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import pojos.Registrant;
+import org.openqa.selenium.support.ui.Select;
+import pojos.*;
 import utilities.ConfigReader;
-import pojos.Physician;
+
 import java.util.List;
 
 import static hooks.Hooks.spec;
@@ -21,14 +22,15 @@ import static utilities.Authentication.generateToken;
 
 public class PhysiciansStepDefs {
     Response response;
-    Physician [] pyhsician;
-    Physician postbody= new Physician();
+    Physician[] pyhsician;
+    Physician postbody = new Physician();
+    Select select;
 
     @Given("user sends a GET request for physicians data")
     public void userSendsAGetRequestForUserData() {
-        response= given().headers(
+        response = given().headers(
                 "Authorization",
-                "Bearer "+generateToken(),
+                "Bearer " + generateToken(),
                 "Content-type", ContentType.JSON,
                 "Accept", ContentType.JSON
         ).when().get(ConfigReader.getProperty("pyhsicians_api_get_url"));
@@ -42,8 +44,8 @@ public class PhysiciansStepDefs {
 
     @When("user deserializeses the user data to java")
     public void userDeserializesTheUserDataToJava() throws JsonProcessingException {
-        ObjectMapper obj=new ObjectMapper();
-        pyhsician =obj.readValue(response.asString(),Physician [].class);
+        ObjectMapper obj = new ObjectMapper();
+        pyhsician = obj.readValue(response.asString(), Physician[].class);
 
     }
 
@@ -61,21 +63,36 @@ public class PhysiciansStepDefs {
     @Given("user creates a postbody")
     public void user_creates_a_postbody() {
 
-        postbody.setSsn(new Faker().idNumber().ssnValid());
-        postbody.setFirstName(new Faker().name().firstName());
-        postbody.setLastName(new Faker().name().lastName());
-        postbody.setBirthDate("01/01/2000");
+        postbody.setSsn("555-55-5432");
+        postbody.setFirstName("Mehmet Ali Sezgin");
+        postbody.setLastName("GENC");
+        //  postbody.setBirthDate("01/01/2000");
+        postbody.setPhone("19685245690");
+        //  postbody.setAdress(new Faker().address().fullAddress());
+        //   postbody.setGender("MALE");
+        //   postbody.setSpeciality("Family_medicine");
+        //    postbody.setBloodGroup("A+");
+        //  postbody.setDescription("The Best Physician");
+        //    postbody.setImage("null");
         postbody.setExamFee(125);
+        postbody.setUser(new User());
+        //   postbody.setCountry(new Country());
+        //    postbody.setCstate(new CState());
+
+
     }
+
     @Given("user sends post request for creating new physician")
     public void user_sends_post_request_for_creating_new_physician() {
-        spec.pathParams("first","api","second","physicians");
-        response= given().spec(spec).headers(
+        spec.pathParams("first", "api", "second", "physicians");
+        response = given().spec(spec).headers(
                 "Authorization",
-                "Bearer "+generateToken(),
+                "Bearer " + generateToken(),
                 "Content-Type", ContentType.JSON
         ).body(postbody).when().post("/{first}/{second}");
         response.prettyPrint();
+
+        System.out.println(postbody);
     }
 
     @Then("Status codes should be {int}")
