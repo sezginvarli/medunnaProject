@@ -10,7 +10,7 @@ import utilities.ReusableMethods;
 
 import java.io.IOException;
 
-public class RegistrationPageShouldRestrictPassword {
+public class RegistrationPageShouldRestrictPasswordMS {
 
     Registrant registrant = new Registrant();
     RegistrationPage registrationPage = new RegistrationPage();

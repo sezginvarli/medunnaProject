@@ -1,3 +1,4 @@
+@US03
 Feature: Registration Page Should Restrict Password
 
 
@@ -22,6 +23,7 @@ Feature: Registration Page Should Restrict Password
     Then user clicks on the register section at the dropdown
     And user enters password at least as one uppercase "<password>"
     And verify the level chart change accordingly
+    And user closes the browser
     Examples:
       | password |
       |aAAA    |
@@ -34,6 +36,7 @@ Scenario Outline:There should be at least 1 special char and see the level chart
   Then user clicks on the register section at the dropdown
   And user enters char as special "<password>"
   And verify the level bar change accordingly
+    And user closes the browser
     Examples:
       | password |
       |aAAA#    |
@@ -47,6 +50,7 @@ Scenario Outline:There should be at least 1 special char and see the level chart
       Then user clicks on the register section at the dropdown
       And user enters char as digit "<password>"
       And verify the level bar level change accordingly
+      And user closes the browser
     Examples:
       | password |
       |aAAA#8    |
@@ -59,6 +63,7 @@ Scenario Outline:There should be at least 1 special char and see the level chart
       Then user clicks on the register section at the dropdown
       And user enters char at least seven digit password "<password>"
     And verify at least 7 chars for strong password
+    And user closes the browser
       Examples:
         | password |
         |aA!A#8y    |

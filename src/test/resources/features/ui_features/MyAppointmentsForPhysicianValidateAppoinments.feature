@@ -1,3 +1,4 @@
+@deneme
 Feature: My Appointments for Physician(Doctor) Validate appoinments with API and DB
 
 
@@ -12,6 +13,7 @@ Feature: My Appointments for Physician(Doctor) Validate appoinments with API and
     And user click my pages drop-down button
     And click My Appointments
     And verify Appointments page
+    And user closes the browser
     Examples:
       | username    | password |
       | doctorurfa5 | 123urfa  |
@@ -28,12 +30,9 @@ Feature: My Appointments for Physician(Doctor) Validate appoinments with API and
     And user click my pages drop-down button
     And click My Patients
     And verify Patients page
+    And user closes the browser
     Examples:
       | username    | password |
       | doctorurfa5 | 123urfa  |
 
-  @US10_TC02
-  Scenario Outline:Validate appointments with API
-    Given user(doctor account) send a get request for users' data
-    Then user deserializes the users' data to java
-    And user saves the users' data to correspondent files and validates
+

@@ -1,4 +1,4 @@
-package stepdefinitions.api_steps;
+package stepdefinitions.ui_steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,7 +8,7 @@ import pages.PhysiciansMainPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class MyAppointmentsForPhysicianValidateAppoinmentsSteps {
+public class MyAppointmentsForPhysicianValidateAppoinmentsStepsMS {
     HomeAndSigninPage homeAndSigninPage=new HomeAndSigninPage();
     PhysiciansMainPage physiciansMainPage =new PhysiciansMainPage();
     @Given("user navigate medunna.com")
@@ -34,7 +34,7 @@ homeAndSigninPage.userNameTextArea.sendKeys(username);
     }
     @Then("user click Sign in button")
     public void user_click_sign_in_button() {
-homeAndSigninPage.signInButton.click();
+    homeAndSigninPage.signInButton.click();
     }
     @Then("user click my pages drop-down button")
     public void user_click_my_pages_drop_down_button() {
@@ -56,6 +56,7 @@ Assert.assertEquals("Appointments",physiciansMainPage.appointmentsPage.getText()
     }
     @Then("verify Patients page")
     public void verify_patients_page() {
+
         Assert.assertEquals("Patients",physiciansMainPage.patientPage.getText());
     }
 }
