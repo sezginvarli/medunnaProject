@@ -6,10 +6,12 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class AdminPhysicianPage {
-    public AdminPhysicianPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+
+    public AdminPhysicianPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(xpath = "//span[text()='Items&Titles']")
+
+    @FindBy(xpath = "//*[@id='entity-menu']/a/span")
     public WebElement itemsAndTitlesButton;
 
     @FindBy(xpath = "//span[.='Physician']")
@@ -18,13 +20,13 @@ public class AdminPhysicianPage {
     @FindBy(xpath = "//span[.='Create a new Physician']")
     public WebElement createanewphysicianButton;
 
-    @FindBy(id = "useSSNSearch")
+    @FindBy(xpath = "//input[@id='useSSNSearch']")
     public WebElement useSearchButton;
 
-    @FindBy(id = "searchSSN")
+    @FindBy(xpath = "//input[@id='searchSSN']")
     public WebElement searchSSNBox;
 
-    @FindBy(className = "btn btn-secondary")
+    @FindBy(xpath = "//button[text()=\"Search User\"]")
     public WebElement searchUserButton;
 
     @FindBy(xpath = "//div[@role='alert']")
@@ -42,19 +44,11 @@ public class AdminPhysicianPage {
     @FindBy(id = "physician-phone")
     public WebElement phoneBox;
 
-    @FindBy(id = "physician-speciality")
+    @FindBy(xpath = "//select[@id='physician-speciality']")
     public WebElement specialityDropdownButton;
 
-    @FindBy(id = "file_image")
+    @FindBy(xpath = "//input[@id='file_image']")
     public WebElement chooseFileButton;
 
-    @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div/div[2]/div/form/div[11]/div/a/img")
-    public WebElement image;
-
-    @FindBy(id = "physician-user")
-    public WebElement userDropdownButton;
-
-    @FindBy(id = "physician-examFee")
-    public WebElement examFeeButton;
 
 }
