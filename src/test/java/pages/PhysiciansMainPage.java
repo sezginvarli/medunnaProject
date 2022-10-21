@@ -37,7 +37,8 @@ public class PhysiciansMainPage {
     @FindBy(xpath = "(//a[@class='dropdown-item'])[5]")
     public WebElement physicianAccountPassword;
 
-    @FindBy(xpath = "(//a[@class='dropdown-item'])[6]")
+    //@FindBy(xpath = "//*[text()='Sign out']")
+    @FindBy(xpath = "//*[.='Sign out']")
     public WebElement physicianAccountSignOut;
 
     @FindBy(xpath = "(//a[starts-with(@href,'/appointment-update/')])[1]")
