@@ -55,4 +55,14 @@ public class HomeAndSigninPage {
     public WebElement signInText;
     @FindBy(partialLinkText = "Password")
     public WebElement passwordDropdown;
+    @FindBy(xpath = "//span[text()='Settings']")
+    public WebElement settingsButton;
+    @FindBy(xpath = "//input[@name='firstName']")
+    public WebElement firstnameSettings;
+    @FindBy(xpath = "//input[@name='lastName']")
+    public WebElement lastnameSettings;
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement emailSettings;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement saveButtonSettings;
 }
