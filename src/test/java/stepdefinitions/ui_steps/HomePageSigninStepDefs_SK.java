@@ -140,16 +140,4 @@ public class HomePageSigninStepDefs_SK {
         Assert.assertTrue(homeAndSigninPage.authentication.isDisplayed());
     }
 
-
-
-    @Then("user close the application")
-    public void user_close_the_application() {
-
-    }
-
-
 }
-
-
-
-
