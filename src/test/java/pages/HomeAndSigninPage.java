@@ -55,4 +55,6 @@ public class HomeAndSigninPage {
     public WebElement signInText;
     @FindBy(partialLinkText = "Password")
     public WebElement passwordDropdown;
+    @FindBy(partialLinkText = "SIGN IN AGAIN")
+    public WebElement signInAgain;
 }
