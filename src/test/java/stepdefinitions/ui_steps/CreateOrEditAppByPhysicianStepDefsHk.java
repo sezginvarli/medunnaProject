@@ -1,11 +1,8 @@
 package stepdefinitions.ui_steps;
 
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import pages.AppointmentEditCreatePage;
 import pages.AppointmentPage;
@@ -13,8 +10,6 @@ import pages.PhysiciansMainPage;
 import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
-
-import java.util.List;
 
 public class CreateOrEditAppByPhysicianStepDefsHk {
     PhysiciansMainPage physiciansMainPage=new PhysiciansMainPage();
@@ -28,8 +23,8 @@ public class CreateOrEditAppByPhysicianStepDefsHk {
         System.out.println(loginAs);
         Assert.assertTrue(loginAs.contains(loginName));
     }
-    @Then("oser click on MyAppointments under MyPages")
-    public void oser_click_on_my_appointments_under_my_pages() {
+    @Then("user click on MyAppointments under MyPages")
+    public void user_click_on_my_appointments_under_my_pages() {
         Driver.waitForClickablility(physiciansMainPage.myPagesDropdown,1).click();
         physiciansMainPage.dropdownElementMyAppointments.click();
     }
@@ -184,6 +179,14 @@ public class CreateOrEditAppByPhysicianStepDefsHk {
         String appointmentEditSuccessMessage=Driver.waitForVisibility(appointmentPage.toastifyAllert,3).getText();
         System.out.println("The Appointment is updated with identifier "+appId);
         Assert.assertTrue(appointmentEditSuccessMessage.contains("The Appointment is updated"));
+    Driver.getDriver().navigate().refresh();
+    }
+
+    @Then("user sign out")
+    public void user_sign_out() {
+        Driver.waitForClickablility(physiciansMainPage.userAccountMenu,3).click();
+        Driver.waitForClickablility(physiciansMainPage.physicianAccountSignOut,3);
+        JSUtils.clickElementByJS(physiciansMainPage.physicianAccountSignOut);
 
     }
 }
