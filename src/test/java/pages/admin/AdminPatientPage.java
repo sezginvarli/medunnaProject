@@ -102,5 +102,14 @@ public class AdminPatientPage {
     @FindBy(xpath = "//span[text()='ID']")
     public WebElement ID;
 
+    @FindBy(id = "patient-cstate")
+    public WebElement stateCityDropDown;
+
+    @FindBy(xpath = "(//a[@class='btn btn-danger btn-sm'])[1]")
+    public WebElement firstDeleteButton;
+
+    @FindBy(id = "jhi-confirm-delete-patient")
+    public WebElement confirmDeleteButton;
+
 
 }

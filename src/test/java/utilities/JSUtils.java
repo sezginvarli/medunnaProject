@@ -26,8 +26,8 @@ public class JSUtils {
     }
 
     //    Scroll al the way up of a page
-    public static void scrollAllUpByJS() {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+    public static void scrollAllUpByJS(){
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
     }
 

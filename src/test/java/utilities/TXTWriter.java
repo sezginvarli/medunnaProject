@@ -1,5 +1,6 @@
 package utilities;
 
+import pojos.Appointment;
 import pojos.Registrant;
 
 import java.io.BufferedReader;
@@ -43,6 +44,18 @@ public class TXTWriter {
             FileWriter fw2 = new FileWriter(filePath,false);
             BufferedWriter bw = new BufferedWriter(fw2);
             bw.append(pojoObj +"\n");
+            bw.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public static void saveUiAppointmentData(Appointment appointment){
+
+        try {
+            FileWriter fw=new FileWriter(ConfigReader.getProperty("appointment_data"),true);
+            BufferedWriter bw=new BufferedWriter(fw);
+            bw.append(appointment.toString()+"\n");
             bw.close();
 
         }catch (Exception e){
