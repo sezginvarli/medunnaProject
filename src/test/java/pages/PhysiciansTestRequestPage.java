@@ -42,4 +42,30 @@ public class PhysiciansTestRequestPage {
     @FindBy(id = "1404")
     public WebElement sodium;
 
+    @FindBy(xpath = "//span[contains(.,'ID')]")
+    public WebElement idHeader;
+
+    @FindBy(xpath = "//span[contains(.,'Name')]")
+    public WebElement nameHeader;
+
+    @FindBy(xpath = "//span[contains(.,'Result')]")
+    public WebElement resultHeader;
+
+    @FindBy(xpath = "//span[contains(.,'Default Min. Value')]")
+    public WebElement minValueHeader;
+
+    @FindBy(xpath = "//span[contains(.,'Default Max. Value')]")
+    public WebElement maxValueHeader;
+
+    @FindBy(xpath = "//span[contains(.,'Test')]")
+    public WebElement testHeader;
+
+    @FindBy(xpath = "//span[contains(.,'Description')]")
+    public WebElement descriptionHeader;
+
+    @FindBy(xpath = "//span[contains(.,'Date')]")
+    public WebElement dateHeader;
+
+
+
 }
