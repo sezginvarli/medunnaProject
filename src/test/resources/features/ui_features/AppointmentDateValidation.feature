@@ -1,4 +1,5 @@
-Feature: Appointment date test
+@husrev
+Feature: Appointment date test with ui
 
   Background: User sign in as patient
     Given user goes to the url
@@ -16,16 +17,16 @@ Feature: Appointment date test
     And user clicks on make an appointment button
     And user fills the form with valid dates "<date>"
     And user clicks on send an appointments request button
-#    Then user verifies appointment can not be past date message is not displayed
+    Then user verifies appointment can not be past date message is not displayed
     Then user verifies Appointment registrations saved message is displayed
     And User clicks on account drop-down-menu button
     And user click on sign out
 #    And close the application
     Examples:
       | date |
-      | today  |
       | tomorrow  |
       | oneyearlater  |
+      | today  |
 
   @US07_TC01N
   Scenario Outline: User needs to enter a valid date: Negative
@@ -34,10 +35,10 @@ Feature: Appointment date test
     And user fills the form with valid dates "<date>"
     And user clicks on send an appointments request button
     Then user verifies appointment can not be past date message is displayed
-#    Then user verifies Appointment registrations saved message is not displayed
+    Then user verifies Appointment registrations saved message is not displayed
     And User clicks on account drop-down-menu button
     And user click on sign out
-#    And close the application
+    And close the application
     Examples:
       | date |
       | yesterday  |

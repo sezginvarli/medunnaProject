@@ -1,4 +1,5 @@
-Feature: Appointment date test
+@husrev
+Feature: Appointment date test with api
   @Api
   @TC07_TC03
   Scenario: User sends and fetch appointments with api

@@ -1,3 +1,4 @@
+@husrev
 Feature: validate appointments with db
   @US07_TC04
   Scenario: validate if appointments exist in db
