@@ -1,4 +1,5 @@
 @Signin
+@Close
 @CreatedOrEditPatientByAdmin
 Feature: Create Or Edit Patient By Admin
 
@@ -74,7 +75,7 @@ Scenario Outline: Admin can see all patient information plus id
     | Batch86 | Batch86+ |
 
   @AdminAssignPatientTheirDoctor
-  Scenario Outline: Admin can see all patient information plus id
+  Scenario Outline: Admin can assign their doctor
     Given user enters a valid "<username>" username
     When user enters a valid "<password>" password
     And user clicks on second sign-in button
@@ -89,7 +90,7 @@ Scenario Outline: Admin can see all patient information plus id
       | team03alpha | team03Admin | The Appointment is updated|
 
   @OtherUsersAssignPatientTheirDoctor
-  Scenario Outline: Admin can see all patient information plus id
+  Scenario Outline: Other users can not assign their doctor
     Given user enters a valid "<username>" username
     When user enters a valid "<password>" password
     And user clicks on second sign-in button
@@ -136,7 +137,7 @@ Scenario Outline: Admin can see all patient information plus id
       | team03alpha | team03Admin | USA|   | State is required|
 
   @AdminDeletesAnyPatient
-  Scenario Outline: New patient is created by admin
+  Scenario Outline: Admin can delete any patient
     Given user enters a valid "<username>" username
     When user enters a valid "<password>" password
     And user clicks on second sign-in button
