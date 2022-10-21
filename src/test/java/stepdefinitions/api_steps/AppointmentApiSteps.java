@@ -47,10 +47,6 @@ public class AppointmentApiSteps {
                 "Content-type", ContentType.JSON,
                 "Accept", ContentType.JSON
         ).body(appointmentRequest).when().post("/{first}/{second}/{third}");
-        System.out.println(date);
-        response.prettyPrint();
-        System.out.println(response.getStatusCode());
-
     }
     @When("user deserializes the application data to java")
     public void user_deserializes_the_application_data_to_java() throws JsonProcessingException {

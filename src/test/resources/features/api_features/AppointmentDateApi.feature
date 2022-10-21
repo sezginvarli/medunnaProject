@@ -1,4 +1,5 @@
-@husrev
+@US07-14
+  @Close
 Feature: Appointment date test with api
   @Api
   @TC07_TC03

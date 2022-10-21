@@ -28,6 +28,7 @@ public class PhysicianUiStepDefs {
     InpatientsCreateOrEditPage inpatientsEditPage = new InpatientsCreateOrEditPage();
     InPatient inpatientBeforeChange;
     InPatient inPatientAfterChange;
+    int inpatientId = 235230;
     @When("user clicks on mypages")
     public void user_clicks_on_mypages() {
         ReusableMethods.waitForVisibility(mainPage.myPagesDropdown,5);
@@ -42,8 +43,7 @@ public class PhysicianUiStepDefs {
     @When("user clicks on inpatient edit button")
     public void user_clicks_on_edit_button() {
         ReusableMethods.waitForVisibility(inpatientsPage.inPatientsTableHeaders,10);
-        List<WebElement> editButtons = inpatientsPage.inPatientsEditButtons;
-        editButtons.get(0).click();
+        inpatientsPage.inPatientsTableBody.findElement(By.xpath("//a[contains(@href,"+inpatientId+")]")).click();
     }
 
     @Then("user verifies that a table header exist with given data {string}")
@@ -89,34 +89,44 @@ public class PhysicianUiStepDefs {
     }
     public InPatient getInpatientDetailsFromTable(){
         InPatient inpatient = new InPatient();
-        PhysiciansInpatientsPage newEditPage = new PhysiciansInpatientsPage();
         try {
             //gets inpatients row in table
-            List<WebElement> inpatientPageTableRows = Driver.getDriver().findElements(By.xpath("//table/tbody/tr"));
+//            List<WebElement> inpatientPageTableRows = Driver.getDriver().findElements(By.xpath("//table/tbody/tr"));
 //            System.out.println(newEditPage.inPatientsTableBodyRows.get(0).getText());
-            WebElement inpatientsData = inpatientPageTableRows.get(0);
+            int index = 1;
+            for(int i=0;i<inpatientsPage.inPatientsTableBodyRows.size();i++){
+                if(inpatientsPage.inPatientsTableBodyRows.get(i).getText().contains(String.valueOf(inpatientId))){
+                    index = i+1;
+                }
+            }
+            System.out.println(index);
 
             //set inpatient data to be able to compare
-            inpatient.setId(Integer.parseInt(inpatientsData.findElement(By.xpath("//td[1]")).getText()));
-            inpatient.setStartDate(inpatientsData.findElement(By.xpath("//td[2]")).getText());
-            inpatient.setEndDate(inpatientsData.findElement(By.xpath("//td[3]")).getText());
-            inpatient.setStatus(inpatientsData.findElement(By.xpath("//td[4]")).getText());
-            inpatient.setDescription(inpatientsData.findElement(By.xpath("//td[5]")).getText());
-            inpatient.setCreatedDate(inpatientsData.findElement(By.xpath("//td[6]")).getText());
+            inpatient.setId(Integer.parseInt(inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[1]")).getText()));
+            inpatient.setStartDate(inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[2]")).getText());
+            inpatient.setEndDate(inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[3]")).getText());
+            inpatient.setStatus(inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[4]")).getText());
+            inpatient.setDescription(inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[5]")).getText());
+            inpatient.setCreatedDate(inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[6]")).getText());
 
             //set new classes for class variables
             inpatient.setRoom(new Room());
-            inpatient.getRoom().setId(Integer.parseInt(inpatientsData.findElement(By.xpath("//td[7]")).getText()));
+            if(!inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[7]")).getText().isEmpty()){
+                inpatient.getRoom().setId(Integer.parseInt(inpatientsPage.inPatientsTableBody.
+                        findElement(By.xpath("//tr["+index+"]/td[7]")).getText()));
+            }
 
             //set new classes for class variables
             inpatient.setAppointment(new Appointment());
-            inpatient.getAppointment().setId(Integer.parseInt(inpatientsData.findElement(By.xpath("//td[8]")).getText()));
+            if(!inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[8]")).getText().isEmpty()){
+                inpatient.getAppointment().setId(Integer.parseInt(inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[8]")).getText()));
+            }
 
             //set new classes for class variables
             inpatient.setPatient(new Patient());
 
             //table cell has many patient detail. split data than assign to patient corresponding variables
-            String patientDetail = inpatientsData.findElement(By.xpath("//td[9]")).getText();
+            String patientDetail = inpatientsPage.inPatientsTableBody.findElement(By.xpath("//tr["+index+"]/td[9]")).getText();
             String[] patientSsnAndFullname = patientDetail.split(":");
             String patientSsn = patientSsnAndFullname[0];
             int i = patientSsnAndFullname[1].lastIndexOf(" ");
@@ -155,13 +165,13 @@ public class PhysicianUiStepDefs {
             case "Status":
                 Assert.assertTrue(inpatientsEditPage.status.isEnabled());
 //                JSUtils.clickElementByJS(inpatientsEditPage.room);
+//                page gives error without room
+                Select selectARoom = new Select(inpatientsEditPage.room);
+                selectARoom.selectByValue("28476");
+
                 Select selectStatus = new Select(inpatientsEditPage.status);
                 String oldStatus = selectStatus.getFirstSelectedOption().getText();
-                selectStatus.selectByIndex(0);
-                String newStatus = selectStatus.getFirstSelectedOption().getText();
-                if(oldStatus.equals(newStatus)){
-                    selectStatus.selectByIndex(1);
-                }
+                selectStatus.selectByVisibleText("STAYING");
                 break;
             case "Description":
                 Assert.assertTrue(inpatientsEditPage.description.isEnabled());
@@ -214,7 +224,7 @@ public class PhysicianUiStepDefs {
     public void userVerifiesIfTheInpatientCreateOrEditFormAreaHasChangedWith(String data, String value) {
 
         Driver.getDriver().navigate().refresh();
-        ReusableMethods.waitForVisibility(inpatientsPage.inPatientsTableBody,10);
+        ReusableMethods.waitForVisibility(inpatientsPage.inPatientsTableBody,20);
 
         switch (data){
             case "ID":
@@ -254,8 +264,8 @@ public class PhysicianUiStepDefs {
         Select selectStatus = new Select(inpatientsEditPage.status);
         List<WebElement> options = selectStatus.getOptions();
         List<String> optionValues = new ArrayList<>();
-        for(int i=0;i<options.size();i++){
-            optionValues.add(options.get(i).getText());
+        for (WebElement option : options) {
+            optionValues.add(option.getText());
         }
         Assert.assertTrue(optionValues.contains("UNAPPROVED"));
         Assert.assertTrue(optionValues.contains("DISCHARGED"));

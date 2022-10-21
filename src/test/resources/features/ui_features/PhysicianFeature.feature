@@ -1,4 +1,5 @@
-@husrev
+@US07-14
+  @Close
 Feature: Doctor view and edit inpatients
 
   Background: User sign in as doctor
@@ -16,9 +17,6 @@ Feature: Doctor view and edit inpatients
     When user clicks on mypages
     And user clicks on myinpatients button
     Then user verifies that a table header exist with given data "<data>"
-    And User clicks on account drop-down-menu button
-    And user click on sign out
-#    And user close the application
     Examples:
       | data |
       |   ID   |
@@ -35,27 +33,23 @@ Feature: Doctor view and edit inpatients
   Scenario Outline: user edits inpatients
     When user clicks on mypages
     And user clicks on myinpatients button
-#    And user gets inpatient data before changing data
     And user clicks on inpatient edit button
     And user sets inpatient "<data>" with "<value>"
     And user clicks on save button
     Then user verifies inpatient is updated message
     And user gets inpatient data after changing data
     Then user verifies if the inpatient create or edit form "<data>" area has changed with "<value>"
-    And User clicks on account drop-down-menu button
-    And user click on sign out
-    And user close the application
     Examples:
       | data | value|
-#      |   ID   | 987321   |
-#      |  Start Date    |15/11/2022 12:12|
-#      |  End Date    | 16/11/2022 11:11 |
-#      |  Status    | STAYING   |
-      |  Description    | description is changed by automated script 002|
-#      |  Created Date    | 14/11/2022 10:10|
-#      |  Room    |  31712      |
-#      |  Appointment    | 279463 |
-#      |  Patient    | 277764    |
+      |   ID   | 987321   |
+      |  Start Date    |15/11/2022 12:12|
+      |  End Date    | 16/11/2022 11:11 |
+      |  Status    | STAYING   |
+      |  Description    | description is changed by automated script|
+      |  Created Date    | 14/11/2022 10:10|
+      |  Room    |  31712      |
+      |  Appointment    | 279463 |
+      |  Patient    | 277764    |
 
   @US14_TC02_2
   Scenario: status can be UNAPPROVED, DISCHARGED, STAYING or CANCELLED
