@@ -7,9 +7,9 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class HomeAndSigninNewPage {
+public class HomeAndSigninPage {
 
-    public HomeAndSigninNewPage(){
+    public HomeAndSigninPage(){
         PageFactory.initElements(Driver.getDriver(),this);}
 
    // @FindBy(xpath = "(/a[@class='appointment-btn scrollto']")
@@ -118,6 +118,16 @@ public class HomeAndSigninNewPage {
     public WebElement signInText;
     @FindBy(partialLinkText = "Password")
     public WebElement passwordDropdown;
+    @FindBy(xpath = "//span[text()='Settings']")
+    public WebElement settingsButton;
+    @FindBy(xpath = "//input[@name='firstName']")
+    public WebElement firstnameSettings;
+    @FindBy(xpath = "//input[@name='lastName']")
+    public WebElement lastnameSettings;
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement emailSettings;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement saveButtonSettings;
 }
 
 

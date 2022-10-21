@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import pages.admin.AdminPatientPage;
 import pages.AppointmentEditCreatePage;
 import pages.AppointmentPage;
-import pages.HomeAndSigninNewPage;
+import pages.HomeAndSigninPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -18,7 +18,7 @@ public class Acar_CreateOrEditPatientStepDefs {
 
     AdminPatientPage adminPatientPage=new AdminPatientPage();
     Faker faker=new Faker();
-    HomeAndSigninNewPage homeAndSigninPage=new HomeAndSigninNewPage();
+    HomeAndSigninPage homeAndSigninPage=new HomeAndSigninPage();
 
     AppointmentPage appointmentPage=new AppointmentPage();
 

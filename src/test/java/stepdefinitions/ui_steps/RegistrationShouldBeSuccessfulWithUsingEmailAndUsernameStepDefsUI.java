@@ -4,7 +4,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.HomeAndSigninNewPage;
+import pages.HomeAndSigninPage;
 import pages.RegistrationPage;
 import pojos.Registrant;
 import utilities.ConfigReader;
@@ -15,7 +15,7 @@ import static utilities.TXTWriter.saveUiRegistrantsData;
 
 public class RegistrationShouldBeSuccessfulWithUsingEmailAndUsernameStepDefsUI {
 
-    HomeAndSigninNewPage homePage=new HomeAndSigninNewPage();
+    HomeAndSigninPage homePage=new HomeAndSigninPage();
     RegistrationPage registrationPage=new RegistrationPage();
     Registrant registrant=new Registrant();
 

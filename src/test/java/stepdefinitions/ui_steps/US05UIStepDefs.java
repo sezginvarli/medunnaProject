@@ -8,13 +8,13 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import pages.HomeAndSigninNewPage;
+import pages.HomeAndSigninPage;
 import utilities.Driver;
 
 public class US05UIStepDefs {
 
 
-    HomeAndSigninNewPage homeAndSigninPage=new HomeAndSigninNewPage();
+    HomeAndSigninPage homeAndSigninPage=new HomeAndSigninPage();
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @Given("User go to the {string}")

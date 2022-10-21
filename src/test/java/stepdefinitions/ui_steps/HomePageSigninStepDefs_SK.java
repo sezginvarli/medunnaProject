@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.HomeAndSigninNewPage;
+import pages.HomeAndSigninPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -14,7 +14,7 @@ import static org.openqa.selenium.Keys.TAB;
 
 public class HomePageSigninStepDefs_SK {
 
-    HomeAndSigninNewPage homeAndSigninPage = new HomeAndSigninNewPage();
+    HomeAndSigninPage homeAndSigninPage = new HomeAndSigninPage();
 
     @Given("User clicks on account drop-down-menu button")
     public void user_clicks_on_account_drop_down_menu_button() {

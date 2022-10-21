@@ -3,13 +3,13 @@ package stepdefinitions.ui_steps;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import pages.HomeAndSigninNewPage;
+import pages.HomeAndSigninPage;
 import pages.RegistrationPage;
 import pojos.PasswordChange;
 import utilities.ReusableMethods;
 
 public class PasswordSegmentOnHomepageShouldEditableStepDefs {
-    HomeAndSigninNewPage homeAndSigninPage = new HomeAndSigninNewPage();
+    HomeAndSigninPage homeAndSigninPage = new HomeAndSigninPage();
     RegistrationPage registrationPage=new RegistrationPage();
     Faker faker=new Faker();
     PasswordChange passwordChange=new PasswordChange();
