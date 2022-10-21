@@ -30,5 +30,19 @@ public class   Authentication {
 
         return json.getString("id_token");
     }
+    public static String generateTokenWithUsernamePassword(String username,String password) {
 
+        Map<String, Object> map = new HashMap<>();
+        map.put("username", username);
+        map.put("password", password);
+        map.put("rememberMe", "true");
+
+        String endPoint = "https://www.medunna.com/api/authenticate";
+
+        Response response1 = given().contentType(ContentType.JSON).body(map).when().post(endPoint);
+
+        JsonPath token = response1.jsonPath();
+
+        return token.getString("id_token");
+    }
 }

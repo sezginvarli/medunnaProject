@@ -1,6 +1,7 @@
 package stepdefinitions.db_steps;
 
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -38,4 +39,6 @@ public class MakeAnAppointmentDB_EEStepDefs {
     public void user_closes_the_database_connection() {
         DBUtils.closeConnection();
     }
+
+
 }
