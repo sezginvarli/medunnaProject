@@ -1,4 +1,6 @@
 @Signin
+@Close
+@AllFeatureUS18.02
 Feature: Test Physicians
 
   Background: Go to homepage
@@ -85,7 +87,7 @@ Feature: Test Physicians
         When Admin fill the required credentials except Phone
         Then Admin click on save button and should see "Phone number is required."
         When Admin fill the required credentials but;filled date outside of the stated dates
-        Then Admin click on save button and should see "Date must be between 10/20/1822 and 10/20/2002"
+        Then Admin click on save button and should see "Date must be between 10/21/1822 and 10/21/2002"
         Examples:user credentials
           | username | password |
           | Batch86  | Batch86+ |

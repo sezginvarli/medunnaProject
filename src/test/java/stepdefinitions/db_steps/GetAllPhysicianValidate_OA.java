@@ -25,7 +25,6 @@ public class GetAllPhysicianValidate_OA {
                     +"  "+"createdDate : "+rs.getObject(10)+" "+"userId : "+rs.getObject(11)+"  "+"countryId : "+rs.getObject(12)+"  "+"cStateId : "+rs.getObject(13)+"  "+
                     "createdBy : "+rs.getObject(14)+"  "+"lastModifiedBy : "+rs.getObject(15)+"  "+"lastModifiedDate : "+rs.getObject(16)+"  "+"speciality : "+rs.getObject(17)
                     +"  "+"examFee : "+rs.getObject(18));
-
         }
         System.out.println(DBUtils.getRowCount());
     }

@@ -53,8 +53,6 @@ public class AdminPhysicianPage {
     //*[@id="root"]/div/div/div[1]/div/div/div[1]
     @FindBy(xpath = "//*[text() = 'Created Date']")
     public WebElement createdDate;
-    @FindBy(xpath = "//*[text() = 'Kane']")
-    public WebElement firstNameKane;
     @FindBy(css = "[class = 'info jhi-item-count']")
     public WebElement totalPhysicianNumber;
     @FindBy(css = "//dt[. = 'SSN']")
@@ -85,6 +83,10 @@ public class AdminPhysicianPage {
     public WebElement selectByLineDelete(int lineNumber){
         WebElement selectByLineDelete = Driver.getDriver().findElement(By.xpath("(//div/a[@class = 'btn btn-danger btn-sm'])["+lineNumber+"]"));
         return selectByLineDelete;
+    }
+    public WebElement selectByFakerFirstName(String firstName){
+        WebElement selectByFakerFirstName = Driver.getDriver().findElement(By.xpath("//*[text() = '"+firstName+"']"));
+        return selectByFakerFirstName;
     }
 
 

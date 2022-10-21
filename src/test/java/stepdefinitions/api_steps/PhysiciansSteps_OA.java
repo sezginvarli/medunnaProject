@@ -37,8 +37,8 @@ public class PhysiciansSteps_OA {
     @Then("admin saves users data correspondent files to validate")
     public void admin_saves_users_data_correspondent_files_to_validate() {
         savePhysiciansData(physiciansApi);
-        String files = readFile(ConfigReader.getProperty("physicians_api_data"));
-        System.out.println(files.contains("Kay"));
+//        String files = readFile(ConfigReader.getProperty("physicians_api_data"));
+//        System.out.println(files.contains("Kay"));
         boolean flag = readFileElementExist(ConfigReader.getProperty("physicians_api_data"),"merve_mahir@gmail.com");
         System.out.println("yes there is merve_mahir@gmail.com exist: "+flag);
         Assert.assertTrue(flag);

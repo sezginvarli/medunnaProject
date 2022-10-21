@@ -42,7 +42,7 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     }
     @When("user click on back button")
     public void user_click_on_back_button() {
-        ReusableMethods.waitForVisibility(adminPhysicianPage.backButton,15);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.backButton,25);
         js.executeScript("arguments[0].click()",adminPhysicianPage.backButton);
         ReusableMethods.waitFor(2);
         adminPhysicianPage.selectByLineEdit(3).click();
@@ -51,9 +51,10 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     public void user_fill_the_required_credentials() {
         ReusableMethods.waitForVisibility(adminPhysicianPage.firstName,15);
         adminPhysicianPage.firstName.clear();
-        adminPhysicianPage.firstName.sendKeys("Joseph");
-        namePhysician = "Joseph";
-//        adminPhysicianPage.firstName.sendKeys(faker.name().firstName());
+//        adminPhysicianPage.firstName.sendKeys("Kane");
+        String firstName = faker.name().firstName();
+        adminPhysicianPage.firstName.sendKeys(firstName);
+        namePhysician = firstName;
         adminPhysicianPage.lastName.clear();
         adminPhysicianPage.lastName.sendKeys(faker.name().lastName());
         adminPhysicianPage.birthDate.clear();
@@ -95,7 +96,7 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
         ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,15);
         js.executeScript("arguments[0].click()",adminPhysicianPage.createdDate);
         ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,15);
-        assertTrue(adminPhysicianPage.firstNameKane.isDisplayed());
+        assertTrue(adminPhysicianPage.selectByFakerFirstName(namePhysician).isDisplayed());
     }
     @When("user click on save button and should see successfully edited message")
     public void user_click_on_save_button_and_should_see_successfully_edited_message() {
@@ -108,7 +109,7 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
         Driver.getDriver().navigate().refresh();
         ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,15);
         ReusableMethods.waitFor(2);
-        assertTrue(adminPhysicianPage.firstNameKane.isDisplayed());
+        assertTrue(adminPhysicianPage.selectByFakerFirstName(namePhysician).isDisplayed());
     }
     @When("user click on click on create physician button")
     public void user_click_on_click_on_create_physician_button() {
