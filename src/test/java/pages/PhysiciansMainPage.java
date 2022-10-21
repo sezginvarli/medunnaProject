@@ -56,11 +56,21 @@ public class PhysiciansMainPage {
     @FindBy(xpath = "//button[@class='btn btn-warning btn-sm']")
     public WebElement requestInpatientButton;
 
-    @FindBy(xpath = "//*[.='A new In Patient is created']")
+    @FindBy(xpath = "//*[starts-with(.,'A new In Patient is created')]")
     public WebElement newInPatientCreatedMessage;
 
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
     public WebElement myPatients;
+    @FindBy(xpath = "//*[.='InPatient request already done for this appointment']")
+    public WebElement inpatientAllReadyCreatedMessage;
+
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
+    public WebElement myAppointmentsButtonInMyPagesDropDown;
+
+    // After Every Test, Change the index..
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[3]")
+    public WebElement editButtonInMyAppointmentsPageWithChangingIndex;
+
 
     @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
     public WebElement myInPatients;
