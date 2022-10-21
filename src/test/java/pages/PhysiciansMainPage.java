@@ -37,7 +37,8 @@ public class PhysiciansMainPage {
     @FindBy(xpath = "(//a[@class='dropdown-item'])[5]")
     public WebElement physicianAccountPassword;
 
-    @FindBy(xpath = "(//a[@class='dropdown-item'])[6]")
+    //@FindBy(xpath = "//*[text()='Sign out']")
+    @FindBy(xpath = "//*[.='Sign out']")
     public WebElement physicianAccountSignOut;
 
     @FindBy(xpath = "(//a[starts-with(@href,'/appointment-update/')])[1]")
@@ -58,6 +59,8 @@ public class PhysiciansMainPage {
     @FindBy(xpath = "//*[starts-with(.,'A new In Patient is created')]")
     public WebElement newInPatientCreatedMessage;
 
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement myPatients;
     @FindBy(xpath = "//*[.='InPatient request already done for this appointment']")
     public WebElement inpatientAllReadyCreatedMessage;
 
@@ -69,6 +72,7 @@ public class PhysiciansMainPage {
     public WebElement editButtonInMyAppointmentsPageWithChangingIndex;
 
 
-
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")
+    public WebElement myInPatients;
 
 }

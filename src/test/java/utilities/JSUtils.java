@@ -105,5 +105,4 @@ public class JSUtils {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].style.border='" + borderStyle + "'", element);
     }
-
 }
