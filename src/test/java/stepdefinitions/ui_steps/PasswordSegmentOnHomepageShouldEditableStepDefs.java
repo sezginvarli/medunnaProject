@@ -3,13 +3,10 @@ package stepdefinitions.ui_steps;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import pages.HomeAndSigninPage;
 import pages.RegistrationPage;
 import pojos.PasswordChange;
 import utilities.ReusableMethods;
-
-import java.util.List;
 
 public class PasswordSegmentOnHomepageShouldEditableStepDefs {
     HomeAndSigninPage homeAndSigninPage = new HomeAndSigninPage();

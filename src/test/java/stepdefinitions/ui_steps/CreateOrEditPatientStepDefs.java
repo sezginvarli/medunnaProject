@@ -15,7 +15,6 @@ import utilities.ReusableMethods;
 
 
 
-
 public class CreateOrEditPatientStepDefs {
 
     AdminPatientPage adminPatientPage=new AdminPatientPage();
