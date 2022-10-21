@@ -1,5 +1,6 @@
 package utilities;
 
+import pojos.PasswordChange;
 import pojos.Appointment;
 import pojos.Registrant;
 
@@ -8,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Map;
+
 
 public class TXTWriter {
     public static void saveUiRegistrantsData(Registrant registrant){
@@ -50,6 +52,18 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
+    public static void savePasswordData(PasswordChange passwordChange){
+
+        try {
+            FileWriter fw=new FileWriter(ConfigReader.getProperty("password_data"),false);
+            BufferedWriter bw=new BufferedWriter(fw);
+            bw.append(passwordChange.toString()+"\n");
+            bw.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     public static void saveUiAppointmentData(Appointment appointment){
 
         try {
@@ -62,5 +76,6 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
+
 
 }
