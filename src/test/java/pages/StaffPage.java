@@ -17,24 +17,21 @@ public class StaffPage {
     public WebElement myPagesDropdown;
 
     // Search Patient Button (In Dropdown Menu)
-    @FindBy(xpath = "//*[@id='entity-menu']/div/a[1]")
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
     public WebElement searchPatientButton;
 
     // Patient Searching With SSN (Text Area)
     @FindBy(name = "ssn")
     public WebElement searchPatientWithSsn;
 
-    @FindBy(xpath = "(//a[starts-with(@href,'/patient-detail/')])[1]")
+    @FindBy(xpath = "(//a[@class='btn btn-info btn-sm'])[1]")
     public WebElement viewButtonAfterSearchingPatient;
 
-    @FindBy(xpath = "(//a[starts-with(@href,'/patient-update/')])[1]")
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
     public WebElement editButtonAfterSearchingPatientPage;
 
-    @FindBy(xpath = "(//a[starts-with(@href,'/patient-appointments/')])[1]")
+    @FindBy(xpath = "(//a[@class='btn btn-warning btn-sm'])[1]")
     public WebElement showAppointmentsButtonAfterSearchingPatientPage;
-
-    @FindBy(id = "patient-id")
-    public WebElement patientIdBox;
 
     @FindBy(id = "patient-firstName")
     public WebElement patientFirstNameBox;
@@ -78,21 +75,69 @@ public class StaffPage {
     @FindBy(xpath = "//*[.='A new Patient is created with identifier']")
     public WebElement newPatientCreatedMessage;
 
+    @FindBy(xpath = "//*[@id='app-view-container']")
+    public WebElement viewPortal;
 
+    @FindBy(id = "ssn")
+    public WebElement ssnInfoTitle;
 
+    @FindBy(id = "firstName")
+    public WebElement firstNameInfoTitle;
 
+    @FindBy(id = "lastName")
+    public WebElement lastNameInfoTitle;
 
+    @FindBy(id = "birthDate")
+    public WebElement birthDateInfoTitle;
 
+    @FindBy(id = "phone")
+    public WebElement phoneInfoTitle;
 
+    @FindBy(id = "email")
+    public WebElement emailInfoTitle;
 
+    @FindBy(id = "gender")
+    public WebElement genderInfoTitle;
 
+    @FindBy(id = "bloodGroup")
+    public WebElement bloodGroupInfoTitle;
 
+    @FindBy(id = "adress")
+    public WebElement adressInfoTitle;
 
+    @FindBy(id = "description")
+    public WebElement descriptionInfoTitle;
 
+    @FindBy(id = "description")
+    public WebElement createdDateInfoTitle;
 
+    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/dl/dt[12]/span")
+    public WebElement userInfoTitle;
 
+    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/dl/dt[13]/span")
+    public WebElement countryInfoTitle;
 
+    @FindBy(xpath = "//*[@id='app-view-container']/div/div/div/div/dl/dt[14]/span")
+    public WebElement stateCityInfoTitle;
 
+    @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
+    public WebElement showTestsButton;
+
+    @FindBy(xpath = "(//a[@class='btn btn-info btn-sm'])[1]")
+    public WebElement viewResultsButton;
+
+    @FindBy(xpath = "//input[@id='c-test-result-result']")
+    public WebElement testResultBox;
+
+    @FindBy(xpath = "//input[@id='c-test-result-description']")
+    public WebElement testResultDescriptionBox;
+
+    @FindBy(xpath = "//button[@id='save-entity']")
+    public WebElement testResultSaveButton;
+
+    @FindBy(xpath = "//*[starts-with(.,'A Test Result is updated')]")
+    //a[starts-with(@href, "mylink")]
+    public WebElement testResultUpdatedMessage;
 
 
 }
