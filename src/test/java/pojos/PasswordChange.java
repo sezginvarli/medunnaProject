@@ -1,12 +1,20 @@
 package pojos;
 
-public class PasswordChange {
-    String newPsw;
-    String currentPsw;
-    String confirmPsw;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-    public PasswordChange() {
-    }
+@JsonIgnoreProperties(ignoreUnknown = true)
+/*
+{
+  "currentPassword": "string",
+  "newPassword": "string"
+}
+ */
+public class PasswordChange {
+    private String newPsw;
+    private String currentPsw;
+
+//    public PasswordChange() {
+//    }
 
     public String getNewPsw() {
         return newPsw;
@@ -24,20 +32,12 @@ public class PasswordChange {
         this.currentPsw = currentPsw;
     }
 
-    public String getConfirmPsw() {
-        return confirmPsw;
-    }
-
-    public void setConfirmPsw(String confirmPsw) {
-        this.confirmPsw = confirmPsw;
-    }
 
     @Override
     public String toString() {
         return "PasswordChange{" +
-                "newPsw='" + newPsw + '\'' +
-                ", currentPsw='" + currentPsw + '\'' +
-                ", confirmPsw='" + confirmPsw + '\'' +
+                "currentPsw='" + currentPsw + '\'' +
+                ", newPsw='" + newPsw + '\'' +
                 '}';
     }
 }

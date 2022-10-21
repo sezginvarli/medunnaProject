@@ -18,6 +18,7 @@ public class RegistrationShouldBeSuccessfulWithUsingEmailAndUsernameStepDefsUI {
     HomeAndSigninPage homePage=new HomeAndSigninPage();
     RegistrationPage registrationPage=new RegistrationPage();
     Registrant registrant=new Registrant();
+    Actions actions=new Actions(Driver.getDriver());
 
     @Given("user goes to the url")
     public void user_goes_to_the_url() {
@@ -42,11 +43,13 @@ public class RegistrationShouldBeSuccessfulWithUsingEmailAndUsernameStepDefsUI {
 
     @Then("user verifies Registration Saved message")
     public void userVerifiesRegistrationSavedMessage() {
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(registrationPage.successMessageToastContainer.isDisplayed());
     }
     @Then("user clicks register button and saves the records")
     public void userClicksRegisterButtonAndSavesTheRecords() {
+        ReusableMethods.waitFor(2);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(2);
         registrationPage.registerButton2.click();
         saveUiRegistrantsData(registrant);
@@ -54,7 +57,6 @@ public class RegistrationShouldBeSuccessfulWithUsingEmailAndUsernameStepDefsUI {
 
     @Then("user hit the enter")
     public void userHitTheEnter() {
-        Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).perform();
     }
 
