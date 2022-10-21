@@ -2,8 +2,10 @@ package stepdefinitions.ui_steps;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.AppointmentRequestPage;
 import pages.PatientPage;
+import utilities.JSUtils;
 import utilities.ReusableMethods;
 
 import java.time.LocalDate;
@@ -12,6 +14,10 @@ public class AppointmentDateStepDefs {
     AppointmentRequestPage appoRequestPage = new AppointmentRequestPage();
     PatientPage patientPage = new PatientPage();
     String phoneNumber = "555-666-7744";
+
+    String day = "";
+    String month = "";
+    String year = "";
     @When("user clicks on make an appointment button")
     public void user_clicks_on_make_an_appointment_button() {
         ReusableMethods.waitForVisibility(patientPage.makeAnAppointmentButton,5);
@@ -26,10 +32,6 @@ public class AppointmentDateStepDefs {
 
         LocalDate date = LocalDate.now();
         System.out.println(date);
-
-        String day = "";
-        String month = "";
-        String year = "";
 
         switch (when){
             case "today":
@@ -166,4 +168,37 @@ public class AppointmentDateStepDefs {
             e.getStackTrace();
         }
     }
+
+    @And("user fills the form with date format MM dd yyyy")
+    public void userFillsTheFormWithDateFormatMMDdYyyy() {
+        ReusableMethods.waitForVisibility(appoRequestPage.appointmentDate,5);
+//        JSUtils.clickElementByJS(appoRequestPage.appointmentDate);
+        appoRequestPage.phone.sendKeys(phoneNumber);
+
+        day = "15";
+        month = "05";
+        year = "2022";
+
+        appoRequestPage.appointmentDate.click();
+        ReusableMethods.waitFor(1);
+        appoRequestPage.appointmentDate.sendKeys(month);
+        ReusableMethods.waitFor(1);
+        appoRequestPage.appointmentDate.sendKeys(day);
+        ReusableMethods.waitFor(1);
+        appoRequestPage.appointmentDate.sendKeys(year);
+    }
+
+    @Then("user verifies date value is changed correctly")
+    public void userVerifiesDateValueIsChangedCorrectly() {
+        ReusableMethods.waitFor(1);
+        String dateValue = appoRequestPage.appointmentDate.getAttribute("value");
+
+        System.out.println(dateValue);
+        System.out.println(day+month+year);
+
+        Assert.assertTrue(dateValue.contains(day));
+        Assert.assertTrue(dateValue.contains(month));
+        Assert.assertTrue(dateValue.contains(year));
+    }
+
 }

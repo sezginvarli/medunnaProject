@@ -42,3 +42,11 @@ Feature: Appointment date test
       | date |
       | yesterday  |
       | oneyearbefore  |
+
+  @US07_TC02
+  Scenario: User checks if date format is MM/dd/yyyy
+    When user clicks on mypages
+    And user clicks on make an appointment button
+    And user fills the form with date format MM dd yyyy
+    Then user verifies date value is changed correctly
+    And close the application
