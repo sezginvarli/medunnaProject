@@ -11,14 +11,10 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "C:/Users/Pc/IdeaProjects/medunnaProject/src/test/resources/features/api_features",
+        features = "./src/test/resources/features/ui_features",
         glue = {"stepdefinitions","hooks"},
-<<<<<<< HEAD:src/test/java/runners/UIRunner.java
         tags = "@US03",
-=======
-        tags = "@US_06_TC_03",
->>>>>>> main:src/test/java/runners/Runner.java
-        dryRun = false
+            dryRun = false
 
 )
 public class UIRunner {

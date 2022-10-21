@@ -12,7 +12,7 @@ import java.util.List;
 import static utilities.DBUtils.getColumnData;
 
 public class ValidateAppointmentsWithDBStepDefsMS {
-    String query ="SELECT * FROM appointment where physician_id";
+    String query ="SELECT * FROM appointment where physician_id=277681" ;
     @Given("user connect to applicants database")
     public void user_connect_to_applicants_database() throws SQLException {
         DBUtils.createConnection();
@@ -24,14 +24,14 @@ public class ValidateAppointmentsWithDBStepDefsMS {
     }
     @Then("user reads all of the patient's id, start date, end date from database")
     public void user_reads_all_of_the_patient_s_id_start_date_end_date_from_database() {
-        List<Object> actualList = getColumnData(query,"patient_id");
+        List<Object> actualList = getColumnData(query,"id");
         List<String> actualListString= new ArrayList<>();
 
         for (Object w:actualList) {
             actualListString.add(w.toString());
             System.out.println(w);
         }
-        Assert.assertTrue("There are no such ids",actualListString.contains("277681"));
+        Assert.assertTrue("There are no such ids",actualListString.contains("277935"));
     }
 
     @Then("user close the connection")

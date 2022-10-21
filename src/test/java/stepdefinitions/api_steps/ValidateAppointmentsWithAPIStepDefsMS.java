@@ -43,10 +43,10 @@ public class ValidateAppointmentsWithAPIStepDefsMS {
         appointment=obj.readValue(response.asString(),Appointment[].class);
 
     }
-    @Then("user validates users data")
-    public void user_validates_user_data() {
-    int id=15665;
-    Assert.assertEquals(id,appointment[0].getId());
+    @Then("user validates users data {int} {int}")
+    public void user_validates_users_data(int id, int index) {
+    //int id=16556;
+    Assert.assertEquals(id,appointment[index].getId());
     }
 }
 
