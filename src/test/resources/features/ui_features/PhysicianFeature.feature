@@ -1,3 +1,4 @@
+@husrev
 Feature: Doctor view and edit inpatients
 
   Background: User sign in as doctor
