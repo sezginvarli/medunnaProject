@@ -33,14 +33,28 @@ Feature: Test Physicians
     Then user clicks on second sign-in button
     When user click on physician from dropdown button
     And user click on click on create physician button
-    And user fill the required credentials
+    And user fill the required field credentials
     And user click on save button and should see successfully created message
     Then user refresh the page and click created date and in first place must see the created physician
     Examples:user credentials
       | username | password |
       | Batch86  | Batch86+ |
 
-    @US18.02_TC03
+  @US18.02_TC03
+  Scenario Outline:Admin doctor can delete a physician
+    And user enters a valid "<username>" username
+    And user clicks on password input box
+    And user enters a valid "<password>" password
+    Then user clicks on second sign-in button
+    When user click on physician from dropdown button
+    When Admin should click  "Delete" button which is created by admin
+    Then Admin should see deleted message
+    And when page is refreshed admin couldn't see the physician
+    Examples:user credentials
+      | username | password |
+      | Batch86  | Batch86+ |
+
+    @US18.02_TC04
     Scenario Outline:Admin doctor can view a physician
       And user enters a valid "<username>" username
       And user clicks on password input box
@@ -53,21 +67,6 @@ Feature: Test Physicians
       Examples:user credentials
         | username | password |
         | Batch86  | Batch86+ |
-
-
-      @US18.02_TC04
-      Scenario Outline:Admin doctor can delete a physician
-        And user enters a valid "<username>" username
-        And user clicks on password input box
-        And user enters a valid "<password>" password
-        Then user clicks on second sign-in button
-        When user click on physician from dropdown button
-        When Admin should click  "Delete" button which is created by admin
-        Then Admin should see deleted message
-        And when page is refreshed admin couldn't see the physician
-        Examples:user credentials
-          | username | password |
-          | Batch86  | Batch86+ |
 
       @US18.02_TC05
       Scenario Outline:Admin doctor can not create without obligate fields

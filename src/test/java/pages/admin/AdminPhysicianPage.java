@@ -1,5 +1,4 @@
 package pages.admin;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class AdminPhysicianPage {
+
     public AdminPhysicianPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -55,13 +55,13 @@ public class AdminPhysicianPage {
     public WebElement createdDate;
     @FindBy(css = "[class = 'info jhi-item-count']")
     public WebElement totalPhysicianNumber;
-    @FindBy(css = "//dt[. = 'SSN']")
+    @FindBy(xpath = "//dt[. = 'SSN']")
     public WebElement viewSSNPlace;
-    @FindBy(css = "//dt[. = 'First Name']")
+    @FindBy(xpath = "//dt[. = 'First Name']")
     public WebElement viewFirstNamePlace;
-    @FindBy(css = "//dt[. = 'Phone']")
+    @FindBy(xpath = "//dt[. = 'Phone']")
     public WebElement viewPhonePlace;
-    @FindBy(css = "//dt[. = 'Last Name']")
+    @FindBy(xpath = "//dt[. = 'Last Name']")
     public WebElement viewLastNamePlace;
     @FindBy(xpath = "//h2/b")
     public WebElement physicianIDinViewPage;
@@ -88,9 +88,12 @@ public class AdminPhysicianPage {
         WebElement selectByFakerFirstName = Driver.getDriver().findElement(By.xpath("//*[text() = '"+firstName+"']"));
         return selectByFakerFirstName;
     }
-
-
-
+    @FindBy(xpath = "//*[@id='entity-menu']/a/span")
+    public WebElement itemsAndTitlesButton;
+    @FindBy(xpath = "//span[.='Physician']")
+    public WebElement physicianButton;
+    @FindBy(xpath = "//span[.='Create a new Physician']")
+    public WebElement createanewphysicianButton;
 
 
 

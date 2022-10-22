@@ -112,9 +112,4 @@ public class AdminPatientPage {
     public WebElement confirmDeleteButton;
 
 
-
-
-
-
-
 }

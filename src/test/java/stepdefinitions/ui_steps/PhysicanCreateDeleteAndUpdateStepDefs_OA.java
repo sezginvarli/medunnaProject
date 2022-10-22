@@ -21,6 +21,7 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     String deletedId = "";
     String namePhysician = "";
+    String editedNamePhysician = "";
     AdminMainPage adminMainPage=new AdminMainPage();
     AdminPhysicianPage adminPhysicianPage=new AdminPhysicianPage();
     @Given("when user go to main page")
@@ -37,7 +38,7 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     }
     @When("user click on click on edit button")
     public void user_click_on_click_on_edit_button() {
-        ReusableMethods.waitForVisibility(adminPhysicianPage.visibilityOfId,40);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.visibilityOfId,60);
         adminPhysicianPage.selectByLineEdit(3).click();
     }
     @When("user click on back button")
@@ -79,40 +80,75 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
 //        actions.sendKeys(adminPhysicianPage.description,"All is Well").sendKeys(adminPhysicianPage.examFee,faker.number().digits(3))
 //                .build().perform();
         Select select3 = new Select(adminPhysicianPage.selectUserDropDown);
-        select3.selectByIndex(14);
+        select3.selectByIndex(6);
         Select select4 = new Select(adminPhysicianPage.countryDropDown);
         select4.selectByIndex(3);
+        ReusableMethods.waitFor(3);
+    }
+    @When("user fill the required field credentials")
+    public void user_fill_the_required_field_credentials() {
+        ReusableMethods.waitForVisibility(adminPhysicianPage.firstName,15);
+//        adminPhysicianPage.firstName.sendKeys("Kane");
+        String firstName = faker.name().firstName();
+        adminPhysicianPage.firstName.sendKeys(firstName);
+        namePhysician = editedNamePhysician;
+        adminPhysicianPage.lastName.sendKeys(faker.name().lastName());
+        adminPhysicianPage.birthDate.sendKeys("11.03.1990");
+        adminPhysicianPage.phone.sendKeys("147-587-5050");
+        adminPhysicianPage.address.sendKeys(faker.address().streetAddress());
+        adminPhysicianPage.description.sendKeys("Intern Doctor");
+        adminPhysicianPage.examFee.sendKeys(faker.number().digits(3));
+//        actions.sendKeys(adminPhysicianPage.firstName,faker.name().firstName()).sendKeys(adminPhysicianPage.lastName).
+//                sendKeys(adminPhysicianPage.birthDate,"11.03.1990").sendKeys(adminPhysicianPage.phone,"147-587-6060")
+//                .sendKeys(adminPhysicianPage.address,faker.address().streetName()).build().perform();
+        Select select = new Select(adminPhysicianPage.genderDropDown);
+        select.selectByVisibleText("MALE");
+        Select select1 = new Select(adminPhysicianPage.specialityDropDown);
+        select1.selectByIndex(4);
+        Select select2 = new Select(adminPhysicianPage.bloodGroupDropdown);
+        select2.selectByVisibleText("B+");
+        Select select3 = new Select(adminPhysicianPage.selectUserDropDown);
+        select3.selectByVisibleText("orhanadmin86_87:873-56-4332");
+        Select select4 = new Select(adminPhysicianPage.countryDropDown);
+        select4.selectByIndex(5);
         ReusableMethods.waitFor(3);
     }
     @When("user click on save button and should see successfully created message")
     public void user_click_on_save_button_and_should_see_successfully_created_message(){
         adminPhysicianPage.saveButton.click();
-        ReusableMethods.waitForVisibility(adminPhysicianPage.alert,5);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.alert,7);
         assertTrue(adminPhysicianPage.alert.isDisplayed());
     }
     @Then("user refresh the page and click created date and in first place must see the created physician")
     public void user_refresh_the_page_and_click_created_date_and_in_first_place_must_see_the_created_physician() {
-        Driver.getDriver().navigate().refresh();
-        ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,15);
+//        Driver.getDriver().navigate().refresh();
+//        ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,60);
         js.executeScript("arguments[0].click()",adminPhysicianPage.createdDate);
-        ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,15);
-        assertTrue(adminPhysicianPage.selectByFakerFirstName(namePhysician).isDisplayed());
+        ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,60);
+        ReusableMethods.waitFor(7);
+        System.out.println(editedNamePhysician);
+        assertTrue(adminPhysicianPage.selectByFakerFirstName(editedNamePhysician).isDisplayed());
     }
     @When("user click on save button and should see successfully edited message")
     public void user_click_on_save_button_and_should_see_successfully_edited_message() {
         js.executeScript("arguments[0].click()",adminPhysicianPage.saveButton);
-        ReusableMethods.waitForVisibility(adminPhysicianPage.alert,25);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.alert,30);
         assertTrue(adminPhysicianPage.alert.isDisplayed());
     }
     @Then("user refresh the page should see edited physician")
     public void user_refresh_the_page_should_see_edited_physician() {
         Driver.getDriver().navigate().refresh();
-        ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,15);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,60);
         ReusableMethods.waitFor(2);
         assertTrue(adminPhysicianPage.selectByFakerFirstName(namePhysician).isDisplayed());
     }
     @When("user click on click on create physician button")
     public void user_click_on_click_on_create_physician_button() {
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,50);
+        adminPhysicianPage.selectByLineEdit(2).click();
+        ReusableMethods.waitForVisibility(adminPhysicianPage.backButton,20);
+        js.executeScript("arguments[0].click();", adminPhysicianPage.backButton);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,30);
         adminPhysicianPage.createNewPhysician.click();
     }
     @When("Admin should see physican in page with scroll down")
@@ -125,7 +161,12 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     }
     @When("Admin click on random physician view button")
     public void admin_click_on_random_physician_view_button() {
+        js.executeScript("arguments[0].click()",adminPhysicianPage.selectByLineEdit(3));
+        ReusableMethods.waitForVisibility(adminPhysicianPage.backButton,10);
+        js.executeScript("arguments[0].click()",adminPhysicianPage.backButton);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,40);
         js.executeScript("arguments[0].click()",adminPhysicianPage.selectByLineView(2));
+        ReusableMethods.waitFor(5);
     }
     @Then("Page must include \"First Name,Last Name,Birth Date,Phone,User,Exam Fee etc…")
     public void page_must_include_first_name_last_name_birth_date_phone_user_exam_fee_etc() {
@@ -133,7 +174,13 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
         assertTrue(adminPhysicianPage.viewFirstNamePlace.isDisplayed());
         assertTrue(adminPhysicianPage.viewLastNamePlace.isDisplayed());
         assertTrue(adminPhysicianPage.viewPhonePlace.isDisplayed());
-        assertFalse(Driver.getDriver().findElement(By.xpath("//*[text() = 'Exam Fee']")).isDisplayed());
+        try {
+            assertFalse(Driver.getDriver().findElement(By.xpath("//*[text() = 'Exam Fee']")).isDisplayed());
+            ReusableMethods.waitFor(5);
+        }catch (Exception e) {
+            assertFalse(false);
+        }
+        ReusableMethods.waitFor(2);
     }
     @When("Admin should click  {string} button which is created by admin")
     public void admin_should_click_button_which_is_created_by_admin(String string) {

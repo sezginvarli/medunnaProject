@@ -14,9 +14,10 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt"
         },
         features = "./src/test/resources/features",
-        glue = {"stepdefinitions","hooks"},
+        glue = {"stepdefinitions"},
         tags = "@PhysiciansDB",
         dryRun = false
 )
 public class DBRunner {
 }
+//@US005_Api
