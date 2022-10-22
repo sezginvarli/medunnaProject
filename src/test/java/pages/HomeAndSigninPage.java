@@ -86,6 +86,7 @@ public class HomeAndSigninPage {
     public WebElement signInButton;
     @FindBy(xpath = "//span[text()='Patient29 patient']")
     public WebElement signInVerifyButton;
+
     @FindBy(id = "rememberMe")
     public WebElement rememberMeCheckBox;
     @FindBy(xpath = "//div[@class='alert alert-warning fade show']")

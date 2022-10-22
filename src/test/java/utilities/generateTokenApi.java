@@ -1,4 +1,5 @@
 package utilities;
+
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -6,19 +7,14 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import java.util.HashMap;
 import java.util.Map;
+
 import static io.restassured.RestAssured.given;
+
 public class generateTokenApi {
     public static String getToken(){
         RequestSpecification spec = new RequestSpecBuilder().setBaseUri("https://medunna.com").build();
         spec.pathParams("first" , "api", "second" , "authenticate");
-        //Set the expected data
-        /*
-        {
-  "password": "string",
-  "rememberMe": true,
-  "username": "string"
-}
-         */
+
         Map<String, Object> expectedData = new HashMap<>();
         expectedData.put("username", "Batch86");
         expectedData.put("password", "Batch86+");
