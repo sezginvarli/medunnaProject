@@ -10,7 +10,9 @@ import java.util.List;
 public class RegistrationPage {
 
     public RegistrationPage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
+
     }
 
     @FindBy(id = "ssn")
@@ -78,6 +80,18 @@ public class RegistrationPage {
 
     @FindBy(xpath= "(//input[@class='is-touched is-dirty av-valid form-control'])[5]")
     public WebElement validEmail;
+
+    @FindBy(xpath= "(//div[@class='invalid-feedback'])[1]")
+    public WebElement passwordIsRequiedText;
+
+    @FindBy(xpath= "//input[@class='is-touched is-dirty av-valid form-control']")
+    public WebElement passwordIsAtLeastFourCharText;
+
+    @FindBy(xpath= "//li[@style='background-color: rgb(255, 0, 0);']")
+    public WebElement passwordStrongLevel1;
+
+    @FindBy(xpath= "(//li[@style='background-color: rgb(0, 255, 0);'])[5]")
+    public WebElement passwordStrongestLevel;
     @FindBy(xpath = "//*[text()='Password for [']")
     public WebElement passwordText;
     @FindBy(xpath="//input[@name='currentPassword']")
@@ -98,5 +112,11 @@ public class RegistrationPage {
     public WebElement noConfirmError;
     @FindBy(xpath= "//*[text()='The password and its confirmation do not match!']")
     public WebElement confirmNotMatch;
+    @FindBy(xpath= "(//input[@class='is-touched is-dirty av-invalid is-invalid form-control'])[1]")
+    public WebElement anyError;
+    @FindBy(xpath= "//*[text()='The password and its confirmation do not match!']")
+    public List <WebElement> noConfirmNotMatch;
+    @FindBy(xpath= "//div[@class='invalid-feedback']")
+    public WebElement invalidFeedback;
 
 }

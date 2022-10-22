@@ -86,6 +86,7 @@ public class HomeAndSigninPage {
     public WebElement signInButton;
     @FindBy(xpath = "//span[text()='Patient29 patient']")
     public WebElement signInVerifyButton;
+
     @FindBy(id = "rememberMe")
     public WebElement rememberMeCheckBox;
     @FindBy(xpath = "//div[@class='alert alert-warning fade show']")
@@ -118,6 +119,8 @@ public class HomeAndSigninPage {
     public WebElement signInText;
     @FindBy(partialLinkText = "Password")
     public WebElement passwordDropdown;
+    @FindBy(partialLinkText = "SIGN IN AGAIN")
+    public WebElement signInAgain;
     @FindBy(xpath = "//span[text()='Settings']")
     public WebElement settingsButton;
     @FindBy(xpath = "//input[@name='firstName']")
@@ -129,5 +132,3 @@ public class HomeAndSigninPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement saveButtonSettings;
 }
-
-

@@ -72,7 +72,7 @@ public class PhysicianUiStepDefs {
     @And("user clicks on save button")
     public void userClicksOnSaveButton() {
         ReusableMethods.waitFor(1);
-
+        inpatientsEditPage.saveButton.click();
         JSUtils.clickElementByJS(inpatientsEditPage.saveButton);
         ReusableMethods.waitFor(3);
     }
@@ -82,7 +82,6 @@ public class PhysicianUiStepDefs {
         ReusableMethods.waitForVisibility(inpatientsEditPage.inpatientEditSuccessMessage,10);
         Assert.assertTrue(inpatientsEditPage.inpatientEditSuccessMessage.isDisplayed());
     }
-
     @And("user gets inpatient data after changing data")
     public void userGetsInpatientDataAfterChangingData() {
         inPatientAfterChange = getInpatientDetailsFromTable();
