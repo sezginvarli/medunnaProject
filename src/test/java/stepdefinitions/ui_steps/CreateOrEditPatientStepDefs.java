@@ -100,6 +100,7 @@ public class CreateOrEditPatientStepDefs {
     public void verify_the_items_titles_is_not_here() {
         ReusableMethods.waitFor(1);
         Assert.assertEquals(0, Driver.getDriver().findElements(By.xpath("//span[.='Items&Titles']")).size());
+        ReusableMethods.waitFor(1);
     }
     @Then("close the application")
     public void close_the_application() {
@@ -165,6 +166,7 @@ public class CreateOrEditPatientStepDefs {
         ReusableMethods.waitForVisibility(appointmentEditCreatePage.appointmentPhysicianArea,5);
         ReusableMethods.waitFor(2);
         Select select =new Select(appointmentEditCreatePage.appointmentPhysicianArea);
+        ReusableMethods.waitFor(2);
         select.selectByValue("277681");
     }
     @When("user selects {string} country")
