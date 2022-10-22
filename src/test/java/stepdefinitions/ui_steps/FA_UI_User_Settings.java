@@ -62,7 +62,7 @@ public class FA_UI_User_Settings {
         homeAndSigninPage.lastnameSettings.sendKeys(lastname);
         ReusableMethods.waitFor(2);
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        String lastnameText = js.executeScript("return document.getElementById('" + "firstName" + "').value").toString();
+        String lastnameText = js.executeScript("return document.getElementById('" + "lastName" + "').value").toString();
         Assert.assertEquals(lastname,lastnameText);
     }
 }
