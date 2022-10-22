@@ -37,8 +37,8 @@ public class ValidateAppointmentsWithAPIStepDefsMS {
         response.prettyPrint();
 
     }
-    @Given("user converts user records to Java")
-    public void user_converts_user_records_to_java() throws JsonProcessingException {
+    @Given("user converts user record to Java")
+    public void user_converts_user_record_to_java() throws JsonProcessingException {
         ObjectMapper obj=new ObjectMapper();
         appointment=obj.readValue(response.asString(),Appointment[].class);
 
