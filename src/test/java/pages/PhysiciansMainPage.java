@@ -68,7 +68,7 @@ public class PhysiciansMainPage {
     public WebElement myAppointmentsButtonInMyPagesDropDown;
 
     // After Every Test, Change the index..
-    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[3]")
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
     public WebElement editButtonInMyAppointmentsPageWithChangingIndex;
 
 

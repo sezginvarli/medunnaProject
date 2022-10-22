@@ -67,6 +67,7 @@ public class StaffStepDefs_MT {
 
     @And("user clicks on Edit button")
     public void userClicksOnEditButton() {
+        Driver.wait(5);
         ReusableMethods.waitForVisibility(staffPage.editButtonAfterSearchingPatientPage,3).click();
     }
 
@@ -203,10 +204,5 @@ public class StaffStepDefs_MT {
         String actualMessage = staffPage.testResultUpdatedMessage.getText();
         Assert.assertTrue(actualMessage.contains(updateMessage));
 
-    }
-
-    @And("user close the page")
-    public void userCloseThePage() {
-        Driver.closeDriver();
     }
 }
