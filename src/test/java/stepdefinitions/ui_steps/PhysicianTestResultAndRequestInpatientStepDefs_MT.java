@@ -53,8 +53,7 @@ public class PhysicianTestResultAndRequestInpatientStepDefs_MT {
 
     @And("user clicks on Request Inpatient button")
     public void userClicksOnRequestInpatientButton() {
-        Driver.wait(3);
-        physiciansMainPage.requestInpatientButton.click();
+        ReusableMethods.waitForClickablility(physiciansMainPage.requestInpatientButton,5).click();
     }
 
     @Then("Verify {string} pop up is display")
@@ -68,8 +67,7 @@ public class PhysicianTestResultAndRequestInpatientStepDefs_MT {
 
     @And("user clicks on the Edit button")
     public void userClicksOnTheEditButton() {
-        Driver.wait(5);
-        ReusableMethods.waitForVisibility(physiciansMainPage.editButtonInMyAppointmentsPageWithChangingIndex, 3).click();
+        ReusableMethods.waitForClickablility(physiciansMainPage.editButtonInMyAppointmentsPageWithChangingIndex, 10).click();
     }
 
 }

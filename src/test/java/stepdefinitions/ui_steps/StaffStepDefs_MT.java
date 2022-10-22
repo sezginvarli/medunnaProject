@@ -34,7 +34,7 @@ public class StaffStepDefs_MT {
 
     @When("user clicks on View button")
     public void user_clicks_on_view_button() {
-        ReusableMethods.waitForClickablility(staffPage.viewButtonAfterSearchingPatient,3).click();
+        ReusableMethods.waitForClickablility(staffPage.viewButtonAfterSearchingPatient,5).click();
     }
 
     @Then("Verify view portal is displayed")
@@ -68,7 +68,7 @@ public class StaffStepDefs_MT {
     @And("user clicks on Edit button")
     public void userClicksOnEditButton() {
         Driver.wait(5);
-        ReusableMethods.waitForVisibility(staffPage.editButtonAfterSearchingPatientPage,3).click();
+        ReusableMethods.waitForClickablility(staffPage.editButtonAfterSearchingPatientPage,10).click();
     }
 
     @And("user sends a new firstname")
@@ -165,18 +165,18 @@ public class StaffStepDefs_MT {
 
     @And("user clicks on Show Appointments button")
     public void userClicksOnShowAppointmentsButton() {
-        ReusableMethods.waitForClickablility(staffPage.showAppointmentsButtonAfterSearchingPatientPage,3).click();
+        ReusableMethods.waitForClickablility(staffPage.showAppointmentsButtonAfterSearchingPatientPage,5).click();
 
     }
 
     @And("user clicks on Show Tests button")
     public void userClicksOnShowTestsButton() {
-        ReusableMethods.waitForClickablility(staffPage.showTestsButton,3).click();
+        ReusableMethods.waitForClickablility(staffPage.showTestsButton,5).click();
     }
 
     @And("user clicks on View Results button")
     public void userClicksOnViewResultsButton() {
-        ReusableMethods.waitForClickablility(staffPage.viewResultsButton,3).click();
+        ReusableMethods.waitForClickablility(staffPage.viewResultsButton,5).click();
     }
 
     @And("user updates test result")
