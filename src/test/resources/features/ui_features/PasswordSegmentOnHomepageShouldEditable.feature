@@ -126,16 +126,3 @@ Feature:Password segment on Homepage should be editable
     Then user should see any error message
     Then user closes the browser
 
-
-
-
-
-
-
-
-
-
-
-
-
-

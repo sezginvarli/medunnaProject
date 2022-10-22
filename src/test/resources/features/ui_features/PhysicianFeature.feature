@@ -44,7 +44,7 @@ Feature: Doctor view and edit inpatients
     Then user verifies if the inpatient create or edit form "<data>" area has changed with "<value>"
     And User clicks on account drop-down-menu button
     And user click on sign out
-    And user close the application
+#    And user close the application
     Examples:
       | data | value|
 #      |   ID   | 987321   |
