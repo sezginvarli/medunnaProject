@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class JSUtils {
+
     //This method will takes two parameter: WebElement, and WebDriver
     //When you pass the element, JS will click on that element
 //    JSUtils.clickElementByJS(driver.findElement(By.id("submit-button")));
@@ -26,8 +27,8 @@ public class JSUtils {
     }
 
     //    Scroll al the way up of a page
-    public static void scrollAllUpByJS() {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+    public static void scrollAllUpByJS(){
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
     }
 
@@ -106,3 +107,4 @@ public class JSUtils {
         js.executeScript("arguments[0].style.border='" + borderStyle + "'", element);
     }
 }
+

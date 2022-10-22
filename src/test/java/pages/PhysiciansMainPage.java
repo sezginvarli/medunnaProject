@@ -24,8 +24,15 @@ public class PhysiciansMainPage {
     public WebElement myPages;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[1]")
     public WebElement dropdownElementMyAppointments;
-
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+    public WebElement myPatient;
+
+@FindBy(xpath="//*[@id='appointment-heading']")
+    public WebElement appointmentsPage;
+
+    @FindBy(xpath="//*[@id='patient-heading']")
+    public WebElement patientPage;
+
     public WebElement dropdownElementMyPatients;
 
     @FindBy(xpath = "(//a[@class='dropdown-item'])[3]")

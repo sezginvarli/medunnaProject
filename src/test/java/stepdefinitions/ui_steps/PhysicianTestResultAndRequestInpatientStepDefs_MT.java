@@ -67,6 +67,7 @@ public class PhysicianTestResultAndRequestInpatientStepDefs_MT {
 
     @And("user clicks on the Edit button")
     public void userClicksOnTheEditButton() {
+        Driver.wait(5);
         ReusableMethods.waitForClickablility(physiciansMainPage.editButtonInMyAppointmentsPageWithChangingIndex, 10).click();
     }
 
