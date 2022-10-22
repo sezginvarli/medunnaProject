@@ -18,4 +18,3 @@ import org.junit.runner.RunWith;
 )
 public class Runner {
 }
-//@US_008
