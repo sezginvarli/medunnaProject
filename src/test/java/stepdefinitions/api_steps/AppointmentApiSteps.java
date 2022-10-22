@@ -9,7 +9,6 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.Appointment;
 import pojos.AppointmentRequest;
-import pojos.Registrant;
 import utilities.ConfigReader;
 import utilities.TXTWriter;
 
@@ -52,8 +51,6 @@ public class AppointmentApiSteps {
     public void user_deserializes_the_application_data_to_java() throws JsonProcessingException {
         ObjectMapper obj=new ObjectMapper();
         appointment =obj.readValue(response.asString(), Appointment.class);
-        System.out.println(appointment.toString());
-        System.out.println(appointment.getPatient().toString());
 
         TXTWriter.saveUiAppointmentData(appointment);
     }

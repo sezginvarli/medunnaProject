@@ -42,6 +42,7 @@ Feature: Registration should be successful with email and username
     Examples: test data
       |username|
       |Brad123@|
+      |Brad+/12|
 
   @US002_TC05_UI
   Scenario Outline: TC05 valid email that contains "@."
