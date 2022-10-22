@@ -7,21 +7,23 @@ Feature:Password segment on Homepage should be editable
     When user enters their credentials for signIn and clicks
     Then user clicks on the Password section at the dropdown
     And user verifies Password for page
-@US_008_HP
-    Scenario:User can edit and change their password
-    Then user enter their current password as "erty"
-    And user enter their new password as "erty"
-    And user enter their confirmation password as "erty"
-    Then user clicks on the save button
-    And user verifies Password changed! pop-up
+  @US_008_HP
+  Scenario Outline: TC01 new password should be confirmed new
+    Given user enter their currentPassword "<currentPsw>"
+    And user enter their newPassword "<newPsw>"
     And user saves the password data
+    Then user verifies there is no any error message for confirmation
     Then user closes the browser
+    Examples: test data
+      |currentPsw|newPsw|
+      |e123      |e1234  |
   @US_008_TC01
   Scenario: TC01 new password should be confirmed
     Given user enter their current password as "erty"
     And user enter their new password as "eeeee"
     And user enter their confirmation password as "eeeee"
     Then user verifies there is no any error message for confirmation
+    Then user closes the browser
 
   @US_008_TC02
   Scenario: TC02 new password should be confirmed
@@ -29,6 +31,7 @@ Feature:Password segment on Homepage should be editable
     And user enter their new password as "eeeee"
     And user enter their confirmation password as "aaaaa"
     Then user verifies The password and its confirmation do not match! error message
+    Then user closes the browser
 
   @US_008_TC03
   Scenario Outline: There should be at least 1 lowercase char and see the level chart
@@ -106,7 +109,7 @@ Feature:Password segment on Homepage should be editable
     Then user closes the browser
     Examples: test data
       |newPassword1|newPassword2  |
-      |123@Wd      |123@Wd1       |
+      |123*Wd      |123*Wd1       |
       |abc1F!      |abc1F!6.k     |
 
   @US_008_TC09
@@ -114,6 +117,15 @@ Feature:Password segment on Homepage should be editable
     Given user enter their current password as "erty"
     When user enter their new password as "       "
     Then user should not see more than 1 bar
+    Then user closes the browser
+
+  @US_008_TC10
+  Scenario: password can not include space as a character
+    Given user enter their current password as "erty"
+    When user enter their new password as "asdf1 !H"
+    Then user should see any error message
+    Then user closes the browser
+
 
 
 

@@ -25,7 +25,7 @@ public class InpatientsCreateOrEditPage {
     public WebElement createdDate;
 
     @FindBy(xpath = "//select[@name='appointment.id']")
-    public WebElement appointmentId;
+    public WebElement appointment;
 
     @FindBy(xpath = "//select[@name='status']")
     public WebElement status;
@@ -38,4 +38,7 @@ public class InpatientsCreateOrEditPage {
 
     @FindBy(xpath = "//button[@id='save-entity']")
     public WebElement saveButton;
+
+    @FindBy(xpath = "//*[contains(text(),'The In Patient is updated')]")
+    public WebElement inpatientEditSuccessMessage;
 }
