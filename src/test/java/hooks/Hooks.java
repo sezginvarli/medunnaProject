@@ -22,6 +22,7 @@ public class Hooks {
     }
     @Before (order = 1,value = "@NewApplicant")
     public void navigateToRegistration(){
+
         Driver.getDriver().get(ConfigReader.getProperty("registration_page_url"));
     }
 
