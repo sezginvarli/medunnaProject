@@ -112,5 +112,11 @@ public class RegistrationPage {
     public WebElement noConfirmError;
     @FindBy(xpath= "//*[text()='The password and its confirmation do not match!']")
     public WebElement confirmNotMatch;
+    @FindBy(xpath= "(//input[@class='is-touched is-dirty av-invalid is-invalid form-control'])[1]")
+    public WebElement anyError;
+    @FindBy(xpath= "//*[text()='The password and its confirmation do not match!']")
+    public List <WebElement> noConfirmNotMatch;
+    @FindBy(xpath= "//div[@class='invalid-feedback']")
+    public WebElement invalidFeedback;
 
 }

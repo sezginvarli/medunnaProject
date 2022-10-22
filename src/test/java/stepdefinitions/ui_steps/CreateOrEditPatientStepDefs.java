@@ -13,11 +13,9 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.io.IOException;
-import java.util.List;
 
 
-public class Acar_CreateOrEditPatientStepDefs {
+public class CreateOrEditPatientStepDefs {
 
     AdminPatientPage adminPatientPage=new AdminPatientPage();
     Faker faker=new Faker();
@@ -102,6 +100,7 @@ public class Acar_CreateOrEditPatientStepDefs {
     public void verify_the_items_titles_is_not_here() {
         ReusableMethods.waitFor(1);
         Assert.assertEquals(0, Driver.getDriver().findElements(By.xpath("//span[.='Items&Titles']")).size());
+        ReusableMethods.waitFor(1);
     }
     @Then("close the application")
     public void close_the_application() {
@@ -167,6 +166,38 @@ public class Acar_CreateOrEditPatientStepDefs {
         ReusableMethods.waitForVisibility(appointmentEditCreatePage.appointmentPhysicianArea,5);
         ReusableMethods.waitFor(2);
         Select select =new Select(appointmentEditCreatePage.appointmentPhysicianArea);
+        ReusableMethods.waitFor(2);
         select.selectByValue("277681");
     }
+    @When("user selects {string} country")
+    public void user_selects_country(String country) {
+        ReusableMethods.waitFor(1);
+        Select select=new Select(adminPatientPage.countryDropDown);
+        select.selectByVisibleText(country);
+    }
+    @When("user selects {string} state")
+    public void user_selects_state(String state) {
+        ReusableMethods.waitFor(1);
+        Select select=new Select(adminPatientPage.stateCityDropDown);
+        ReusableMethods.waitFor(1);
+        if (!state.equals("California")){
+            select.selectByVisibleText(state);
+        }
+
+    }
+    @When("click on ID button for order")
+    public void click_on_id_button_for_order() {
+        ReusableMethods.waitForClickablility(adminPatientPage.ID,5).click();
+    }
+    @When("user clicks on delete button")
+    public void user_clicks_on_delete_button() {
+        ReusableMethods.waitFor(3);
+        adminPatientPage.firstDeleteButton.click();
+    }
+    @When("user clicks on confirm delete button")
+    public void user_clicks_on_confirm_delete_button() {
+        ReusableMethods.waitFor(3);
+        ReusableMethods.waitForClickablility(adminPatientPage.confirmDeleteButton,5).click();
+    }
+
 }
