@@ -5,16 +5,17 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.admin.AdminPhysicianPage;
+import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
 
 public class PhysiciansSVStepDefinitions {
     AdminPhysicianPage adminPhysicianPage = new AdminPhysicianPage();
     Faker faker;
-    Select select;
-
+    Actions actions;
 
     @Then("user clicks on Items and Titles button")
     public void user_clicks_on_items_and_titles_button() throws InterruptedException {
@@ -50,9 +51,11 @@ public class PhysiciansSVStepDefinitions {
     }
 
     @Then("user views an existing registered person")
-    public void user_views_an_existing_registered_person() {
-        String expectedExistingSSN = "User found with search SSN";
-        Assert.assertEquals(expectedExistingSSN, adminPhysicianPage.existingSSN.getText());
+    public void verify_the_appointment_is_updated_successfully() {
+
+        String appointmentEditSuccessMessage = Driver.waitForVisibility(adminPhysicianPage.toastifyAllert, 3).getText();
+        Assert.assertTrue(appointmentEditSuccessMessage.contains("User found with search SSN"));
+
     }
 
     @Then("user verifies First Name box is populated")
@@ -75,71 +78,50 @@ public class PhysiciansSVStepDefinitions {
         adminPhysicianPage.phoneBox.isDisplayed();
     }
 
-    @Given("user clicks on specialty dropdown menu")
+    @Given("user selects specialty dropdown menu")
     public void user_clicks_on_specialty_dropdown_menu() {
-        adminPhysicianPage.specialityDropdownButton.click();
-    }
-
-    @When("users selects specialty")
-    public void users_selects_specialty() {
-        adminPhysicianPage.specialityDropdownButton.click();
+        Select select = new Select(adminPhysicianPage.specialityDropdownButton);
         select.selectByValue("FAMILY_MEDICINE");
+
     }
 
     @Then("user verifies specialty is provided")
     public void user_verifies_specialty_is_provided() {
-        adminPhysicianPage.specialityDropdownButton.isSelected();
+
     }
 
     @Given("user clicks on Choose File button")
     public void user_clicks_on_choose_file_button() {
-        adminPhysicianPage.chooseFileButton.click();
+        //  JSUtils.clickElementByJS(adminPhysicianPage.chooseFileButton);
     }
 
-    @Then("user verifies folder is opened")
-    public void user_verifies_folder_is_opened() {
-
-    }
 
     @When("user selects a picture of doctor")
     public void user_selects_a_picture_of_doctor() {
+        String filePath = "C:\\Users\\win10\\Untitled.png";
+        adminPhysicianPage.chooseFileButton.sendKeys(filePath);
 
     }
 
-    @When("user clicks open button on folder")
-    public void user_clicks_open_button_on_folder() {
-
+    @Then("user verifies picture of doctor is loaded")
+    public void user_verifies_picture_of_doctor_is_loaded() {
+        adminPhysicianPage.imageCheck.isDisplayed();
     }
 
-//    @Then("user verifies picture of doctor is loaded")
-//    public void user_verifies_picture_of_doctor_is_loaded() {
-//        adminPhysicianPage.image.isDisplayed();
-//    }
-//
-//    @Given("user clicks on User dropdown menu")
-//    public void user_clicks_on_user_dropdown_menu() {
-//        adminPhysicianPage.userDropdownButton.click();
-//    }
-//
-//    @Given("user provides a valid {string}")
-//    public void user_provides_a_valid(String string) {
-//        adminPhysicianPage.examFeeButton.sendKeys(string);
-//    }
-//
-//    @Then("user verifies exam fee is provided")
-//    public void user_verifies_exam_fee_is_provided() {
-//        Assert.assertTrue(adminPhysicianPage.examFeeButton.getText().length() != 0);
-//    }
-//
-//    @When("user chooses an existing user")
-//    public void user_chooses_an_existing_user() {
-//        select.selectByVisibleText(faker.random().toString());
-//    }
-//
-//    @Then("user verifies an existing user is choosed")
-//    public void user_verifies_an_existing_user_is_choosed() {
-//        adminPhysicianPage.userDropdownButton.isSelected();
-//    }
 
+    @Given("user provides a valid {string}")
+    public void user_provides_a_valid(String exam_fee) {
+        adminPhysicianPage.examFee.sendKeys(exam_fee);
+        Driver.wait(2);
+
+        String actualExamfee = adminPhysicianPage.examFee.getAttribute("value");
+        Assert.assertEquals(exam_fee, actualExamfee);
+    }
+
+    @Then("user saves the records")
+    public void user_saves_the_records() {
+       JSUtils.clickElementByJS(adminPhysicianPage.saveButton);
+
+    }
 
 }

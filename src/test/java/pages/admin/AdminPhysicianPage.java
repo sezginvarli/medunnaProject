@@ -29,7 +29,7 @@ public class AdminPhysicianPage {
     @FindBy(xpath = "//button[text()=\"Search User\"]")
     public WebElement searchUserButton;
 
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//div[@class='Toastify']")
     public WebElement existingSSN;
 
     @FindBy(id = "physician-firstName")
@@ -50,5 +50,18 @@ public class AdminPhysicianPage {
     @FindBy(xpath = "//input[@id='file_image']")
     public WebElement chooseFileButton;
 
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+    public WebElement toastifyAllert;
 
+    @FindBy(xpath = "//select[@id='physician-speciality']")
+    public WebElement specialtyButton;
+
+    @FindBy(xpath = "//button[@class='btn btn-danger']")
+    public WebElement imageCheck;
+
+    @FindBy(xpath = "//input[@name='examFee']")
+    public WebElement examFee;
+
+    @FindBy(xpath = "//button[@id='save-entity']")
+    public WebElement saveButton;
 }

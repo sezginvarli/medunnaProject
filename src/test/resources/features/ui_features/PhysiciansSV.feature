@@ -1,4 +1,4 @@
-@Signin @CreateorEditPhysiciansByAdmin
+@Signin
 Feature: Create Or Edit Physicians By Admin
 
   Background:
@@ -21,64 +21,13 @@ Feature: Create Or Edit Physicians By Admin
     And user verifies Last Name box is populated
     And user verifies birthDate box is populated
     And user verifies Phone box is populated
-#    When user clicks on specialty dropdown menu
-#    And users selects specialty
-#    Then user verifies specialty is provided
-#    When user closes the browser
-#    And user clicks on Choose File button
-#    Then user verifies folder is opened
-#    When user selects a picture of doctor
-#    And user clicks open button on folder
-#    Then user verifies picture of doctor is loaded
-#    When user provides a valid "<exam fee>"
-#    Then user verifies exam fee is provided
-#    When user clicks on User dropdown menu
-#    And user chooses an existing user
-#    Then user verifies an existing user is choosed
+    When user selects specialty dropdown menu
+    And user clicks on Choose File button
+    And user selects a picture of doctor
+    Then user verifies picture of doctor is loaded
+    When user provides a valid "<exam_fee>"
+    When user saves the records
 
-  #  And user sign out
     Examples:
-      | username | password | ssn         |exam fee|
-      | Batch86  | Batch86+ | 678-78-1001 |100.00  |
-
-#  @US18.01_TC02
-#  Scenario Outline:test populated areas
-#    Given user clicks on Use Search button
-#    When user provides valid "<ssn>" id in SSN box
-#    And user clicks Search User Button
-#
-#    Examples:
-#      | ssn         |
-#      | 555-55-9874 |
-
-#  @US18.01_TC03
-#  Scenario:test doctor specialty
-#    Given user clicks on specialty dropdown menu
-#    When users selects specialty
-#    Then user verifies specialty is provided
-#    And user closes the browser
-
-#  @US18.01_TC04
-#  Scenario:test picture is loaded
-#    Given user clicks on Choose File button
-#    Then user verifies folder is opened
-#    When user selects a picture of doctor
-#    And user clicks open button on folder
-#    Then user verifies picture of doctor is loaded
-#    And user closes the browser
-
-#  @US18.01_TC05
-#  Scenario Outline:test exam fee
-#    Given user provides a valid "<exam fee>"
-#    Then user verifies exam fee is provided
-#    And user closes the browser
-#    Examples:
-#      | exam fee |
-#      | 100      |
-#
-#  @US18.01_TC06
-#  Scenario:test choose a doctor among existing users
-#    Given user clicks on User dropdown menu
-#    When user chooses an existing user
-#    Then user verifies an existing user is choosed
-#    And user closes the browser
+      | username | password | ssn         | exam_fee |
+      | Batch86  | Batch86+ | 678-78-1001 | 100      |
