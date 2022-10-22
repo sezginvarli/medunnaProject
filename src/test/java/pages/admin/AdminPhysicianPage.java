@@ -36,6 +36,8 @@ public class AdminPhysicianPage {
     public WebElement fileImageUpload;
     @FindBy(css = "[name = 'examFee']")
     public WebElement examFee;
+    @FindBy(xpath = "(//div[@class = 'invalid-feedback'])[1]")
+    public WebElement dateErrorMessage;
     @FindBy(css = "[name = 'user.id']")
     public WebElement selectUserDropDown;
     @FindBy(css = "[name = 'country.id']")
@@ -53,6 +55,8 @@ public class AdminPhysicianPage {
     //*[@id="root"]/div/div/div[1]/div/div/div[1]
     @FindBy(xpath = "//*[text() = 'Created Date']")
     public WebElement createdDate;
+    @FindBy(xpath = "(//td/a)[1]")
+    public WebElement deleteFirstElementByCreatedBy;
     @FindBy(css = "[class = 'info jhi-item-count']")
     public WebElement totalPhysicianNumber;
     @FindBy(xpath = "//dt[. = 'SSN']")

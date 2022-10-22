@@ -13,11 +13,11 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "./src/test/resources/features",
+        features = "./src/test/resources/features/db_features",
         glue = {"stepdefinitions"},
         tags = "@PhysiciansDB",
         dryRun = false
 )
 public class DBRunner {
 }
-//@US005_Api
+//@US_009DB

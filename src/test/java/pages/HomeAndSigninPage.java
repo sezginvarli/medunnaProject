@@ -119,6 +119,8 @@ public class HomeAndSigninPage {
     public WebElement signInText;
     @FindBy(partialLinkText = "Password")
     public WebElement passwordDropdown;
+    @FindBy(partialLinkText = "SIGN IN AGAIN")
+    public WebElement signInAgain;
     @FindBy(xpath = "//span[text()='Settings']")
     public WebElement settingsButton;
     @FindBy(xpath = "//input[@name='firstName']")
@@ -130,5 +132,3 @@ public class HomeAndSigninPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement saveButtonSettings;
 }
-
-

@@ -204,7 +204,6 @@ public class StaffStepDefs_MT {
         Assert.assertTrue(actualMessage.contains(updateMessage));
 
     }
-
 //    @And("user close the page")
 //    public void userCloseThePage() {
 //        Driver.closeDriver();

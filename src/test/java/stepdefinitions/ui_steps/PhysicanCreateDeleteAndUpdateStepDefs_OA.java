@@ -19,9 +19,10 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     Faker faker = new Faker();
     Actions actions=new Actions(Driver.getDriver());
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-    String deletedId = "";
+    String deletedPhysicianID = "";
     String namePhysician = "";
     String editedNamePhysician = "";
+    String getDeletedPhysicianMessage = "";
     AdminMainPage adminMainPage=new AdminMainPage();
     AdminPhysicianPage adminPhysicianPage=new AdminPhysicianPage();
     @Given("when user go to main page")
@@ -91,7 +92,7 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
 //        adminPhysicianPage.firstName.sendKeys("Kane");
         String firstName = faker.name().firstName();
         adminPhysicianPage.firstName.sendKeys(firstName);
-        namePhysician = editedNamePhysician;
+        editedNamePhysician = firstName;
         adminPhysicianPage.lastName.sendKeys(faker.name().lastName());
         adminPhysicianPage.birthDate.sendKeys("11.03.1990");
         adminPhysicianPage.phone.sendKeys("147-587-5050");
@@ -121,10 +122,11 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     }
     @Then("user refresh the page and click created date and in first place must see the created physician")
     public void user_refresh_the_page_and_click_created_date_and_in_first_place_must_see_the_created_physician() {
-//        Driver.getDriver().navigate().refresh();
-//        ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,60);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,60);
         js.executeScript("arguments[0].click()",adminPhysicianPage.createdDate);
-        ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,60);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,60);
+        Driver.getDriver().navigate().refresh();
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,60);
         ReusableMethods.waitFor(7);
         System.out.println(editedNamePhysician);
         assertTrue(adminPhysicianPage.selectByFakerFirstName(editedNamePhysician).isDisplayed());
@@ -139,7 +141,7 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
     public void user_refresh_the_page_should_see_edited_physician() {
         Driver.getDriver().navigate().refresh();
         ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,60);
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
         assertTrue(adminPhysicianPage.selectByFakerFirstName(namePhysician).isDisplayed());
     }
     @When("user click on click on create physician button")
@@ -187,23 +189,28 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
         ReusableMethods.waitForVisibility(adminPhysicianPage.createdDate,20);
         ReusableMethods.waitFor(1);
         adminPhysicianPage.createdDate.click();
-        ReusableMethods.waitForVisibility(adminPhysicianPage.selectByLineDelete(1),15);
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,60);
+        ReusableMethods.waitFor(2);
+        Driver.getDriver().navigate().refresh();
+        ReusableMethods.waitForVisibility(adminPhysicianPage.totalPhysicianNumber,60);
         ReusableMethods.waitFor(5);
-        deletedId = Driver.getDriver().findElement(By.xpath("(//*[@class = 'btn btn-link btn-sm'])[1]")).getText();
+        deletedPhysicianID = adminPhysicianPage.deleteFirstElementByCreatedBy.getText();
         adminPhysicianPage.selectByLineDelete(1).click();
         ReusableMethods.waitFor(2);
         adminPhysicianPage.deleteConfirmButton.click();
+        ReusableMethods.waitFor(2);
+        getDeletedPhysicianMessage = adminPhysicianPage.alert.getText();
+
     }
     @Then("Admin should see deleted message")
     public void admin_should_see_deleted_message() {
-        System.out.println(deletedId);
-        ReusableMethods.waitFor(2);
-        assertTrue(adminPhysicianPage.alert.isDisplayed());
+        ReusableMethods.waitFor(3);
+        assertEquals(getDeletedPhysicianMessage,"A Physician is deleted with identifier "+deletedPhysicianID);
     }
     @Then("when page is refreshed admin couldn't see the physician")
     public void when_page_is_refreshed_admin_couldn_t_see_the_physician() {
         try {
-            assertTrue(Driver.getDriver().findElement(By.xpath("//*[text() = '"+deletedId+"']")).isDisplayed());
+            assertTrue(Driver.getDriver().findElement(By.xpath("//*[text() = '"+deletedPhysicianID+"']")).isDisplayed());
         }catch (Exception e){
             assertFalse(false);
         }
@@ -230,6 +237,12 @@ public class PhysicanCreateDeleteAndUpdateStepDefs_OA {
         js.executeScript("arguments[0].click()",adminPhysicianPage.saveButton);
         ReusableMethods.waitFor(2);
         assertTrue(Driver.getDriver().findElement(By.xpath("//*[text() = '"+string+"']")).isDisplayed());
+    }
+    @Then("Admin click on save button and should see date error message")
+    public void admin_click_on_save_button_and_should_see_date_error_message() {
+        js.executeScript("arguments[0].click()",adminPhysicianPage.saveButton);
+        ReusableMethods.waitFor(2);
+        assertTrue(Driver.getDriver().findElement(By.xpath("//*[text() = '"+adminPhysicianPage.dateErrorMessage.getText()+"']")).isDisplayed());
     }
     @When("Admin fill the required credentials except Last Name")
     public void admin_fill_the_required_credentials_except_last_name() {
