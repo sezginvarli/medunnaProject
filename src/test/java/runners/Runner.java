@@ -11,11 +11,11 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "./src/test/resources/features/ui_features",
+        features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-        tags = "@US03",
+        tags = "@US10",
             dryRun = false
 
 )
-public class UIRunner {
+public class Runner {
 }
