@@ -30,4 +30,4 @@ Feature: Physiacian Features
     Examples:
       | username   | password | name       | Anamnesis           | Treatment     | Diagnosis | prescription | description          |
       | alimeCann  | aliCan86 | alime cann | knee pain,dorsalgia | ASA           | RA        | Aspirin      | call back next month |
-     | doctorurfa5 | 123urfa | DOCTORURFA1 | cough               | Acetylsistein | URTI      |              |                      |
+    | doctorurfa5 | 123urfa | DOCTORURFA1 | cough               | Acetylsistein | URTI      |              |                      |
