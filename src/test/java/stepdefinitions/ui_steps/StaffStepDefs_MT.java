@@ -19,7 +19,7 @@ public class StaffStepDefs_MT {
 
     HomeAndSigninPage homeAndSigninPage = new HomeAndSigninPage();
     StaffPage staffPage = new StaffPage();
-    Registrant registrant=new Registrant();
+    Registrant registrant = new Registrant();
     Faker faker = new Faker();
 
     @When("user clicks on Search Patient button")
@@ -34,7 +34,7 @@ public class StaffStepDefs_MT {
 
     @When("user clicks on View button")
     public void user_clicks_on_view_button() {
-        ReusableMethods.waitForClickablility(staffPage.viewButtonAfterSearchingPatient,3).click();
+        ReusableMethods.waitForClickablility(staffPage.viewButtonAfterSearchingPatient, 3).click();
     }
 
     @Then("Verify view portal is displayed")
@@ -67,12 +67,12 @@ public class StaffStepDefs_MT {
 
     @And("user clicks on Edit button")
     public void userClicksOnEditButton() {
-        ReusableMethods.waitForVisibility(staffPage.editButtonAfterSearchingPatientPage,3).click();
+        ReusableMethods.waitForVisibility(staffPage.editButtonAfterSearchingPatientPage, 3).click();
     }
 
     @And("user sends a new firstname")
     public void userSendsANewFirstname() {
-        ReusableMethods.waitForVisibility(staffPage.patientFirstNameBox,1).clear();
+        ReusableMethods.waitForVisibility(staffPage.patientFirstNameBox, 1).clear();
         staffPage.patientFirstNameBox.sendKeys(Faker.instance().name().firstName());
     }
 
@@ -85,7 +85,7 @@ public class StaffStepDefs_MT {
     @And("user sends a new birthday")
     public void userSendsANewBirthday() {
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(staffPage.patientBirthDateBox,"12-05-1995").sendKeys(Keys.ARROW_RIGHT)
+        actions.sendKeys(staffPage.patientBirthDateBox, "12-05-1995").sendKeys(Keys.ARROW_RIGHT)
                 .sendKeys("09-30").build().perform();
     }
 
@@ -98,21 +98,21 @@ public class StaffStepDefs_MT {
     @And("user sends a new phone")
     public void userSendsANewPhone() {
         staffPage.patientPhoneBox.clear();
-        String phoneNumber = "555123"+faker.phoneNumber().subscriberNumber(4);
+        String phoneNumber = "555123" + faker.phoneNumber().subscriberNumber(4);
         staffPage.patientPhoneBox.sendKeys(phoneNumber);
     }
 
     @And("user select a new gender")
     public void userSelectANewGender() {
         Select select = new Select(staffPage.patientGenderDropDown);
-        int randomGenderIndex = faker.number().numberBetween(0,2);
+        int randomGenderIndex = faker.number().numberBetween(0, 2);
         select.selectByIndex(randomGenderIndex);
     }
 
     @And("user select a new blood group")
     public void userSelectANewBloodGroup() {
         Select select = new Select(staffPage.patientBloodGroupDropDown);
-        int randomBloodGroupIndex = faker.number().numberBetween(0,7);
+        int randomBloodGroupIndex = faker.number().numberBetween(0, 7);
         select.selectByIndex(randomBloodGroupIndex);
     }
 
@@ -131,7 +131,7 @@ public class StaffStepDefs_MT {
     @And("user select a new user")
     public void userSelectANewUser() {
         Select select = new Select(staffPage.patientUserDropDown);
-        int randomUserIndex = faker.number().numberBetween(0,18);
+        int randomUserIndex = faker.number().numberBetween(0, 18);
         select.selectByIndex(randomUserIndex);
     }
 
@@ -151,31 +151,32 @@ public class StaffStepDefs_MT {
 
     @And("user clicks on Save button")
     public void userClicksOnSaveButton() {
-        ReusableMethods.waitForClickablility(staffPage.saveButton,3).click();
+        ReusableMethods.waitForClickablility(staffPage.saveButton, 3).click();
     }
 
     @Then("Verify {string} pop up")
     public void verifyPopUp(String popUpMessage) {
         try {
-            ReusableMethods.waitForVisibility(staffPage.newPatientCreatedMessage,5);
+            ReusableMethods.waitForVisibility(staffPage.newPatientCreatedMessage, 5);
             Assert.assertTrue(staffPage.newPatientCreatedMessage.getText().contains(popUpMessage));
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
     }
 
     @And("user clicks on Show Appointments button")
     public void userClicksOnShowAppointmentsButton() {
-        ReusableMethods.waitForClickablility(staffPage.showAppointmentsButtonAfterSearchingPatientPage,3).click();
+        ReusableMethods.waitForClickablility(staffPage.showAppointmentsButtonAfterSearchingPatientPage, 3).click();
 
     }
 
     @And("user clicks on Show Tests button")
     public void userClicksOnShowTestsButton() {
-        ReusableMethods.waitForClickablility(staffPage.showTestsButton,3).click();
+        ReusableMethods.waitForClickablility(staffPage.showTestsButton, 3).click();
     }
 
     @And("user clicks on View Results button")
     public void userClicksOnViewResultsButton() {
-        ReusableMethods.waitForClickablility(staffPage.viewResultsButton,3).click();
+        ReusableMethods.waitForClickablility(staffPage.viewResultsButton, 3).click();
     }
 
     @And("user updates test result")
