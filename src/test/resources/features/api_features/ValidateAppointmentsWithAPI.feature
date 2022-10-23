@@ -14,5 +14,5 @@ Feature: My Appointments for Physician(Doctor) Validate appointments with API an
       | 16565  | 2     |
       | 16569  | 3     |
       | 16586  | 4     |
-      | 16600 | 5     |
+      | 16600  | 5     |
       | 141996 | 6     |
