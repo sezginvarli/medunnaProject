@@ -1,4 +1,5 @@
 @Signin
+  @ab
 Feature: User Settings
   Background: Go to homepage
     Given User clicks on account drop-down-menu button
@@ -32,7 +33,7 @@ Feature: User Settings
     Then close the application
     Examples:
       | username | password | firstname |
-      | userbatch8687 | Batch86+ | fatih |
+      | patientbatch8687 | Batch86+ | fatih |
 
   @US_06_TC_03
   Scenario Outline: New patient is created by admin
@@ -47,7 +48,7 @@ Feature: User Settings
     Then close the application
     Examples:
       | username | password | lastname |
-      | userbatch8687 | Batch86+ | kaya |
+      | patientbatch8687 | Batch86+ | kaya |
 
 
 

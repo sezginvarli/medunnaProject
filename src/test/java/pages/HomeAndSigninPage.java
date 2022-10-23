@@ -86,6 +86,7 @@ public class HomeAndSigninPage {
     public WebElement signInButton;
     @FindBy(xpath = "//span[text()='Patient29 patient']")
     public WebElement signInVerifyButton;
+
     @FindBy(id = "rememberMe")
     public WebElement rememberMeCheckBox;
     @FindBy(xpath = "//div[@class='alert alert-warning fade show']")
@@ -106,8 +107,8 @@ public class HomeAndSigninPage {
     public WebElement registrationPage;
     @FindBy(xpath = "//span[text()='Sign in']")
     public WebElement signinHeaderVisible;
-    @FindBy(xpath = "//span[text()='Cancel']")
-    public WebElement cancel;
+//    @FindBy(xpath = "//span[text()='Cancel']")
+//    public WebElement cancel;
     @FindBy(xpath = "//strong[text()='Failed to sign in!']")
     public WebElement authentication;
     @FindBy(xpath = "//a[@href='/logout']")
@@ -130,4 +131,8 @@ public class HomeAndSigninPage {
     public WebElement emailSettings;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement saveButtonSettings;
+    @FindBy(xpath = "(//button[@type='button'])[3]")
+    public WebElement cancel;
+
+
 }
