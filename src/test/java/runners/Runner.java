@@ -13,8 +13,9 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-    //    tags = "@Fatih",
+        tags = "@PhysicianAppointmentEdit",
         dryRun = false
 )
 public class Runner {
 }
+//@US_008
