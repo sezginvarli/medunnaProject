@@ -89,6 +89,7 @@ public class CreateOrEditPatientStepDefs {
     }
     @When("Click on save button")
     public void click_on_save_button() {
+        ReusableMethods.waitFor(1);
         adminPatientPage.saveButton.click();
     }
     @Then("Verify {string} message")
@@ -163,10 +164,11 @@ public class CreateOrEditPatientStepDefs {
     }
     @When("user assign new doctor for patient")
     public void user_assign_new_doctor_for_patient() {
+        ReusableMethods.waitFor(2);
         ReusableMethods.waitForVisibility(appointmentEditCreatePage.appointmentPhysicianArea,5);
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         Select select =new Select(appointmentEditCreatePage.appointmentPhysicianArea);
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         select.selectByValue("277681");
     }
     @When("user selects {string} country")
