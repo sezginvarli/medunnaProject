@@ -1,3 +1,4 @@
+@Fatih
 Feature: Registration with some data
 
   Background: Go to registration page
@@ -62,12 +63,4 @@ Feature: Registration with some data
     Examples:
       | lastname |
       | Erik*123  |
-
-
-
-
-
-
-
-
 

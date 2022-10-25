@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.AppointmentRequestPage;
 import pages.PatientPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
 
@@ -201,4 +203,11 @@ public class AppointmentDateStepDefs {
         Assert.assertTrue(dateValue.contains(year));
     }
 
+    @Given("user goes to the url with chrome language option set to english")
+    public void userGoesToTheUrlWithChromeLanguageOptionSetToEnglish() {
+        Driver.getChromeWithLangOption("en-US").get(ConfigReader.getProperty("base_url"));
+        ReusableMethods.waitFor(3);
+        patientPage = new PatientPage();
+        appoRequestPage = new AppointmentRequestPage();
+    }
 }

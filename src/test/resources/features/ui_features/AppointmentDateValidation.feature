@@ -1,4 +1,5 @@
-@husrev
+@US07-14
+  @Close
 Feature: Appointment date test with ui
 
   Background: User sign in as patient
@@ -20,8 +21,6 @@ Feature: Appointment date test with ui
     Then user verifies appointment can not be past date message is not displayed
     Then user verifies Appointment registrations saved message is displayed
     And User clicks on account drop-down-menu button
-    And user click on sign out
-#    And close the application
     Examples:
       | date |
       | tomorrow  |
@@ -37,8 +36,6 @@ Feature: Appointment date test with ui
     Then user verifies appointment can not be past date message is displayed
     Then user verifies Appointment registrations saved message is not displayed
     And User clicks on account drop-down-menu button
-    And user click on sign out
-    And close the application
     Examples:
       | date |
       | yesterday  |
@@ -50,4 +47,3 @@ Feature: Appointment date test with ui
     And user clicks on make an appointment button
     And user fills the form with date format MM dd yyyy
     Then user verifies date value is changed correctly
-    And close the application

@@ -2,7 +2,6 @@ package runners;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
         monochrome = true,
@@ -13,10 +12,12 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "./src/test/resources/features/db_features",
+
+        features = "./src/test/resources/features",
         glue = {"stepdefinitions"},
-        tags = "@US_009DB",
+        tags = "  @PhysiciansDB",
         dryRun = false
 )
 public class DBRunner {
 }
+
