@@ -1,0 +1,3 @@
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null', activated=false, authorities=null}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null', activated=false, authorities=null}
+Registrant{firstName='null', lastName='null', ssn='null', login='null', langKey='null', password='null', email='null', activated=false, authorities=null}
