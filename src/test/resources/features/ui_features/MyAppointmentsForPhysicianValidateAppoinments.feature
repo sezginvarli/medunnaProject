@@ -1,4 +1,5 @@
-@deneme
+@US_10
+
 Feature: My Appointments for Physician(Doctor) Validate appoinments with API and DB
 
 

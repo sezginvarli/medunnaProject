@@ -41,11 +41,3 @@ Feature:Username and email should be validated with api and must be unique
     Then Status code should be 201
     And user verifies username and email with given data in body
 
-
-
-
-
-
-
-
-

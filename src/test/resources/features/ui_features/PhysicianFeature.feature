@@ -47,15 +47,15 @@ Feature: Doctor view and edit inpatients
     And user close the application
     Examples:
       | data | value|
-#      |   ID   | 987321   |
-#      |  Start Date    |15/11/2022 12:12|
-#      |  End Date    | 16/11/2022 11:11 |
-#      |  Status    | STAYING   |
-      |  Description    | description is changed by automated script 002|
-#      |  Created Date    | 14/11/2022 10:10|
-#      |  Room    |  31712      |
-#      |  Appointment    | 279463 |
-#      |  Patient    | 277764    |
+      |   ID   | 987321   |
+      |  Start Date    |15/11/2022 12:12|
+      |  End Date    | 16/11/2022 11:11 |
+      |  Status    | STAYING   |
+      |  Description    | description is changed by automated script|
+      |  Created Date    | 14/11/2022 10:10|
+      |  Room    |  31712      |
+      |  Appointment    | 279463 |
+      |  Patient    | 277764    |
 
   @US14_TC02_2
   Scenario: status can be UNAPPROVED, DISCHARGED, STAYING or CANCELLED
