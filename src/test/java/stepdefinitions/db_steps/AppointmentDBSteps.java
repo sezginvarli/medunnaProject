@@ -31,7 +31,6 @@ public class AppointmentDBSteps {
         for (Object w:actualList) {
             actualListString.add(w.toString());
         }
-        System.out.println(actualListString);
 
         Assert.assertTrue("There are no such ids",actualListString.contains("284252"));
     }

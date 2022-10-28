@@ -174,7 +174,6 @@ public class CreateOrEditAppByPhysicianStepDefsHk {
     }
     @Then("verify the appointment is updated successfully")
     public void verify_the_appointment_is_updated_successfully() {
-
         String appointmentEditSuccessMessage=Driver.waitForVisibility(appointmentPage.toastifyAllert,5).getText();
         System.out.println("The Appointment is updated with identifier "+appId);
         Assert.assertTrue(appointmentEditSuccessMessage.contains("The Appointment is updated"));

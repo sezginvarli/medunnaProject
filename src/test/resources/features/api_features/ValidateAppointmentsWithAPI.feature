@@ -1,4 +1,5 @@
 @US10
+
 Feature: My Appointments for Physician(Doctor) Validate appointments with API and DB
 
   @US10_TC030
@@ -11,7 +12,7 @@ Feature: My Appointments for Physician(Doctor) Validate appointments with API an
       | 16556  | 0     |
       | 16557  | 1     |
       | 16565  | 2     |
-      | 16586  | 3     |
-      | 16600  | 4     |
-      | 141996 | 5     |
-      | 277757 | 6     |
+      | 16569  | 3     |
+      | 16586  | 4     |
+      | 16600  | 5     |
+      | 141996 | 6     |
