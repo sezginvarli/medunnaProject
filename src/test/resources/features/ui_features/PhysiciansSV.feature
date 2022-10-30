@@ -1,4 +1,5 @@
 @Signin
+@SmokeTest
 Feature: Create Or Edit Physicians By Admin
 
   Background:

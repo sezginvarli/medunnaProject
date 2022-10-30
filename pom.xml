@@ -107,9 +107,6 @@
             <version>42.5.0</version>
         </dependency>
 
-
-
-
         <!--        &lt;!&ndash; https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter &ndash;&gt;-->
         <!--        <dependency>-->
         <!--            <groupId>tech.grasshopper</groupId>-->
@@ -117,13 +114,11 @@
         <!--            <version>1.2.0</version>-->
         <!--        </dependency>-->
 
-
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.8</version>
         </dependency>
-
 
     </dependencies>
 
@@ -189,6 +184,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

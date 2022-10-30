@@ -1,4 +1,5 @@
 @US_002
+@SmokeTest
 Feature: Registration should be successful with email and username
   Background: user navigates to the registration page
     Given user goes to the url

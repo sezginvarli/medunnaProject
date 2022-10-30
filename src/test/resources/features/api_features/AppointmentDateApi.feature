@@ -1,4 +1,5 @@
 @US07-14
+@SmokeTest
   @Close
 Feature: Appointment date test with api
   @Api

@@ -1,4 +1,5 @@
 @US07_TC02
+@SmokeTest
 Feature: validation with chrome option english
   Scenario: user send date as MM/dd/yyyy on chrome lang en
     Given user goes to the url with chrome language option set to english

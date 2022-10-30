@@ -1,5 +1,6 @@
 @US_002
 @Api
+@SmokeTest
 Feature:Username and email should be validated with api and must be unique
   @US002_TC01_Api
   Scenario Outline: TC01 username validation

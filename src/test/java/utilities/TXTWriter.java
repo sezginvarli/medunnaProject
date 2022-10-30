@@ -1,18 +1,14 @@
 package utilities;
-import pojos.Physician;
-import pojos.PasswordChange;
-import pojos.Appointment;
-import pojos.Registrant;
-import java.io.BufferedReader;
+import pojos.*;
+
 import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.Map;
+
 public class TXTWriter {
     public static void saveUiRegistrantsData(Registrant registrant) {
 
         try {
-            FileWriter fw = new FileWriter(ConfigReader.getProperty("applicant_data"), true);
+            FileWriter fw = new FileWriter(ConfigReader.getProperty("applicant_data"), false);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.append(registrant.toString() + "\n");
             bw.close();
@@ -88,6 +84,17 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
+    public static void saveApiTestItemsData(CTestItem[] cTestItem){
 
+        try {
+            FileWriter fw=new FileWriter(ConfigReader.getProperty("testitem_data"),true);
+            BufferedWriter bw=new BufferedWriter(fw);
+            bw.append(cTestItem.toString() +"\n");
+            bw.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }

@@ -1,4 +1,5 @@
 @US_009API
+@SmokeTest
 Feature:US009 API Test
 
   @US_009API_PatientGet_Staff

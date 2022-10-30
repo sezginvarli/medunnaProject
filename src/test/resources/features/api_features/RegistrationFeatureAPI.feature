@@ -1,5 +1,5 @@
 Feature: test api registrants data
-
+  @SmokeTest
   @Api
   @GetApiRegistrants
   Scenario:
