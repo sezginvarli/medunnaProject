@@ -322,4 +322,8 @@ public class Driver {
         driver.manage().window().maximize();
         return driver;
     }
+    public static void backToTwoTimes(){
+        driver.navigate().back();
+        driver.navigate().back();
+    }
 }
