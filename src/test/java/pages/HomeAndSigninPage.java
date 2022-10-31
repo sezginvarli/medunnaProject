@@ -107,8 +107,8 @@ public class HomeAndSigninPage {
     public WebElement registrationPage;
     @FindBy(xpath = "//span[text()='Sign in']")
     public WebElement signinHeaderVisible;
-    @FindBy(xpath = "//span[text()='Cancel']")
-    public WebElement cancel;
+//    @FindBy(xpath = "//span[text()='Cancel']")
+//    public WebElement cancel;
     @FindBy(xpath = "//strong[text()='Failed to sign in!']")
     public WebElement authentication;
     @FindBy(xpath = "//a[@href='/logout']")
@@ -131,4 +131,8 @@ public class HomeAndSigninPage {
     public WebElement emailSettings;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement saveButtonSettings;
+    @FindBy(xpath = "(//button[@type='button'])[3]")
+    public WebElement cancel;
+
+
 }

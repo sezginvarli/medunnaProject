@@ -1,4 +1,4 @@
-@US_009DB
+
 Feature:US09 DB Test.
   @US_009DB
   Scenario:User needs to validate all patient info from DB
