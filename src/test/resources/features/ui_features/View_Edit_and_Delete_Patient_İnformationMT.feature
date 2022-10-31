@@ -70,8 +70,3 @@ Feature: View, edit and delete Patient information
         | username    | password    | SSN         |
         | team03staff | team03Staff | 128-65-1234 |
 
-
-
-
-
-

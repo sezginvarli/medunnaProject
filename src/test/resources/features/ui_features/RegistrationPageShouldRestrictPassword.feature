@@ -13,9 +13,9 @@ Feature: Registration Page Should Restrict Password
     And user closes the browser
     Examples:
       | password |
-      |aaAA      |
-      |ab2@      |
-      |eDc4      |
+      | aaAA     |
+      | ab2@     |
+      | eDc4     |
 
   @US03_TC02
   Scenario Outline: There should be at least 1 UpperCase char for stronger password and  see the level chart change accordingly

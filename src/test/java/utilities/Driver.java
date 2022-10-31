@@ -313,4 +313,17 @@ public class Driver {
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
+
+    public static WebDriver getChromeWithLangOption(String locale){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--lang="+locale);
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        return driver;
+    }
+    public static void backToTwoTimes(){
+        driver.navigate().back();
+        driver.navigate().back();
+    }
 }
