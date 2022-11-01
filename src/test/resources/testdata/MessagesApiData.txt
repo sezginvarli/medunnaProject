@@ -1,4 +1,4 @@
-Message{email='kado@gmail.com', message='lutfen sikayetmi duzeltin', name='Ali', subject='sikayet mesaji'}
+Message{email='damian.trantow@hotmail.com', message='Infertility (Female)', name='Jessie', subject='Quo Vadis'}
 Message{email='kado@gmail.com', message='lutfen sikayetmi duzeltin', name='Ali', subject='sikayet mesaji'}
 Message{email='deniz@gmail.com', message='danisma personeli hastalarin haklari konusunda bilgilendirilmelidir', name='Deniz', subject='hasta haklari'}
 Message{email='hamza@gmail.com', message='sikayetim varNo, no, no, no, no, this sucker's electrical, but I need a nuclear reaction to generate the 1.21 gigawatts of electricity I need.', name='HamzaMarvin Berry', subject='sikayetFelony & Mayhem Press'}
@@ -37,7 +37,6 @@ Message{email='doka@gmail.com', message='itirazım varLook, you're not gonna be 
 Message{email='benton.blanda@hotmail.com', message='Bu bolum sıkıntısız calisti.', name='Randy', subject='Team57'}
 Message{email='janna.maggio@yahoo.com', message='Mesaj bilgisinin girildigi kutucuk', name='Nickie', subject='Konu Basligi'}
 Message{email='avery.upton@gmail.com', message='Mesaj bilgisinin girildigi kutucuk', name='Danae', subject='Konu Basligi'}
-Message{email='steven.wisozk@hotmail.com', message='Secker & Warburg', name='Lamont', subject='Scottie'}
 Message{email='ronnie.corwin@hotmail.com', message='denemeMesajı= com.github.javafaker.Number@53a524a3com.github.javafaker.Book@3e36a82dcom.github.javafaker.GameOfThrones@2ae36752', name='Chet', subject='denemeMesajıcom.github.javafaker.Number@53a524a3'}
 Message{email='jerry.turner@gmail.com', message='denemeMesajı= com.github.javafaker.Number@76da4a8dcom.github.javafaker.Book@198f08afcom.github.javafaker.GameOfThrones@f7646e4', name='Leandro', subject='denemeMesajıcom.github.javafaker.Number@76da4a8d'}
 Message{email='raymon.schaden@hotmail.com', message='Merhaba DÃ¼nya', name='Buck Ernser DDS', subject='Merhaba'}
@@ -48,3 +47,4 @@ Message{email='charla.harvey@hotmail.com', message='denemeMesajı= com.github.ja
 Message{email='kimberly.schuster@yahoo.com', message='denemeMesajı= com.github.javafaker.Number@1acd3b1com.github.javafaker.Book@675f075ccom.github.javafaker.GameOfThrones@3dd2ac39', name='Branden', subject='denemeMesajıcom.github.javafaker.Number@1acd3b1'}
 Message{email='marinda.kemmer@yahoo.com', message='denemeMesajı= com.github.javafaker.Number@40ec5dd6com.github.javafaker.Book@3628df50com.github.javafaker.GameOfThrones@3ff72ea3', name='Caroll', subject='denemeMesajıcom.github.javafaker.Number@40ec5dd6'}
 Message{email='pattie.friesen@gmail.com', message='denemeMesajı= com.github.javafaker.Number@76dfb2a3com.github.javafaker.Book@4ed3c156com.github.javafaker.GameOfThrones@4f4699b0', name='Annabell', subject='denemeMesajıcom.github.javafaker.Number@76dfb2a3'}
+Message{email='irma.bins@gmail.com', message='Blackie and Son Limited', name='Sherron', subject='Vernita'}

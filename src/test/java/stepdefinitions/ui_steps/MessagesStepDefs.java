@@ -8,17 +8,21 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomeAndSigninPage;
 import pages.admin.AdminMessagesPage;
+import pojos.Message;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.List;
 import java.util.Map;
 
+import static utilities.TXTWriter.saveUiMessageData;
+
 public class MessagesStepDefs {
 
     HomeAndSigninPage homeAndSigninPage=new HomeAndSigninPage();
     Faker faker=new Faker();
     AdminMessagesPage adminMessagesPage =new AdminMessagesPage();
+    Message message=new Message();
     @Given("Admin enters username and password")
     public void admin_enters_username_and_password(DataTable credentials) {
 
@@ -49,25 +53,33 @@ public class MessagesStepDefs {
     public void user_enter_in_namebox(String name) {
         name=faker.name().firstName();
         Driver.waitAndSendText(adminMessagesPage.messageNameBox,name);
+        message.setName(name);
     }
     @When("user enter {string} in emailbox")
     public void user_enter_in_emailbox(String email) {
         email=faker.internet().emailAddress();
         Driver.waitAndSendText(adminMessagesPage.messageEmailBox,email);
+        message.setEmail(email);
     }
     @When("user enter {string} in subjectbox")
     public void user_enter_in_subjectbox(String subject) {
-        subject=faker.medical().medicineName();
+        subject="Advice";
         Driver.waitAndSendText(adminMessagesPage.messageSubjectBox,subject);
+        message.setSubject(subject);
     }
     @When("user enter {string} in messagesbox")
     public void user_enter_in_messagesbox(String messages) {
-        messages=faker.shakespeare().asYouLikeItQuote();
+        messages="Hello World";
         Driver.waitAndSendText(adminMessagesPage.messageMessageBox,messages);
+        message.setMessage(messages);
     }
     @When("user clicks on save button for creating message")
     public void user_clicks_on_save_button_for_creating_message() {
         Driver.waitAndClick(adminMessagesPage.saveMessageButton);
+    }
+    @When("user saves the message data into file")
+    public void user_saves_the_message_data_into_file() {
+        saveUiMessageData(message);
     }
     @Then("verify {string} message")
     public void verify_message(String message) {
