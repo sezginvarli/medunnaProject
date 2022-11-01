@@ -7,7 +7,6 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.Bill;
-import pojos.CTestItem;
 import pojos.CTestOneResult;
 
 import java.util.Arrays;
@@ -15,7 +14,6 @@ import java.util.Arrays;
 import static hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertTrue;
-import static utilities.Authentication.generateToken;
 import static utilities.Authentication.generateTokenWithUsernamePassword;
 
 public class MyAppointmentsbyPatientApiStepDefs {
@@ -23,10 +21,6 @@ public class MyAppointmentsbyPatientApiStepDefs {
     Response response2;
     Bill bill;
     CTestOneResult [] cTestOneResult;
-    CTestItem postBody =new CTestItem();
-    Response response3;
-
-
     @Given("user sends a get request with given id {string} for payment validation")
     public void user_sends_a_get_request_with_given_id_for_payment_validation(String id) {
         spec.pathParams("first", "api", "second", "bills","third","appointment","fourth",id);
@@ -80,7 +74,6 @@ public class MyAppointmentsbyPatientApiStepDefs {
         ObjectMapper obj=new ObjectMapper();
         cTestOneResult =obj.readValue(response2.asString(), CTestOneResult [].class);
         System.out.println(Arrays.toString(cTestOneResult));
-
     }
     @Then("user should be validated test results information")
     public void user_should_be_validated_test_results_information() {
@@ -92,29 +85,5 @@ public class MyAppointmentsbyPatientApiStepDefs {
             }
         }
         assertTrue(flag);
-
     }
-    @Given("user sends a post request creating test items")
-    public void user_sends_a_post_request_creating_test_items() {
-      postBody.setCreatedBy("Batch86");
-      postBody.setCreatedDate("2022-10-31T10:10:32.858662Z");
-      postBody.setPrice(13930805.0);
-      postBody.setDefaultValMin("10");
-      postBody.setDefaultValMax("50");
-      postBody.setDescription("eda");
-      postBody.setName("bloodtest3");
-
-
-        spec.pathParams("first","api","second","c-test-items");
-        response3= given().spec(spec).headers(
-                "Authorization",
-                "Bearer "+generateToken(),
-                "Content-Type", ContentType.JSON,
-                "Accept", ContentType.JSON
-        ).body(postBody).when().post("/{first}/{second}");
-        response3.prettyPrint();
-
-        response3.then().assertThat().statusCode(201);
-    }
-
 }

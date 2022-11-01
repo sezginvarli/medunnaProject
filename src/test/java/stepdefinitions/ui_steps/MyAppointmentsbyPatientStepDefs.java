@@ -2,7 +2,6 @@ package stepdefinitions.ui_steps;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import pages.AppointmentPage;
 import pages.HomeAndSigninPage;
 import pages.PatientAppointment;
