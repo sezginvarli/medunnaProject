@@ -22,6 +22,7 @@ Feature: Admin Read, Create, Update and Delete
       And user enter "<subject>" in subjectbox
       And user enter "<messages>" in messagesbox
       And user clicks on save button for creating message
+      And user saves the message data into file
       Then verify "<message>" message
       Examples:
         | name | email | subject | messages | message |
