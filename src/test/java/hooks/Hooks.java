@@ -45,7 +45,7 @@ public class Hooks {
     @After            //(value = "@Close")
     public void closeBrowser(){
 
-        Driver.closeDriver();
+       Driver.closeDriver();
 
     }
 }

@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 
         features = "./src/test/resources/features",
         glue = {"stepdefinitions"},
-        tags = "  @PhysiciansDB",
+        tags = "@US_27_TC_07",
         dryRun = false
 )
 public class DBRunner {
