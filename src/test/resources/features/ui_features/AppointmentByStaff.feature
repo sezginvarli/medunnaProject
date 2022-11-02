@@ -26,3 +26,25 @@ Feature: Appointment management by staff
       And user clicks on Show Appointments button
       And user clicks on first appointments edit button
       Then user verifies that user can select UNAPPROVED, PENDING or CANCELLED, but cannot select COMPLETED
+
+    @US_21_TC_03
+    Scenario: Staff does not need to provide Anamnesis, Treatment or Diagnosis as required fields
+      When user click my pages drop-down button
+      And user clicks on Search Patient button
+      And user search patient with "132-45-1231"
+      And user clicks on Show Appointments button
+      And user clicks on first appointments edit button
+      Given user sets anamnesis box as blank
+      And user sets treatment box as blank
+      And user sets diagnosis box as blank
+      Then user verifies that the error message is not displayed
+
+    @US_21_TC_04
+    Scenario: Staff can select the current doctor that needs to be selected for the patient
+      When user click my pages drop-down button
+      And user clicks on Search Patient button
+      And user search patient with "132-45-1231"
+      And user clicks on Show Appointments button
+      And user clicks on first appointments edit button
+      And user selects a doctor
+      Then user verifies a doctor is selected

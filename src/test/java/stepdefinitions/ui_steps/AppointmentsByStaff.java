@@ -1,12 +1,14 @@
 package stepdefinitions.ui_steps;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.AppointmentEditCreatePage;
 import pages.AppointmentPageByStaff;
+import utilities.JSUtils;
 import utilities.ReusableMethods;
 
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ import java.util.List;
 public class AppointmentsByStaff {
     AppointmentPageByStaff appointmentPage = new AppointmentPageByStaff();
     AppointmentEditCreatePage appointmentEditPage = new AppointmentEditCreatePage();
+    int doctorsId = 277669;
     @Then("user verifies edit button is displayed")
     public void user_verifies_edit_button_is_displayed() {
         ReusableMethods.waitForVisibility(appointmentPage.firstEditButton,10);
@@ -54,5 +57,68 @@ public class AppointmentsByStaff {
 
         Assert.assertTrue(optionValues.contains("CANCELLED"));
         Assert.assertTrue(options.get(3).isEnabled());
+    }
+
+    @Given("user sets anamnesis box as blank")
+    public void userSetsAnamnesisBoxAsBlank() {
+        ReusableMethods.waitForVisibility(appointmentEditPage.appointmentAnamnesisTextArea,10);
+        appointmentEditPage.appointmentAnamnesisTextArea.click();
+        appointmentEditPage.appointmentAnamnesisTextArea.sendKeys("123");
+        ReusableMethods.waitFor(2);
+        appointmentEditPage.appointmentAnamnesisTextArea.clear();
+        JSUtils.blurElementByJS(appointmentEditPage.appointmentAnamnesisTextArea);
+    }
+
+    @And("user sets treatment box as blank")
+    public void userSetsTreatmentBoxAsBlank() {
+        ReusableMethods.waitForVisibility(appointmentEditPage.appointmentTreatmentTextArea,10);
+        appointmentEditPage.appointmentTreatmentTextArea.click();
+        appointmentEditPage.appointmentTreatmentTextArea.sendKeys("234");
+        ReusableMethods.waitFor(2);
+        appointmentEditPage.appointmentTreatmentTextArea.clear();
+        JSUtils.blurElementByJS(appointmentEditPage.appointmentDescriptionTextArea);
+    }
+
+    @And("user sets diagnosis box as blank")
+    public void userSetsDiagnosisBoxAsBlank() {
+        ReusableMethods.waitForVisibility(appointmentEditPage.appointmentDiagnosisTextArea,10);
+        appointmentEditPage.appointmentDiagnosisTextArea.click();
+        appointmentEditPage.appointmentDiagnosisTextArea.sendKeys("345");
+        ReusableMethods.waitFor(2);
+        appointmentEditPage.appointmentDiagnosisTextArea.clear();
+        JSUtils.blurElementByJS(appointmentEditPage.appointmentDiagnosisTextArea);
+    }
+
+    @Then("user verifies that the error message is not displayed")
+    public void userVerifiesThatTheErrorMessageIsNotDisplayed() {
+        ReusableMethods.waitFor(1);
+        try {
+            if(
+                    appointmentEditPage.anamnesisRequiredWarning.isDisplayed() ||
+                    appointmentEditPage.treatmentRequiredWarning.isDisplayed() ||
+                    appointmentEditPage.diagnosisRequiredWarning.isDisplayed()
+            ){
+                Assert.fail();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @And("user selects a doctor")
+    public void userSelectsADoctor() {
+        ReusableMethods.waitFor(30);
+        Select selectDoctor = new Select(appointmentEditPage.appointmentPhysicianArea);
+        selectDoctor.selectByValue(String.valueOf(doctorsId));
+
+        String selected = selectDoctor.getFirstSelectedOption().getText();
+        System.out.println(selected);
+    }
+
+    @Then("user verifies a doctor is selected")
+    public void userVerifiesADoctorIsSelected() {
+//        Select selectedDoctor = new Select(appointmentEditPage.appointmentPhysicianArea);
+        appointmentEditPage.appointmentPhysicianArea.isSelected();
+        System.out.println(appointmentEditPage.appointmentPhysicianArea.isSelected());
     }
 }

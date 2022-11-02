@@ -106,5 +106,9 @@ public class JSUtils {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].style.border='" + borderStyle + "'", element);
     }
+    public static void blurElementByJS(WebElement element) {
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        jsexecutor.executeScript("arguments[0].blur();", element);
+    }
 }
 
