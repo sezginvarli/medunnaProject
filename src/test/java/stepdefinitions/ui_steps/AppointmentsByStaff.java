@@ -3,11 +3,15 @@ package stepdefinitions.ui_steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.AppointmentEditCreatePage;
 import pages.AppointmentPageByStaff;
+import pages.TestResultsPage;
+import pages.TestsPage;
+import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
 
@@ -17,7 +21,10 @@ import java.util.List;
 public class AppointmentsByStaff {
     AppointmentPageByStaff appointmentPage = new AppointmentPageByStaff();
     AppointmentEditCreatePage appointmentEditPage = new AppointmentEditCreatePage();
+    TestsPage testsPage = new TestsPage();
+    TestResultsPage testResultsPage = new TestResultsPage();
     int doctorsId = 277669;
+    int appointmentId;
     @Then("user verifies edit button is displayed")
     public void user_verifies_edit_button_is_displayed() {
         ReusableMethods.waitForVisibility(appointmentPage.firstEditButton,10);
@@ -120,5 +127,53 @@ public class AppointmentsByStaff {
 //        Select selectedDoctor = new Select(appointmentEditPage.appointmentPhysicianArea);
         appointmentEditPage.appointmentPhysicianArea.isSelected();
         System.out.println(appointmentEditPage.appointmentPhysicianArea.isSelected());
+    }
+
+    @And("user clicks on show tests button for appointment id: {int}")
+    public void userClicksOnShowTestsButtonForAppointmentId(int id) {
+        ReusableMethods.waitForVisibility(appointmentPage.firstEditButton,10);
+        appointmentId = id;
+        WebElement showTestsButton = appointmentPage.findShowTestButtonByAppointmentId(appointmentId);
+        JSUtils.scrollIntoViewJS(showTestsButton);
+        JSUtils.clickElementByJS(showTestsButton);
+//        ReusableMethods.waitForClickablility(showTestsButton,5).click();
+    }
+
+    @And("user clicks on view results button")
+    public void userClicksOnViewResultsButton() {
+        ReusableMethods.waitForClickablility(testsPage.firstViewResultButton,5).click();
+    }
+
+    @Then("user verifies that user view test result")
+    public void userVerifiesThatUserViewTestResult() {
+        ReusableMethods.waitForVisibility(testResultsPage.TestResultsHeader,5);
+        Assert.assertTrue(testResultsPage.TestResultsHeader.isDisplayed());
+    }
+
+    @Then("user verifies there is no create an appointment button")
+    public void userVerifiesThereIsNoCreateAnAppointmentButton() {
+        for (WebElement button:appointmentPage.allButtons) {
+            Assert.assertFalse(button.getText().contains("Create a new Appointment"));
+            Assert.assertFalse(button.getAttribute("href").contains("/appointment/new"));
+        }
+    }
+
+    @When("user navigates to {string}")
+    public void userNavigatesTo(String link) {
+        ReusableMethods.waitFor(5);
+        Driver.getDriver().navigate().to(link);
+    }
+
+    @Then("user verifies that authorization denied message is displayed")
+    public void userVerifiesThatAuthorizationDeniedMessageIsDisplayed() {
+        ReusableMethods.waitForVisibility(appointmentPage.authorizationDeniedMessage,10);
+            Assert.assertTrue(appointmentPage.authorizationDeniedMessage.isDisplayed());
+    }
+
+    @Then("user verifies current url contains appointment-update")
+    public void userVerifiesCurrentUrlContainsAppointmentUpdate() {
+        ReusableMethods.waitForVisibility(appointmentEditPage.appointmentSaveButton,5);
+        String currentUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("/appointment-update/"));
     }
 }
