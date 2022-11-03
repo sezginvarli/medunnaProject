@@ -11,8 +11,14 @@ public class AdminMainPage {
     }
     @FindBy(xpath = "//*[text() = 'Administration']")
     public WebElement adminMainPageText;
+
+    @FindBy(xpath = "//*[text()='User management']")
+    public WebElement userManagementText;
+
     @FindBy(id = "entity-menu")
     public WebElement adminMainPageItemDropdown;
     @FindBy(xpath = "//div[@class= 'dropdown-menu dropdown-menu-right show']/a[3]")
     public WebElement adminMainPageItemDropdownPhysician;
+    @FindBy(css = "[class][href = '/c-test-item']")
+    public WebElement getAdminMainPageTestItemDropdown;
 }

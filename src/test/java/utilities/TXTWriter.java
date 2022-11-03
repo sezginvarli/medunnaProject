@@ -101,7 +101,41 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
+    public static void saveTheMessageData(Message data){
+        try {
+            FileWriter fw=new FileWriter(ConfigReader.getProperty("save_message"),false);
+            BufferedWriter bw=new BufferedWriter(fw);
+            bw.append(data.toString()+"\n");
+            bw.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public static void saveUiMessageData(Message message) {
+
+        try {
+            FileWriter fw = new FileWriter(ConfigReader.getProperty("messages_data_ui"), false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.append(message.toString() + "\n");
+            bw.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void saveUiAllRoomsData(Room[] rooms) {
+
+            try {
+                FileWriter fw = new FileWriter(ConfigReader.getProperty("room_data"), true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                for (int i = 0; i < rooms.length; i++) {
+                    bw.append(rooms[i].toString() + "\n");
+                }
+                bw.close();
 
 
-
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
 }
