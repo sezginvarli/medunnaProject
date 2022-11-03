@@ -21,4 +21,5 @@ public class PatientPage {
 
     @FindBy(xpath = "//a[@href='/make-appointment']")
     public WebElement makeAnAppointmentButton;
+
 }

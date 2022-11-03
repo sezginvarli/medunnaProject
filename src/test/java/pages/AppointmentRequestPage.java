@@ -36,4 +36,6 @@ public class AppointmentRequestPage {
 
     @FindBy(id = "register-submit")
     public WebElement sendAppointmentRequestButton;
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
+    public WebElement toastifyAlertAppointmentRequestPage;
 }
