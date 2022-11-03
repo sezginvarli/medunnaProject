@@ -210,4 +210,11 @@ public class AppointmentDateStepDefs {
         patientPage = new PatientPage();
         appoRequestPage = new AppointmentRequestPage();
     }
+
+    @Then("user verifies date value is changed")
+    public void userVerifiesDateValueIsChanged() {
+        ReusableMethods.waitFor(3);
+        String dateValue = appoRequestPage.appointmentDate.getAttribute("value");
+        Assert.assertTrue(dateValue.contains("2022-12-05"));
+    }
 }
