@@ -1,4 +1,5 @@
 @Signin
+@Close
 @US_013
 Feature: My Appointments Edit And Test Results by Physician
 
@@ -23,7 +24,6 @@ Feature: My Appointments Edit And Test Results by Physician
       And user updates test result
       And user clicks on Result Save button
       Then Verify "A Test Result is updated" pop up is displayed
-      And user close the page
     Examples:
       | username    | password    | SSN   |
       | team03staff | team03Staff | 153-11-7830 |
@@ -42,7 +42,6 @@ Feature: My Appointments Edit And Test Results by Physician
     And user clicks on Show Test Results button
     And user clicks on View Test Results button
     Then Verify all test information is displayed
-    And user close the page
     Examples:
       | username    | password    |
       | team03doctor | team03Doctor |
@@ -60,7 +59,6 @@ Feature: My Appointments Edit And Test Results by Physician
     And user clicks on the Edit button
     And user clicks on Request Inpatient button
     Then Verify "A new In Patient is created" pop up is display
-    And user close the page
     Examples:
       | username    | password    |
       | alimecann | aliCan86 |
