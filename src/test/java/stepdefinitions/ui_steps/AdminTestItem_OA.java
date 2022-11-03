@@ -43,7 +43,7 @@ public class AdminTestItem_OA {
     @Then("User click the save button and see Test Item is Created alert.")
     public void user_click_the_save_button_and_see_test_item_is_created_alert() {
         js.executeScript("arguments[0].click()",adminTestItemsPage.testItemSaveEntity);
-        ReusableMethods.waitForVisibility(adminTestItemsPage.testItemToastifyAlert,3);
+        ReusableMethods.waitForVisibility(adminTestItemsPage.testItemToastifyAlert,7);
         assertTrue(adminTestItemsPage.testItemToastifyAlert.getText().contains("A new Test Item is created with identifier"));
     }
     @Then("User should click Created Date and see the created Test Item")

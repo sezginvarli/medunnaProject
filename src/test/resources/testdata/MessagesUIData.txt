@@ -1,0 +1,1 @@
+Message{email='bok.denesik@gmail.com', message='Hello World', name='Brunilda', subject='Advice'}

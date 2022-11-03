@@ -18,8 +18,10 @@ public class PatientPage {
 
     @FindBy(xpath = "//a[@href='/patient-appointment']")
     public WebElement myAppointmentsButton;
-
     @FindBy(xpath = "//a[@href='/make-appointment']")
+
     public WebElement makeAnAppointmentButton;
+    @FindBy(partialLinkText = "My")
+    public WebElement myAppointment;
 
 }
