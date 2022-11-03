@@ -123,5 +123,19 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
+    public static void saveUiAllRoomsData(Room[] rooms) {
 
+            try {
+                FileWriter fw = new FileWriter(ConfigReader.getProperty("room_data"), true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                for (int i = 0; i < rooms.length; i++) {
+                    bw.append(rooms[i].toString() + "\n");
+                }
+                bw.close();
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
 }
