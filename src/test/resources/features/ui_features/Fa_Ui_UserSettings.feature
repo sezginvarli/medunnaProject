@@ -1,5 +1,6 @@
 @Signin
   @ab
+@SmokeTest
 Feature: User Settings
   Background: Go to homepage
     Given User clicks on account drop-down-menu button

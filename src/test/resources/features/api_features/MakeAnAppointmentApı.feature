@@ -1,5 +1,5 @@
 @US005_Api
-
+@SmokeTest
 Feature:api
 
   Scenario: api appointment

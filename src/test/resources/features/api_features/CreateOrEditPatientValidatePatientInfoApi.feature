@@ -1,5 +1,5 @@
 Feature: US_015
-
+  @SmokeTest
   @PatientInfoValidation
 Scenario Outline:Create Or Edit Patient Info With API
   Given user sends get request all patients

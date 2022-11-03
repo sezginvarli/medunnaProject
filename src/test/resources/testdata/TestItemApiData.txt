@@ -1,0 +1,33 @@
+CTestItem{createdBy='null', createdDate='null', defaultValMax='333', defaultValMin='33', description='thirty three', name='thrty_2', price=33.0}
+io.restassured.internal.RestAssuredResponseImpl@c94bd18
+io.restassured.path.json.JsonPath@71fb8301
+io.restassured.path.json.JsonPath@2f99d8c
+io.restassured.path.json.JsonPath@44492c06
+{
+    "type": "https://www.medunna.com/problem/problem-with-message",
+    "title": "Internal Server Error",
+    "status": 500,
+    "detail": "could not execute batch; SQL [insert into c_test_item (created_by, created_date, last_modified_by, last_modified_date, default_val_max, default_val_min, description, name, price, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]; constraint [unique_ctestitem_name]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute batch",
+    "path": "/api/c-test-items",
+    "message": "error.http.500"
+}
+{
+    "createdBy": "batch86",
+    "createdDate": "2022-11-03T13:59:50.129160Z",
+    "id": 294670,
+    "name": "thrty_9",
+    "description": "thirty three",
+    "price": 33.0,
+    "defaultValMin": "33",
+    "defaultValMax": "333"
+}
+{
+    "createdBy": "batch86",
+    "createdDate": "2022-11-03T14:09:23.553008Z",
+    "id": 294673,
+    "name": "thrty_91",
+    "description": "thirty three",
+    "price": 33.0,
+    "defaultValMin": "33",
+    "defaultValMax": "333"
+}

@@ -1,6 +1,6 @@
 @US_018.1
 Feature: test api physicians
-
+  @SmokeTest
   @Api
   @PhysiciansGet
 

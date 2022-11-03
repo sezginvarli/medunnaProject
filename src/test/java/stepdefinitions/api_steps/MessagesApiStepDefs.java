@@ -21,7 +21,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static utilities.Authentication.generateToken;
 import static utilities.TXTReader.readFileElementExist;
-import static utilities.TXTWriter.saveApiMessagesData;
+
 
 public class MessagesApiStepDefs {
     Message expectedMessage =new Message();
@@ -118,7 +118,7 @@ public class MessagesApiStepDefs {
 
         Message[] messages = obj.readValue(response.asString(), Message[].class);
 
-        saveApiMessagesData(messages);
+     //   saveApiMessagesData(messages);
     }
     @Then("user validates the room data {string},{string},{string} and {string}")
     public void user_validates_the_room_data_and(String email, String name, String subject, String message) {

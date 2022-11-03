@@ -1,4 +1,5 @@
 @US_002
+@SmokeTest
 Feature: US002_email_validation_db
   @US002_TC01_DB
   Scenario:TC01_email_validation

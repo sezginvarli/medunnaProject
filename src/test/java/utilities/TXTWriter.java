@@ -1,10 +1,8 @@
 package utilities;
+import io.restassured.response.Response;
 import pojos.*;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Map;
 public class TXTWriter {
     public static void saveUiRegistrantsData(Registrant registrant) {
@@ -51,42 +49,45 @@ public class TXTWriter {
         }
     }
 
-    public static void SavePojoToFile(String filePath, Object pojoObj){
-        try{
-            FileWriter fw2 = new FileWriter(filePath,false);
+    public static void SavePojoToFile(String filePath, Object pojoObj) {
+        try {
+            FileWriter fw2 = new FileWriter(filePath, false);
             BufferedWriter bw = new BufferedWriter(fw2);
-            bw.append(pojoObj +"\n");
+            bw.append(pojoObj + "\n");
             bw.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void savePasswordData(PasswordChange passwordChange){
+
+    public static void savePasswordData(PasswordChange passwordChange) {
 
         try {
-            FileWriter fw=new FileWriter(ConfigReader.getProperty("password_data"),false);
-            BufferedWriter bw=new BufferedWriter(fw);
-            bw.append(passwordChange.toString()+"\n");
+            FileWriter fw = new FileWriter(ConfigReader.getProperty("password_data"), false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.append(passwordChange.toString() + "\n");
             bw.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void saveUiAppointmentData(Appointment appointment){
+
+    public static void saveUiAppointmentData(Appointment appointment) {
 
         try {
-            FileWriter fw=new FileWriter(ConfigReader.getProperty("appointment_data"),true);
-            BufferedWriter bw=new BufferedWriter(fw);
-            bw.append(appointment.toString()+"\n");
+            FileWriter fw = new FileWriter(ConfigReader.getProperty("appointment_data"), true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.append(appointment.toString() + "\n");
             bw.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void saveApiMessagesData(Message[] message){
+
+    public static void saveApiMessagesData(Message[] message) {
 
         try {
             FileWriter fw = new FileWriter(ConfigReader.getProperty("messages_data"), false);
@@ -101,16 +102,18 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
-    public static void saveTheMessageData(Message data){
+
+    public static void saveTheMessageData(Message data) {
         try {
-            FileWriter fw=new FileWriter(ConfigReader.getProperty("save_message"),false);
-            BufferedWriter bw=new BufferedWriter(fw);
-            bw.append(data.toString()+"\n");
+            FileWriter fw = new FileWriter(ConfigReader.getProperty("save_message"), false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.append(data.toString() + "\n");
             bw.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public static void saveUiMessageData(Message message) {
 
         try {
@@ -119,23 +122,33 @@ public class TXTWriter {
             bw.append(message.toString() + "\n");
             bw.close();
 
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void saveApiTestItemsData(CTestItem[] cTestItem) {
+        try {
+            FileWriter fw = new FileWriter(ConfigReader.getProperty("testitem_data"), true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.append(cTestItem.toString() + "\n");
+            bw.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void saveUiAllRoomsData(Room[] rooms) {
 
-            try {
-                FileWriter fw = new FileWriter(ConfigReader.getProperty("room_data"), true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                for (int i = 0; i < rooms.length; i++) {
-                    bw.append(rooms[i].toString() + "\n");
-                }
-                bw.close();
+    public static void saveApiCreatedTestItemsData(Response response) {
+        try {
+            FileWriter fw = new FileWriter(ConfigReader.getProperty("testitem_data"), true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.append(response.asPrettyString() + "\n");
+            bw.close();
 
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

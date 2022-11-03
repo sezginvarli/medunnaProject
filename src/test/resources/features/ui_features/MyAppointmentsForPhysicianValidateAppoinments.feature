@@ -1,5 +1,5 @@
 @US_10
-
+@SmokeTest
 Feature: My Appointments for Physician(Doctor) Validate appoinments with API and DB
 
 

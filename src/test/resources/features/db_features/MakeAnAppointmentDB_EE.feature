@@ -1,4 +1,5 @@
 @US05_DB
+@SmokeTest
 Feature:US05_Make An Appointment DB
 
   Scenario Outline: TC01
