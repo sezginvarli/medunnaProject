@@ -10,6 +10,11 @@ import org.junit.Assert;
 import pojos.Physician;
 import utilities.ConfigReader;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
 import static utilities.TXTReader.readFile;
@@ -31,6 +36,7 @@ public class PhysiciansSteps_OA {
     @Given("admin deserialization the physicians data to java")
     public void admin_deserialization_the_physicians_data_to_java() throws JsonProcessingException {
         ObjectMapper obj = new ObjectMapper();
+
         physiciansApi = obj.readValue(response.asString(), Physician[].class);
         System.out.println(physiciansApi.length);
     }

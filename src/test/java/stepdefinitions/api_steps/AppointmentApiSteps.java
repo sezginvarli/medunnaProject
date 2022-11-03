@@ -9,7 +9,6 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.Appointment;
 import pojos.AppointmentRequest;
-import pojos.Registrant;
 import utilities.ConfigReader;
 import utilities.TXTWriter;
 
@@ -32,9 +31,24 @@ public class AppointmentApiSteps {
     AppointmentRequest appointmentRequest = new AppointmentRequest(null,null,email,firstName,null, lastName, phone,null,ssn,date);
 
     public String readyAppointmentDate(){
-        LocalDate myDate = LocalDate.now();
-//        return myDate.toString();
-        return "2022-10-21";
+        LocalDate today = LocalDate.now();
+        LocalDate myDate = today.plusDays(1);
+
+        int dayNum = myDate.getDayOfMonth();
+        String day = String.valueOf(dayNum);
+        if(day.length()==1){
+            day = "0"+day;
+        }
+
+        int monthNum = myDate.getMonthValue();
+        String month = String.valueOf(monthNum);
+        if(month.length()==1){
+            month = "0"+month;
+        }
+
+        int year = myDate.getYear();
+        return ""+year+"-"+month+"-"+day;
+//        return "2022-10-21";
     }
 
     @When("user sends post request for creating new appointment")
@@ -47,17 +61,11 @@ public class AppointmentApiSteps {
                 "Content-type", ContentType.JSON,
                 "Accept", ContentType.JSON
         ).body(appointmentRequest).when().post("/{first}/{second}/{third}");
-        System.out.println(date);
-        response.prettyPrint();
-        System.out.println(response.getStatusCode());
-
     }
     @When("user deserializes the application data to java")
     public void user_deserializes_the_application_data_to_java() throws JsonProcessingException {
         ObjectMapper obj=new ObjectMapper();
         appointment =obj.readValue(response.asString(), Appointment.class);
-        System.out.println(appointment.toString());
-        System.out.println(appointment.getPatient().toString());
 
         TXTWriter.saveUiAppointmentData(appointment);
     }
@@ -69,5 +77,10 @@ public class AppointmentApiSteps {
         Assert.assertEquals(appointment.getPatient().getFirstName(),appointmentRequest.getFirstName());
         Assert.assertEquals(appointment.getPatient().getLastName(),appointmentRequest.getLastName());
         Assert.assertEquals(appointment.getStartDate().substring(0,10),appointmentRequest.getStartDate());
+    }
+
+    @When("get tomorrows date")
+    public void getTomorrowsDate() {
+        System.out.println(appointmentRequest.getStartDate());
     }
 }

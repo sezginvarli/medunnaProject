@@ -206,8 +206,3 @@ public class StaffStepDefs_MT {
 
     }
 }
-//    @And("user close the page")
-//    public void userCloseThePage() {
-//        Driver.closeDriver();
-//    }
-//}
