@@ -1,8 +1,8 @@
 package utilities;
-import pojos.Physician;
-import pojos.PasswordChange;
-import pojos.Appointment;
-import pojos.Registrant;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import pojos.*;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -88,22 +88,28 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
-    public static void saveApiMessagesData(Message[] message){
 
+    public static void saveApiTestItemsData(CTestItem[] cTestItem){
         try {
-            FileWriter fw = new FileWriter(ConfigReader.getProperty("messages_data"), false);
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            for (int i = 0; i < message.length; i++) {
-                bw.append(message[i].toString() + "\n");
-            }
+            FileWriter fw=new FileWriter(ConfigReader.getProperty("testitem_data"),true);
+            BufferedWriter bw=new BufferedWriter(fw);
+            bw.append(cTestItem.toString() +"\n");
             bw.close();
 
         }catch (Exception e){
             e.printStackTrace();
         }
     }
+    public static void saveApiCreatedTestItemsData(Response response){
+        try {
+            FileWriter fw=new FileWriter(ConfigReader.getProperty("testitem_data"),true);
+            BufferedWriter bw=new BufferedWriter(fw);
+            bw.append(response.asPrettyString() +"\n");
+            bw.close();
 
-
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }
