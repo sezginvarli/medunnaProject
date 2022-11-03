@@ -10,14 +10,12 @@ import org.junit.runner.RunWith;
                 "html:target/html-reports/cucumber.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
-                "rerun:target/failedRerun.txt",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "rerun:target/failedRerun.txt"
         },
 
         features = "./src/test/resources/features",
-        glue = {"stepdefinitions","hooks"},
-         tags = "@TestItemsDeletionApi",
-        //       tags = "@hk",
+        glue = {"stepdefinitions"},
+        tags = "@US_27_TC_07",
         dryRun = false
 )
 public class DBRunner {

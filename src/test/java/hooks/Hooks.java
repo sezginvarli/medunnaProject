@@ -13,6 +13,7 @@ import utilities.Driver;
 public class Hooks {
     @Before
     public void setUp(){
+
     }
     public static RequestSpecification spec;
     @Before (value = "@Api")
@@ -21,6 +22,7 @@ public class Hooks {
     }
     @Before (order = 1,value = "@NewApplicant")
     public void navigateToRegistration(){
+
         Driver.getDriver().get(ConfigReader.getProperty("registration_page_url"));
     }
 
@@ -40,10 +42,10 @@ public class Hooks {
         }
 
     }
-    @After
+    @After            (value = "@Close")
     public void closeBrowser(){
 
-        Driver.closeDriver();
+       Driver.closeDriver();
 
     }
 }

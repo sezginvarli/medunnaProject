@@ -12,7 +12,7 @@ public class HomeAndSigninPage {
     public HomeAndSigninPage(){
         PageFactory.initElements(Driver.getDriver(),this);}
 
-   // @FindBy(xpath = "(/a[@class='appointment-btn scrollto']")
+
     @FindBy(xpath = "(//a[@href='#appointment'])[1]")
     public WebElement MakeAnAppointment;
 

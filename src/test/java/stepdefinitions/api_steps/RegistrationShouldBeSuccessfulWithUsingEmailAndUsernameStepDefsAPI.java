@@ -10,8 +10,6 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.Registrant;
 import utilities.ConfigReader;
-
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -49,14 +47,6 @@ public class RegistrationShouldBeSuccessfulWithUsingEmailAndUsernameStepDefsAPI 
     public void username_as_should_be_validated(String username) {
         json=response.jsonPath();
         actualUsernameData= json.getList("findAll{it.id>0}.login");
-//        boolean flag=false;
-//        for (int i = 0; i <actualUsernameData.size() ; i++) {
-//            if (!actualUsernameData.contains(username)){
-//                flag= true;
-//            }
-//        }
-//        Assert.assertTrue(flag);
-       //response.then().assertThat().body("login",hasItem(username.toLowerCase()));
         Assert.assertFalse("Username cannot be the same as the others",actualUsernameData.contains(username));
 
     }
@@ -93,14 +83,6 @@ public class RegistrationShouldBeSuccessfulWithUsingEmailAndUsernameStepDefsAPI 
     public void emailAsShouldBeValidated(String email) {
         json=response.jsonPath();
         actualEmailData= json.getList("findAll{it.id>0}.email");
-//        boolean flag=false;
-//        for (int i = 0; i <actualUsernameData.size() ; i++) {
-//            if (!actualUsernameData.contains(username)){
-//                flag= true;
-//            }
-//        }
-//        Assert.assertTrue(flag);
-        //response.then().assertThat().body("login",hasItem(username.toLowerCase()));
         Assert.assertFalse("Email cannot be the same as the others",actualEmailData.contains(email));
 
     }

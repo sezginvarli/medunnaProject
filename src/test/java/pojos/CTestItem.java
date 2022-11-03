@@ -21,15 +21,17 @@ public class CTestItem {
     private String defaultValMax;
     private String defaultValMin;
     private String description;
+    //private int id;
     private String name;
     private double price;//required
 
-    public CTestItem(String createdBy, String createdDate, String defaultValMax, String defaultValMin, String description, String name, double price) {
+    public CTestItem(String createdBy, String createdDate, String defaultValMax, String defaultValMin, String description, int id, String name, double price) {
         this.createdBy = createdBy;
         this.createdDate = createdDate;
         this.defaultValMax = defaultValMax;
         this.defaultValMin = defaultValMin;
         this.description = description;
+        //this.id = id;
         this.name = name;
         this.price = price;
     }
@@ -109,6 +111,7 @@ public class CTestItem {
                 ", defaultValMax='" + defaultValMax + '\'' +
                 ", defaultValMin='" + defaultValMin + '\'' +
                 ", description='" + description + '\'' +
+              //  ", id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 '}';
