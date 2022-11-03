@@ -101,7 +101,27 @@ public class TXTWriter {
             e.printStackTrace();
         }
     }
+    public static void saveTheMessageData(Message data){
+        try {
+            FileWriter fw=new FileWriter(ConfigReader.getProperty("save_message"),false);
+            BufferedWriter bw=new BufferedWriter(fw);
+            bw.append(data.toString()+"\n");
+            bw.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public static void saveUiMessageData(Message message) {
 
+        try {
+            FileWriter fw = new FileWriter(ConfigReader.getProperty("messages_data_ui"), false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.append(message.toString() + "\n");
+            bw.close();
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

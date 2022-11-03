@@ -19,4 +19,6 @@ public class AdminMainPage {
     public WebElement adminMainPageItemDropdown;
     @FindBy(xpath = "//div[@class= 'dropdown-menu dropdown-menu-right show']/a[3]")
     public WebElement adminMainPageItemDropdownPhysician;
+    @FindBy(css = "[class][href = '/c-test-item']")
+    public WebElement getAdminMainPageTestItemDropdown;
 }
