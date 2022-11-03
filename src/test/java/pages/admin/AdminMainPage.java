@@ -21,4 +21,11 @@ public class AdminMainPage {
     public WebElement adminMainPageItemDropdownPhysician;
     @FindBy(css = "[class][href = '/c-test-item']")
     public WebElement getAdminMainPageTestItemDropdown;
+
+    @FindBy(xpath = "//span[text()='Items&Titles']")
+    public WebElement itemsAndTitles;
+    @FindBy(xpath = "(//a[@href='/room'])[1]")
+    public WebElement roomDropDown;
+
+
 }
