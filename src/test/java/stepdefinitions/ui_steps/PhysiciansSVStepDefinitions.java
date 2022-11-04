@@ -41,7 +41,7 @@ public class PhysiciansSVStepDefinitions {
 
     @Then("user clicks Search User Button")
     public void user_clicks_search_user_button() {
-        adminPhysicianPage.searchUserButton.click();
+         adminPhysicianPage.searchUserButton.click();
 
     }
 
