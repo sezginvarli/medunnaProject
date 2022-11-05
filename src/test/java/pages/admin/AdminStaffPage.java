@@ -10,8 +10,6 @@ public class AdminStaffPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//input[@id='useSSNSearch']")
-    public WebElement useSearchButton;
 
 
 }

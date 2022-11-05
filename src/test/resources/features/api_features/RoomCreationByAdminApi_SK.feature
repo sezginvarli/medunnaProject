@@ -9,7 +9,7 @@ Feature: Validate all rooms with API creating, reading, updating and deleting
     Given admin sends a get request for rooms' data
     Given admin should receive 200 status code
     And admin deserializes the rooms' data to java
-    Then admin saves the rooms' data to corresponding file and validates the data
+  #  Then admin saves the rooms' data to corresponding file and validates the data
 
 
   @RoomPostRequest

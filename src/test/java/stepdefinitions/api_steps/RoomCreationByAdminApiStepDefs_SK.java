@@ -20,7 +20,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
-import static utilities.TXTWriter.saveUiAllRoomsData;
+//import static utilities.TXTWriter.saveUiAllRoomsData;
 
 
 public class RoomCreationByAdminApiStepDefs_SK {
@@ -66,11 +66,11 @@ public class RoomCreationByAdminApiStepDefs_SK {
         }
         assertTrue(flag);
     }
-    @Then("admin saves the rooms' data to corresponding file and validates the data")
-    public void admin_saves_the_rooms_data_to_corresponding_file_and_validates_the_data() {
-
-        saveUiAllRoomsData(rooms);
-    }
+//    @Then("admin saves the rooms' data to corresponding file and validates the data")
+//    public void admin_saves_the_rooms_data_to_corresponding_file_and_validates_the_data() {
+//
+//        saveUiAllRoomsData(rooms);
+//    }
 
     @Given("admin sends a post request for rooms' data")
     public void admin_sends_a_post_request_for_rooms_data() {
