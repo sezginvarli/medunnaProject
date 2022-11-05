@@ -1,6 +1,7 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -321,5 +322,22 @@ public class Driver {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         return driver;
+    }
+    public static void backToTwoTimes(){
+        driver.navigate().back();
+        driver.navigate().back();
+    }
+    public static void scrollDown() {
+        new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN).build().perform();
+    }
+    public static void waitAndVerify(WebElement element) {
+        for (int i = 0; i < timeout; i++) {
+            try {
+                Assert.assertTrue(element.isDisplayed());
+                return;
+            } catch (WebDriverException e) {
+                wait(1);
+            }
+        }
     }
 }

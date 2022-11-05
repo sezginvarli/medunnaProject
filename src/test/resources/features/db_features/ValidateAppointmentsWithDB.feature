@@ -1,5 +1,5 @@
 @US10_TC04
-
+@SmokeTest
 Feature: Validate_appointments_with_DB
 
   Scenario:   Validate appointments with DB

@@ -1,6 +1,7 @@
 
 Feature:US09 DB Test.
   @US_009DB
+  @SmokeTest
   Scenario:User needs to validate all patient info from DB
 
     Given User connects to Medunna database

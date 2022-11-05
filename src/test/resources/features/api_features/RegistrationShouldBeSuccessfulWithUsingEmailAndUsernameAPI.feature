@@ -1,5 +1,6 @@
 @US_002
 @Api
+@SmokeTest
 Feature:Username and email should be validated with api and must be unique
   @US002_TC01_Api
   Scenario Outline: TC01 username validation
@@ -24,7 +25,7 @@ Feature:Username and email should be validated with api and must be unique
       |samsunmerkez|
 
   @US002_TC03_Api
-  Scenario Outline: TC0 email validation
+  Scenario Outline: TC03 email validation
     Given user sends a get request for user data
     Then the status code should be 200
     And user deserializes the user data to java
@@ -35,7 +36,7 @@ Feature:Username and email should be validated with api and must be unique
       |brad@654@gmail.com|
 
   @US002_PostApi
-  Scenario: TC09_email_post_request
+  Scenario: TC04 email_post_request
     Given user creates a post body
     Given user sends post request for creating new registrant
     Then Status code should be 201

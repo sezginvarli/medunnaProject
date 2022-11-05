@@ -1,5 +1,6 @@
 @US_00012
 @Signin
+@SmokeTest
 Feature:My Appointments / Edit / Request a test only by Physician
 
   Background: Go to homepage
